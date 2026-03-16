@@ -136,9 +136,8 @@ description: >-
   reliable weather information to help users plan and prepare for any weather
   event.
 maintainers:
-  - FN: API Evangelist
-    url: http://apievangelist.com
-    email: info@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
 specificationVersion: '0.18'
 type: Contract
 position: Consuming
