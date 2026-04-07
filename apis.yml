@@ -5,7 +5,8 @@ apis:
   - aid: weatherbit:weatherbit-current-weather-api
     name: Weatherbit Current Weather API
     tags: []
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: 
+      https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: http://api.weatherbit.io
     humanURL: https://www.weatherbit.io/api/weather-current
     properties:
@@ -21,23 +22,23 @@ apis:
   - aid: weatherbit:weatherbit-severe-weather-alerts-api
     name: Weatherbit Severe Weather Alerts API
     tags: []
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: 
+      https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.weatherbit.io
     humanURL: https://www.weatherbit.io/api/alerts
     properties:
       - url: https://www.weatherbit.io/api/alerts
         type: Documentation
-    description: >+
-      This API returns severe weather alerts issued by local meteorological
-      agencies. Current supported countries include: The USA via NOAA. European
-      Union member nations, the United Kingdom, and Israel via Meteoalarm. As
-      well as weather alerts for Canada via Environment Canada, and China via
-      the China Meteorological Administration.
-
+    description: >-
+      This API returns severe weather alerts issued by local meteorological agencies.
+      Current supported countries include: The USA via NOAA. European Union member
+      nations, the United Kingdom, and Israel via Meteoalarm. As well as weather alerts
+      for Canada via Environment Canada, and China via the China Meteorological Administration.
   - aid: weatherbit:weatherbit-weather-forecast-api
     name: Weatherbit Weather Forecast API
     tags: []
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: 
+      https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.example.com
     humanURL: https://www.weatherbit.io/api/weather-forecast-api
     properties:
@@ -54,7 +55,8 @@ apis:
   - aid: weatherbit:weatherbit-historical-weather-api
     name: Weatherbit Historical Weather API
     tags: []
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: 
+      https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.weatherbit.io
     humanURL: https://www.weatherbit.io/api/historical-weather-api
     properties:
@@ -71,7 +73,8 @@ apis:
   - aid: weatherbit:weatherbit-ag-weather-api
     name: Weatherbit Ag-Weather API
     tags: []
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: 
+      https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.example.com
     humanURL: https://www.weatherbit.io/api/agweather-api
     properties:
@@ -84,21 +87,22 @@ apis:
   - aid: weatherbit:weatherbit-air-quality-api
     name: Weatherbit Air Quality API
     tags: []
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: 
+      https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.example.com
     humanURL: https://www.weatherbit.io/api/air-quality-api
     properties:
       - url: https://www.weatherbit.io/api/air-quality-api
         type: Documentation
-    description: >
-      Enrich your business applications with high quality air quality data
-      derived from the world's most advanced global, and regional air quality
-      models. As well as thousands of air quality monitoring stations around the
-      world.
+    description: >-
+      Enrich your business applications with high quality air quality data derived
+      from the world's most advanced global, and regional air quality models. As well
+      as thousands of air quality monitoring stations around the world.
 name: Weatherbit
 tags:
   - Weather
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: 
+  https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 common:
   - url: https://www.weatherbit.io/pricing
     type: Plans
@@ -125,16 +129,11 @@ common:
 created: 2023/11/20
 modified: '2025-01-04'
 description: >-
-  Weatherbit is a leading provider of weather data and forecasting services.
-  They specialize in delivering accurate and up-to-date weather information to
-  businesses and individuals around the world. Their services include real-time
-  weather data, historical weather patterns, and advanced forecasting models to
-  help clients make informed decisions based on weather conditions. Weatherbit's
-  platform offers a wide range of customizable tools and APIs to integrate
-  weather data into various applications, websites, and systems. With a strong
-  focus on innovation and accuracy, Weatherbit is committed to providing
-  reliable weather information to help users plan and prepare for any weather
-  event.
+  Weatherbit is a leading provider of weather data and forecasting services. They
+  specialize in delivering accurate and up-to-date weather information to businesses
+  and individuals around the world. Their services include real-time weather data,
+  historical weather patterns, and advanced forecasting models to help clients make
+  informed decisions based on weather conditions.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
