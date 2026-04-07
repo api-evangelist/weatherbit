@@ -224,7 +224,7 @@ paths:
   /forecast/daily:
     get:
       tags:
-        - 16 day / daily Forecast
+        - 16 Day / Daily Forecast
       summary: Weatherbit Returns a daily forecast - Given Lat/Lon.
       description: "Returns a daily forecast, where each point represents one day (24hr) period. Every point has a datetime string in the format \"YYYY-MM-DD\". One day begins at 00:00 UTC, and ends at 23:59 UTC. \n"
       parameters:
@@ -621,7 +621,7 @@ paths:
   /forecast/hourly:
     get:
       tags:
-        - 240 hour / hourly Forecast
+        - 240 Hour / Hourly Forecast
       summary: Weatherbit Returns an hourly forecast - Given a lat/lon.
       description: "Returns an hourly forecast, where each point represents a one hour period. Every point has a datetime string in the format \"YYYY-MM-DD:HH\". Time is UTC. \n"
       parameters:
@@ -3320,3 +3320,21 @@ components:
           format: int32
         message:
           type: string
+tags:
+  - name: 16 Day / Daily Forecast
+  - name: 240 Hour / Hourly Forecast
+  - name: 60 Minute Rain/Snow Nowcast
+  - name: AgWeather Forecast
+  - name: Air Quality Forecast
+  - name: Alerts
+  - name: Bulk Downloads
+  - name: Climate Normals (Averages)
+  - name: Current Air Quality
+  - name: Current Weather Data
+  - name: Daily Historical Weather Data
+  - name: Forecast Degree Day API
+  - name: Historical AgWeather Data
+  - name: Historical Air Quality
+  - name: Historical Degree Day API
+  - name: Hourly Historical Weather Data
+  - name: Sub-Hourly Historical Weather Data
