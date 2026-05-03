@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-schema/weatherbit-error-schema.json",
+  "title": "Error",
+  "description": "Error schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "message": {
+      "type": "string"
+    }
+  }
+}

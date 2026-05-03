@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-schema/weatherbit-normals-obj-schema.json",
+  "title": "NormalsObj",
+  "description": "NormalsObj schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "month": {
+      "type": "number",
+      "description": "Month number",
+      "example": 2.0
+    },
+    "temp": {
+      "type": "number",
+      "description": "Average temperature",
+      "example": 30.0
+    },
+    "dewpt": {
+      "type": "number",
+      "description": "Average dew point",
+      "example": 25.0
+    },
+    "max_wind_spd": {
+      "type": "number",
+      "description": "Maximum wind speed",
+      "example": 5.0
+    },
+    "min_wind_spd": {
+      "type": "number",
+      "description": "Minimum wind speed",
+      "example": 0.0
+    },
+    "wind_spd": {
+      "type": "number",
+      "description": "Average wind speed",
+      "example": 2.0
+    },
+    "wind_dir": {
+      "type": "number",
+      "description": "Average wind direction",
+      "example": 200.0
+    },
+    "precip": {
+      "type": "number",
+      "description": "Average Liquid equivalent precipitation - Default (mm)",
+      "example": 3.1
+    },
+    "snow": {
+      "type": "number",
+      "description": "Average Snowfall - Default (mm)",
+      "example": 30.5
+    }
+  }
+}

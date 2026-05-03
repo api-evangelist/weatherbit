@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-schema/weatherbit-history-subhourly-obj-schema.json",
+  "title": "HistorySubhourlyObj",
+  "description": "HistorySubhourlyObj schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "ts": {
+      "type": "number",
+      "description": "Unix Timestamp",
+      "example": 1551718800
+    },
+    "timestamp_local": {
+      "type": "string",
+      "description": "Timestamp in local time",
+      "example": "2019-03-04 12:15:00"
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "description": "Timestamp UTC",
+      "example": "2019-03-04 17:15:00"
+    },
+    "revision_status": {
+      "type": "string",
+      "description": "Data revision status (interim or final)",
+      "example": "final"
+    },
+    "slp": {
+      "type": "number",
+      "description": "Sea level pressure (mb)",
+      "example": 1020.1
+    },
+    "pres": {
+      "type": "number",
+      "description": "Pressure (mb)",
+      "example": 845.0
+    },
+    "rh": {
+      "type": "integer",
+      "description": "Relative Humidity as a percentage (%)",
+      "example": 85
+    },
+    "dewpt": {
+      "type": "number",
+      "description": "Dew point (Default Celcius)",
+      "example": -1.5
+    },
+    "temp": {
+      "type": "number",
+      "description": "Temperature (Default Celcius)",
+      "example": -1.2
+    },
+    "app_temp": {
+      "type": "number",
+      "description": "Apparent Temperature or Wind Chill/Heat Index (Default Celcius)",
+      "example": -1.5
+    },
+    "wind_spd": {
+      "type": "number",
+      "description": "Wind Speed (Default m/s)",
+      "example": 14.7
+    },
+    "wind_gust_spd": {
+      "type": "number",
+      "description": "Wind Gust Speed - Default (m/s)",
+      "example": 16.85
+    },
+    "wind_dir": {
+      "type": "integer",
+      "description": "Wind direction (Degrees)",
+      "example": 325
+    },
+    "uv": {
+      "type": "number",
+      "description": "UV Index (1-11+)",
+      "example": 4.0
+    },
+    "solar_rad": {
+      "type": "number",
+      "description": "Estimated solar radiation (W/m^2)",
+      "example": 300.0
+    },
+    "ghi": {
+      "type": "number",
+      "description": "Global horizontal solar irradiance (W/m^2)",
+      "example": 1500.0
+    },
+    "dhi": {
+      "type": "number",
+      "description": "Diffuse normal solar irradiance (W/m^2)",
+      "example": 200.0
+    },
+    "dni": {
+      "type": "number",
+      "description": "Direct normal solar irradiance (W/m^2)",
+      "example": 400.0
+    },
+    "elev_angle": {
+      "type": "number",
+      "description": "Solar elevation angle (Degrees)",
+      "example": 27.5
+    },
+    "azimuth": {
+      "type": "number",
+      "description": "Solar azimuth angle (Degrees)",
+      "example": 40.5
+    },
+    "vis": {
+      "type": "number",
+      "description": "Visibility (KM)",
+      "example": 10.0
+    },
+    "pod": {
+      "type": "string",
+      "description": "Part of the day (d = day, n = night)",
+      "example": "n"
+    },
+    "weather": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "type": "string",
+          "description": "Icon code for forecast image display",
+          "example": "s01n"
+        },
+        "code": {
+          "type": "integer",
+          "description": "Weather Condition code",
+          "example": 601
+        },
+        "description": {
+          "type": "string",
+          "description": "Weather Condition description",
+          "example": "Light Snow"
+        }
+      }
+    },
+    "clouds": {
+      "type": "integer",
+      "description": "Cloud Cover 0-100 (%)",
+      "example": 50
+    },
+    "precip_rate": {
+      "type": "number",
+      "description": "Liquid equivalent precipitation rate - Default (mm/hr)",
+      "example": 3.0
+    },
+    "snow_rate": {
+      "type": "number",
+      "description": "Snowfall Rate - Default (mm/hr)",
+      "example": 30.0
+    }
+  }
+}

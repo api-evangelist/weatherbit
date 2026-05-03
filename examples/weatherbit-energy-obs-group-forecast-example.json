@@ -1,0 +1,13 @@
+{
+  "city_name": "Raleigh",
+  "state_code": "NC",
+  "country_code": "US",
+  "timezone": "America/New_York",
+  "lat": 38.0,
+  "lon": -78.25,
+  "threshold_units": "C",
+  "threshold_value": "18",
+  "data": [
+    null
+  ]
+}

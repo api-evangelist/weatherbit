@@ -1,0 +1,11 @@
+{
+  "month": 2.0,
+  "temp": 30.0,
+  "dewpt": 25.0,
+  "max_wind_spd": 5.0,
+  "min_wind_spd": 0.0,
+  "wind_spd": 2.0,
+  "wind_dir": 200.0,
+  "precip": 3.1,
+  "snow": 30.5
+}

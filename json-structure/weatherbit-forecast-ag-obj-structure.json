@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-structure/weatherbit-forecast-ag-obj-structure.json",
+  "name": "ForecastAGObj",
+  "description": "ForecastAGObj schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "bulk_soil_density": {
+      "type": "double",
+      "description": "Bulk Soil Density",
+      "example": 1370.0
+    },
+    "dlwrf_avg": {
+      "type": "double",
+      "description": "Average Downward Longwave Radiation Flux",
+      "example": 418.656
+    },
+    "dlwrf_max": {
+      "type": "double",
+      "description": "Maximum Downward Longwave Radiation Flux",
+      "example": 440.25
+    },
+    "dlwrf_net": {
+      "type": "double",
+      "description": "Net Downward Longwave Radiation Flux",
+      "example": 143.0
+    },
+    "dswrf_avg": {
+      "type": "double",
+      "description": "Average Downward Shortwave Radiation Flux",
+      "example": 158.848
+    },
+    "dswrf_max": {
+      "type": "double",
+      "description": "Maximum Downward Shortwave Radiation Flux",
+      "example": 492.25
+    },
+    "dswrf_net": {
+      "type": "double",
+      "description": "Net Downward Shortwave Radiation Flux",
+      "example": -50.832
+    },
+    "evapotranspiration": {
+      "type": "double",
+      "description": "Evapotranspiration",
+      "example": 4.247
+    },
+    "precip": {
+      "type": "double",
+      "description": "Precipitation",
+      "example": 18.5
+    },
+    "pres_avg": {
+      "type": "double",
+      "description": "Average Pressure",
+      "example": 1011.644
+    },
+    "revision_status": {
+      "type": "string",
+      "description": "Data revision status",
+      "example": "final"
+    },
+    "skin_temp_avg": {
+      "type": "double",
+      "description": "Average Skin Temperature",
+      "example": 29.4
+    },
+    "skin_temp_max": {
+      "type": "double",
+      "description": "Maximum Skin Temperature",
+      "example": 40.4
+    },
+    "skin_temp_min": {
+      "type": "double",
+      "description": "Minimum Skin Temperature",
+      "example": 25.4
+    },
+    "soilm_0_10cm": {
+      "type": "double",
+      "description": "Soil Moisture (0-10cm depth)",
+      "example": 25.697
+    },
+    "soilm_100_200cm": {
+      "type": "double",
+      "description": "Soil Moisture (100-200cm depth)",
+      "example": 273.625
+    },
+    "soilm_10_40cm": {
+      "type": "double",
+      "description": "Soil Moisture (10-40cm depth)",
+      "example": 72.813
+    },
+    "soilm_40_100cm": {
+      "type": "double",
+      "description": "Soil Moisture (40-100cm depth)",
+      "example": 152.203
+    },
+    "soilt_0_10cm": {
+      "type": "double",
+      "description": "Soil Temperature (0-10cm depth)",
+      "example": 29.5
+    },
+    "soilt_100_200cm": {
+      "type": "double",
+      "description": "Soil Temperature (100-200cm depth)",
+      "example": 24.4
+    },
+    "soilt_10_40cm": {
+      "type": "double",
+      "description": "Soil Temperature (10-40cm depth)",
+      "example": 29.8
+    },
+    "soilt_40_100cm": {
+      "type": "double",
+      "description": "Soil Temperature (40-100cm depth)",
+      "example": 27.7
+    },
+    "specific_humidity": {
+      "type": "double",
+      "description": "Specific Humidity",
+      "example": 0.014513969421387
+    },
+    "temp_2m_avg": {
+      "type": "double",
+      "description": "Average Temperature at 2 meters",
+      "example": 26.6
+    },
+    "v_soilm_0_10cm": {
+      "type": "double",
+      "description": "Volumetric Soil Moisture (0-10cm depth)",
+      "example": 0.257
+    },
+    "v_soilm_100_200cm": {
+      "type": "double",
+      "description": "Volumetric Soil Moisture (100-200cm depth)",
+      "example": 0.274
+    },
+    "v_soilm_10_40cm": {
+      "type": "double",
+      "description": "Volumetric Soil Moisture (10-40cm depth)",
+      "example": 0.243
+    },
+    "v_soilm_40_100cm": {
+      "type": "double",
+      "description": "Volumetric Soil Moisture (40-100cm depth)",
+      "example": 0.254
+    },
+    "valid_date": {
+      "type": "string",
+      "description": "Valid Date",
+      "example": "2023-09-08"
+    },
+    "wind_10m_spd_avg": {
+      "type": "double",
+      "description": "Average Wind Speed at 10 meters",
+      "example": 2.505
+    }
+  }
+}

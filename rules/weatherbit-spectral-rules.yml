@@ -1,0 +1,176 @@
+rules:
+
+  # INFO / METADATA
+  info-title-required:
+    description: Info must have a title
+    severity: error
+    given: $.info
+    then:
+      field: title
+      function: truthy
+
+  info-description-required:
+    description: Info must have a description
+    severity: warn
+    given: $.info
+    then:
+      field: description
+      function: truthy
+
+  info-version-required:
+    description: Info must have a version
+    severity: error
+    given: $.info
+    then:
+      field: version
+      function: truthy
+
+  # OPENAPI VERSION
+  openapi-version-3:
+    description: Must use OpenAPI 3.x
+    severity: error
+    given: $
+    then:
+      field: openapi
+      function: pattern
+      functionOptions:
+        match: "^3\\."
+
+  # SERVERS
+  servers-required:
+    description: Servers array must be defined
+    severity: error
+    given: $
+    then:
+      field: servers
+      function: truthy
+
+  servers-https-only:
+    description: All server URLs must use HTTPS
+    severity: warn
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://"
+
+  # PATHS — NAMING CONVENTIONS
+  paths-kebab-case:
+    description: Path segments must use kebab-case or snake_case
+    severity: info
+    given: $.paths[*]~
+    then:
+      function: pattern
+      functionOptions:
+        match: "^(\\/[a-z0-9{}_,\\-\\/]*)*$"
+
+  paths-no-trailing-slash:
+    description: Paths must not have trailing slashes
+    severity: warn
+    given: $.paths[*]~
+    then:
+      function: pattern
+      functionOptions:
+        notMatch: "\\/$"
+
+  # OPERATIONS
+  operation-summary-required:
+    description: Every operation must have a summary
+    severity: warn
+    given: $.paths[*][get,post,put,delete,patch]
+    then:
+      field: summary
+      function: truthy
+
+  operation-summary-weatherbit-prefix:
+    description: Operation summaries must start with Weatherbit
+    message: "Summary must start with 'Weatherbit': {{value}}"
+    severity: info
+    given: $.paths[*][get,post,put,delete,patch].summary
+    then:
+      function: pattern
+      functionOptions:
+        match: "^Weatherbit"
+
+  operation-tags-required:
+    description: Operations must have at least one tag
+    severity: warn
+    given: $.paths[*][get,post,put,delete,patch]
+    then:
+      field: tags
+      function: truthy
+
+  # PARAMETERS
+  parameter-description-required:
+    description: Every parameter should have a description
+    severity: warn
+    given: $.paths[*][get,post,put,delete,patch].parameters[*]
+    then:
+      field: description
+      function: truthy
+
+  parameter-api-key-in-query:
+    description: API key parameter must be named 'key'
+    message: "API key parameter should be named 'key'"
+    severity: info
+    given: $.paths[*][get,post,put,delete,patch].parameters[?(@.name == 'key')]
+    then:
+      field: in
+      function: enumeration
+      functionOptions:
+        values: [query]
+
+  # RESPONSES
+  response-success-required:
+    description: Every operation must have a 2xx success response
+    severity: error
+    given: $.paths[*][get,post,put,delete,patch].responses
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          minProperties: 1
+
+  response-description-required:
+    description: Every response must have a description
+    severity: warn
+    given: $.paths[*][get,post,put,delete,patch].responses[*]
+    then:
+      field: description
+      function: truthy
+
+  # SCHEMAS
+  schema-type-defined:
+    description: Schemas should define a type
+    severity: warn
+    given: $.components.schemas[*]
+    then:
+      field: type
+      function: truthy
+
+  # HTTP METHOD CONVENTIONS
+  get-no-request-body:
+    description: GET operations must not have a request body
+    severity: error
+    given: $.paths[*].get
+    then:
+      field: requestBody
+      function: falsy
+
+  # GENERAL QUALITY
+  no-empty-descriptions:
+    description: Descriptions must not be empty strings
+    severity: warn
+    given: $..description
+    then:
+      function: pattern
+      functionOptions:
+        match: ".+"
+
+  contact-info-recommended:
+    description: Info should have contact details
+    severity: info
+    given: $.info
+    then:
+      field: contact
+      function: truthy

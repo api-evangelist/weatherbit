@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-schema/weatherbit-aq-hour-schema.json",
+  "title": "AQHour",
+  "description": "AQHour schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "ts": {
+      "type": "number",
+      "description": "Unix Timestamp",
+      "example": 1551718800
+    },
+    "timestamp_local": {
+      "type": "string",
+      "description": "Timestamp in local time",
+      "example": "2019-03-04 12:00:00"
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "description": "Timestamp UTC",
+      "example": "2019-03-04 17:00:00"
+    },
+    "aqi": {
+      "type": "integer",
+      "description": "Cloud cover as a percentage (%)",
+      "example": 100
+    },
+    "so2": {
+      "type": "number",
+      "description": "Concentration of SO2 (\u00b5g/m\u00b3)",
+      "example": 50.0
+    },
+    "no2": {
+      "type": "number",
+      "description": "Concentration of NO2 (\u00b5g/m\u00b3)",
+      "example": 25.0
+    },
+    "o3": {
+      "type": "number",
+      "description": "Concentration of O3 (\u00b5g/m\u00b3)",
+      "example": 2.0
+    },
+    "pm25": {
+      "type": "number",
+      "description": "Concentration of PM 2.5 (\u00b5g/m\u00b3)",
+      "example": 230.0
+    },
+    "pm10": {
+      "type": "number",
+      "description": "Concentration of PM 10 (\u00b5g/m\u00b3)",
+      "example": 150.0
+    }
+  }
+}

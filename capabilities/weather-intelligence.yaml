@@ -1,0 +1,227 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Weatherbit Weather Intelligence"
+  description: "Unified weather intelligence workflow combining current conditions, forecasts, historical data, alerts, and air quality. Used by developers, businesses, and researchers to access global weather data."
+  tags:
+    - Weather
+    - Forecasting
+    - Historical Data
+    - Air Quality
+    - Alerts
+    - Agricultural
+  created: "2026-05-03"
+  modified: "2026-05-03"
+
+binds:
+  - namespace: env
+    keys:
+      WEATHERBIT_API_KEY: WEATHERBIT_API_KEY
+
+capability:
+  consumes:
+    - import: weatherbit
+      location: ./shared/weatherbit-api.yaml
+
+  exposes:
+    - type: rest
+      port: 8081
+      namespace: weather-intelligence-api
+      description: "Unified REST API for weather intelligence using Weatherbit data."
+      resources:
+        - path: /v1/current
+          name: current-conditions
+          description: "Current weather conditions"
+          operations:
+            - method: GET
+              name: get-current-weather
+              description: "Get current weather for a location"
+              call: "weatherbit.get-current-weather"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/alerts
+          name: alerts
+          description: "Severe weather alerts"
+          operations:
+            - method: GET
+              name: get-alerts
+              description: "Get severe weather alerts for a location"
+              call: "weatherbit.get-alerts"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/forecasts/daily
+          name: daily-forecast
+          description: "Daily weather forecasts"
+          operations:
+            - method: GET
+              name: get-daily-forecast
+              description: "Get daily weather forecast"
+              call: "weatherbit.get-daily-forecast"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/forecasts/hourly
+          name: hourly-forecast
+          description: "Hourly weather forecasts"
+          operations:
+            - method: GET
+              name: get-hourly-forecast
+              description: "Get hourly weather forecast"
+              call: "weatherbit.get-hourly-forecast"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/history/daily
+          name: historical-weather
+          description: "Historical weather observations"
+          operations:
+            - method: GET
+              name: get-history-daily
+              description: "Get historical daily observations"
+              call: "weatherbit.get-history-daily"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/air-quality/current
+          name: air-quality
+          description: "Current air quality"
+          operations:
+            - method: GET
+              name: get-current-airquality
+              description: "Get current air quality conditions"
+              call: "weatherbit.get-current-airquality"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/air-quality/forecast
+          name: air-quality-forecast
+          description: "Air quality forecasts"
+          operations:
+            - method: GET
+              name: get-airquality-forecast
+              description: "Get hourly air quality forecast"
+              call: "weatherbit.get-airquality-forecast"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/agricultural-weather
+          name: agweather
+          description: "Agricultural weather data"
+          operations:
+            - method: GET
+              name: get-agweather-forecast
+              description: "Get agricultural weather forecast"
+              call: "weatherbit.get-agweather-forecast"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/climate-normals
+          name: climate-normals
+          description: "Historical climate normals"
+          operations:
+            - method: GET
+              name: get-normals
+              description: "Get climate normals for a location"
+              call: "weatherbit.get-normals"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9091
+      namespace: weather-intelligence-mcp
+      transport: http
+      description: "MCP server for AI-assisted weather intelligence using Weatherbit data."
+      tools:
+        - name: get-current-weather
+          description: "Get current weather conditions for any location"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-current-weather"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-severe-alerts
+          description: "Get severe weather alerts for a location"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-alerts"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-daily-forecast
+          description: "Get 16-day daily weather forecast"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-daily-forecast"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-hourly-forecast
+          description: "Get 240-hour hourly weather forecast"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-hourly-forecast"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-historical-weather
+          description: "Get historical daily weather observations"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-history-daily"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-current-air-quality
+          description: "Get current air quality including pollutants and AQI"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-current-airquality"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-air-quality-forecast
+          description: "Get 72-hour air quality forecast"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-airquality-forecast"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-agricultural-weather
+          description: "Get agricultural weather forecast for farming applications"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-agweather-forecast"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-climate-normals
+          description: "Get historical climate normals and averages"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-normals"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-energy-forecast
+          description: "Get energy weather forecast with degree days"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-energy-forecast"
+          outputParameters:
+            - type: object
+              mapping: "$."

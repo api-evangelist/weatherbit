@@ -1,0 +1,238 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "Weatherbit"
+  description: "Complete vocabulary for the Weatherbit API covering weather observations, forecasts, historical data, air quality, and agricultural weather."
+  created: "2026-05-03"
+  modified: "2026-05-03"
+
+operational:
+  apis:
+    - name: "Weatherbit API"
+      namespace: weatherbit
+      version: "2.0.0"
+      baseUrl: https://api.weatherbit.io/v2.0
+      status: active
+
+  resources:
+    - name: current-weather
+      api: weatherbit
+      description: "Current weather observations from global stations"
+      actions: [get]
+    - name: alerts
+      api: weatherbit
+      description: "Severe weather alerts covering US, Canada, EU, Israel"
+      actions: [get]
+    - name: daily-forecast
+      api: weatherbit
+      description: "16-day daily weather forecasts"
+      actions: [get]
+    - name: hourly-forecast
+      api: weatherbit
+      description: "240-hour hourly weather forecasts"
+      actions: [get]
+    - name: minutely-forecast
+      api: weatherbit
+      description: "60-minute precipitation nowcasts"
+      actions: [get]
+    - name: historical-weather
+      api: weatherbit
+      description: "Historical daily, hourly, and sub-hourly observations"
+      actions: [get]
+    - name: air-quality
+      api: weatherbit
+      description: "Current and forecast air quality including 6 major pollutants"
+      actions: [get-current, get-forecast, get-history]
+    - name: agricultural-weather
+      api: weatherbit
+      description: "Agricultural weather forecasts and historical data"
+      actions: [get-forecast, get-history]
+    - name: energy-weather
+      api: weatherbit
+      description: "Energy weather forecasts with degree days"
+      actions: [get-forecast, get-history]
+    - name: climate-normals
+      api: weatherbit
+      description: "Historical climate normals (1991-2020 averages)"
+      actions: [get]
+    - name: bulk-data
+      api: weatherbit
+      description: "Pre-generated bulk weather datasets"
+      actions: [list, download]
+
+  actions:
+    - name: get
+      httpMethod: GET
+      pattern: read
+    - name: list
+      httpMethod: GET
+      pattern: read
+    - name: download
+      httpMethod: GET
+      pattern: read
+
+  schemas:
+    core:
+      - name: CurrentWeather
+        description: "Current weather observation"
+        keyProperties: [lat, lon, city_name, state_code, country_code, temp, app_temp, rh, wind_spd, wind_dir, vis, clouds, weather, uv, aqi, datetime]
+      - name: DailyForecast
+        description: "Daily weather forecast period"
+        keyProperties: [datetime, high_temp, low_temp, temp, rh, wind_spd, wind_dir, clouds, precip, snow, uv, weather]
+      - name: HourlyForecast
+        description: "Hourly weather forecast period"
+        keyProperties: [timestamp_local, temp, app_temp, rh, wind_spd, wind_dir, clouds, vis, precip, snow, uv, weather]
+      - name: Alert
+        description: "Severe weather alert"
+        keyProperties: [title, description, severity, effective_utc, expires_utc, regions, uri]
+      - name: AirQuality
+        description: "Air quality observation"
+        keyProperties: [aqi, pm25, pm10, o3, no2, so2, co, pollen_level_grass, pollen_level_tree, pollen_level_weed, mold_level]
+      - name: WeatherIcon
+        description: "Weather condition icon and description"
+        keyProperties: [icon, description, code]
+
+  parameters:
+    location:
+      - name: lat
+        type: number
+        description: "Latitude coordinate"
+      - name: lon
+        type: number
+        description: "Longitude coordinate"
+      - name: city
+        type: string
+        description: "City name"
+      - name: city_id
+        type: integer
+        description: "Weatherbit city ID"
+      - name: postal_code
+        type: string
+        description: "Postal/ZIP code"
+      - name: country
+        type: string
+        description: "ISO 3166-1 alpha-2 country code"
+      - name: station
+        type: string
+        description: "Weather station identifier"
+    units:
+      - name: units
+        type: string
+        description: "Unit system: M (metric), S (scientific), I (imperial)"
+      - name: lang
+        type: string
+        description: "Language code for weather descriptions"
+    time:
+      - name: start_date
+        type: string
+        description: "Start date for historical data (YYYY-MM-DD)"
+      - name: end_date
+        type: string
+        description: "End date for historical data (YYYY-MM-DD)"
+      - name: days
+        type: integer
+        description: "Number of forecast days (max 16)"
+      - name: hours
+        type: integer
+        description: "Number of forecast hours (max 240)"
+    pagination:
+      - name: count
+        type: integer
+        description: "Number of results to return"
+
+  enums:
+    unit-systems:
+      - M
+      - S
+      - I
+    alert-severity:
+      - Advisory
+      - Watch
+      - Warning
+      - Extreme
+
+  authentication:
+    - scheme: apiKey
+      parameter: key
+      placement: query
+      description: "API key passed as 'key' query parameter"
+
+capability:
+  workflows:
+    - name: Weather Intelligence
+      file: capabilities/weather-intelligence.yaml
+      description: "Unified weather data combining current conditions, forecasts, history, alerts, and air quality"
+      apisUsed: [weatherbit]
+      toolCount: 10
+      personas: [Developer, Business Analyst, Agricultural Planner, Emergency Manager]
+      domains: [Weather Monitoring, Forecasting, Historical Analysis, Air Quality, Agriculture]
+
+  personas:
+    - id: developer
+      name: Developer
+      description: "Integrates weather data into applications, mobile apps, and services"
+      workflows: [Weather Intelligence]
+    - id: business-analyst
+      name: Business Analyst
+      description: "Uses weather data for business intelligence and risk assessment"
+      workflows: [Weather Intelligence]
+    - id: agricultural-planner
+      name: Agricultural Planner
+      description: "Uses agricultural weather forecasts and historical data for crop management"
+      workflows: [Weather Intelligence]
+    - id: emergency-manager
+      name: Emergency Manager
+      description: "Monitors severe weather alerts for emergency preparedness"
+      workflows: [Weather Intelligence]
+
+  domains:
+    - name: Weather Monitoring
+      description: "Real-time and forecast weather data"
+      resources: [current-weather, daily-forecast, hourly-forecast, minutely-forecast]
+    - name: Historical Analysis
+      description: "Historical weather data for analysis and research"
+      resources: [historical-weather, climate-normals]
+    - name: Air Quality
+      description: "Air quality monitoring and forecasting"
+      resources: [air-quality]
+    - name: Agriculture
+      description: "Agricultural weather data for farming applications"
+      resources: [agricultural-weather]
+
+  namespaces:
+    - name: weatherbit
+      type: consumed
+      baseUri: https://api.weatherbit.io/v2.0
+    - name: weather-intelligence-api
+      type: rest-exposed
+      port: 8081
+    - name: weather-intelligence-mcp
+      type: mcp-exposed
+      port: 9091
+
+  binds:
+    - name: WEATHERBIT_API_KEY
+      description: "Weatherbit API key for authentication"
+      workflows: [Weather Intelligence]
+
+crossReference:
+  - resource: current-weather
+    operations: [get-current-weather]
+    workflows: [Weather Intelligence]
+    personas: [Developer, Business Analyst, Emergency Manager]
+  - resource: alerts
+    operations: [get-alerts]
+    workflows: [Weather Intelligence]
+    personas: [Emergency Manager, Developer]
+  - resource: daily-forecast
+    operations: [get-daily-forecast]
+    workflows: [Weather Intelligence]
+    personas: [Developer, Agricultural Planner, Business Analyst]
+  - resource: air-quality
+    operations: [get-current-airquality, get-airquality-forecast]
+    workflows: [Weather Intelligence]
+    personas: [Developer, Business Analyst]
+  - resource: agricultural-weather
+    operations: [get-agweather-forecast, get-history-agweather]
+    workflows: [Weather Intelligence]
+    personas: [Agricultural Planner]

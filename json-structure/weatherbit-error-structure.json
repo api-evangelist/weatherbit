@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-structure/weatherbit-error-structure.json",
+  "name": "Error",
+  "description": "Error schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "int32"
+    },
+    "message": {
+      "type": "string"
+    }
+  }
+}

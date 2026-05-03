@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-structure/weatherbit-energy-obs-group-structure.json",
+  "name": "EnergyObsGroup",
+  "description": "EnergyObsGroup schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "count": {
+      "type": "int32",
+      "description": "Count of found observations",
+      "example": 1
+    },
+    "start_date": {
+      "type": "int32",
+      "description": "Start Date"
+    },
+    "end_date": {
+      "type": "int32",
+      "description": "End Date"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/EnergyObs"
+      }
+    }
+  }
+}

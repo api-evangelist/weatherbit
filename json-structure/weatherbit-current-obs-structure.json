@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-structure/weatherbit-current-obs-structure.json",
+  "name": "CurrentObs",
+  "description": "CurrentObs schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "city_name": {
+      "type": "string",
+      "description": "City name (closest)",
+      "example": "Raleigh"
+    },
+    "state_code": {
+      "type": "string",
+      "description": "State abbreviation",
+      "example": "NC"
+    },
+    "country_code": {
+      "type": "string",
+      "description": "Country abbreviation",
+      "example": "US"
+    },
+    "timezone": {
+      "type": "string",
+      "description": "Local IANA time zone",
+      "example": "America/New_York"
+    },
+    "lat": {
+      "type": "double",
+      "description": "Latitude",
+      "example": 38.0
+    },
+    "lon": {
+      "type": "double",
+      "description": "Longitude",
+      "example": -78.25
+    },
+    "station": {
+      "type": "string",
+      "description": "Source Station ID",
+      "example": "KRDU"
+    },
+    "sources": {
+      "type": "array",
+      "description": "List of data sources used in response",
+      "items": {
+        "type": "string",
+        "example": "rtma"
+      }
+    },
+    "vis": {
+      "type": "int32",
+      "description": "Visibility - default (M)",
+      "example": 10000
+    },
+    "rh": {
+      "type": "int32",
+      "description": "Relative humidity (%)",
+      "example": 75
+    },
+    "dewpt": {
+      "type": "double",
+      "description": "Dew point temperature - default (C)",
+      "example": 12.0
+    },
+    "wind_dir": {
+      "type": "int32",
+      "description": "Wind direction (degrees)",
+      "example": 125
+    },
+    "wind_cdir": {
+      "type": "string",
+      "description": "Cardinal wind direction",
+      "example": "ENE"
+    },
+    "wind_cdir_full": {
+      "type": "string",
+      "description": "Cardinal wind direction (text)",
+      "example": "East-North-East"
+    },
+    "wind_speed": {
+      "type": "double",
+      "description": "Wind speed - Default (m/s)",
+      "example": 5.85
+    },
+    "temp": {
+      "type": "double",
+      "description": "Temperature - Default (C)",
+      "example": 13.85
+    },
+    "app_temp": {
+      "type": "double",
+      "description": "Apparent temperature - Default (C)",
+      "example": 14.85
+    },
+    "clouds": {
+      "type": "int32",
+      "description": "Cloud cover (%)",
+      "example": 42
+    },
+    "weather": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "type": "string",
+          "description": "Icon code for forecast image display",
+          "example": "c02"
+        },
+        "code": {
+          "type": "int32",
+          "description": "Weather Condition code",
+          "example": 802
+        },
+        "description": {
+          "type": "string",
+          "description": "Weather Condition description",
+          "example": "Broken clouds"
+        }
+      }
+    },
+    "datetime": {
+      "type": "string",
+      "description": "Cycle Hour (UTC) of observation",
+      "example": "2017-03-15:13"
+    },
+    "ob_time": {
+      "type": "string",
+      "description": "Full time (UTC) of observation (YYYY-MM-DD HH:MM)",
+      "example": "2017-03-15 13:11"
+    },
+    "ts": {
+      "type": "double",
+      "description": "Unix Timestamp",
+      "example": 1490990400
+    },
+    "sunrise": {
+      "type": "string",
+      "description": "Time (UTC) of Sunrise (HH:MM)",
+      "example": "06:22"
+    },
+    "sunset": {
+      "type": "string",
+      "description": "Time (UTC) of Sunset (HH:MM)",
+      "example": 1174
+    },
+    "slp": {
+      "type": "double",
+      "description": "Mean sea level pressure in millibars (mb)",
+      "example": 1013.12
+    },
+    "pres": {
+      "type": "double",
+      "description": "Pressure (mb)",
+      "example": 1010.0
+    },
+    "aqi": {
+      "type": "double",
+      "description": "Air quality index (US EPA standard 0 to +500)",
+      "example": 50.0
+    },
+    "uv": {
+      "type": "double",
+      "description": "UV Index",
+      "example": 6.5
+    },
+    "solar_rad": {
+      "type": "double",
+      "description": "Estimated solar radiation (W/m^2)",
+      "example": 300.4
+    },
+    "ghi": {
+      "type": "double",
+      "description": "Global horizontal irradiance (W/m^2)",
+      "example": 450.4
+    },
+    "dni": {
+      "type": "double",
+      "description": "Direct normal irradiance (W/m^2)",
+      "example": 450.4
+    },
+    "dhi": {
+      "type": "double",
+      "description": "Diffuse horizontal irradiance (W/m^2)",
+      "example": 450.4
+    },
+    "elev_angle": {
+      "type": "double",
+      "description": "Current solar elevation angle (Degrees)",
+      "example": 37.0
+    },
+    "pod": {
+      "type": "string",
+      "description": "Part of the day (d = day, n = night)"
+    },
+    "precip": {
+      "type": "double",
+      "description": "Precipitation in last hour - Default (mm)",
+      "example": 2.0
+    },
+    "snow": {
+      "type": "double",
+      "description": "Snowfall in last hour - Default (mm)",
+      "example": 10.0
+    }
+  }
+}

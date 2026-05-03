@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-schema/weatherbit-energy-obs-series-schema.json",
+  "title": "EnergyObsSeries",
+  "description": "EnergyObsSeries schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "description": "Date",
+      "example": "2018-06-01"
+    },
+    "cdd": {
+      "type": "number",
+      "description": "Cooling degree days",
+      "example": 10.0
+    },
+    "hdd": {
+      "type": "number",
+      "description": "Heating degree days",
+      "example": 120.0
+    },
+    "rh": {
+      "type": "integer",
+      "description": "Average Relative humidity (%)",
+      "example": 75
+    },
+    "dewpt": {
+      "type": "number",
+      "description": "Average dew point temperature - Default (C)",
+      "example": 12.0
+    },
+    "wind_dir": {
+      "type": "integer",
+      "description": "Average wind direction (Degrees)",
+      "example": 125
+    },
+    "wind_spd": {
+      "type": "number",
+      "description": "Average wind speed - Default (m/s)",
+      "example": 5.85
+    },
+    "temp": {
+      "type": "number",
+      "description": "Average temperature - Default (C)",
+      "example": 13.85
+    },
+    "clouds": {
+      "type": "integer",
+      "description": "Average cloud cover (%)",
+      "example": 42
+    },
+    "t_ghi": {
+      "type": "number",
+      "description": "Total global horizontal solar irradiance (W/m^2)",
+      "example": 3000.0
+    },
+    "t_dhi": {
+      "type": "number",
+      "description": "Total diffuse horizontal solar irradiance (W/m^2)",
+      "example": 450.0
+    },
+    "t_dni": {
+      "type": "number",
+      "description": "Total direct normal solar irradiance (W/m^2)",
+      "example": 1200.0
+    },
+    "sun_hours": {
+      "type": "number",
+      "description": "Average number of daily sun hours - # hours where Solar GHI > 1000 W/m^2",
+      "example": 4.5
+    },
+    "precip": {
+      "type": "number",
+      "description": "Total precipitation in period - Default (mm)",
+      "example": 2.0
+    },
+    "snow": {
+      "type": "number",
+      "description": "Total snowfall in period - Default (mm)",
+      "example": 10.0
+    }
+  }
+}

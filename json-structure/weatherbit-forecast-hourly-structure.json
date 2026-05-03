@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-structure/weatherbit-forecast-hourly-structure.json",
+  "name": "ForecastHourly",
+  "description": "ForecastHourly schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "city_name": {
+      "type": "string",
+      "description": "City Name",
+      "example": "Raleigh"
+    },
+    "state_code": {
+      "type": "string",
+      "description": "State Abbreviation",
+      "example": "NC"
+    },
+    "country_code": {
+      "type": "string",
+      "description": "Country Abbreviation",
+      "example": "US"
+    },
+    "lat": {
+      "type": "double",
+      "description": "Latitude",
+      "example": 38.25
+    },
+    "lon": {
+      "type": "double",
+      "description": "Longitude",
+      "example": -78.0
+    },
+    "timezone": {
+      "type": "string",
+      "description": "Local IANA time zone",
+      "example": "America/New_York"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ForecastHour"
+      }
+    }
+  }
+}

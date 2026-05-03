@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-structure/weatherbit-alert-region-group-structure.json",
+  "name": "AlertRegionGroup",
+  "description": "List of impacted regions",
+  "type": "string"
+}

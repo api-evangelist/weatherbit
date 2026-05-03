@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-schema/weatherbit-energy-obs-group-schema.json",
+  "title": "EnergyObsGroup",
+  "description": "EnergyObsGroup schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "count": {
+      "type": "integer",
+      "description": "Count of found observations",
+      "example": 1
+    },
+    "start_date": {
+      "type": "integer",
+      "description": "Start Date"
+    },
+    "end_date": {
+      "type": "integer",
+      "description": "End Date"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/EnergyObs"
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-schema/weatherbit-history-day-schema.json",
+  "title": "HistoryDay",
+  "description": "HistoryDay schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "city_name": {
+      "type": "string",
+      "description": "City name (Closest)",
+      "example": "Seattle"
+    },
+    "state_code": {
+      "type": "string",
+      "description": "State abbreviation",
+      "example": "WA"
+    },
+    "country_code": {
+      "type": "string",
+      "description": "Country abbreviation",
+      "example": "US"
+    },
+    "timezone": {
+      "type": "string",
+      "description": "Local IANA time zone",
+      "example": "America/New_York"
+    },
+    "lat": {
+      "type": "number",
+      "description": "Latitude",
+      "example": 47.61
+    },
+    "lon": {
+      "type": "number",
+      "description": "Longitude",
+      "example": -122.33
+    },
+    "sources": {
+      "type": "array",
+      "description": "List of data sources used in response",
+      "items": {
+        "type": "string",
+        "example": "12345-89083"
+      }
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/HistoryDayObj"
+      }
+    }
+  }
+}

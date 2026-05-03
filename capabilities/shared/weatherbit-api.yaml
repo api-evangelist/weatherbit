@@ -1,0 +1,459 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Weatherbit API"
+  description: "Weatherbit REST API providing current weather, forecasts, historical data, alerts, and air quality for global locations."
+  tags:
+    - Weather
+    - Forecasting
+    - Historical Data
+    - Air Quality
+    - Alerts
+  created: "2026-05-03"
+  modified: "2026-05-03"
+
+binds:
+  - namespace: env
+    keys:
+      WEATHERBIT_API_KEY: WEATHERBIT_API_KEY
+
+capability:
+  consumes:
+    - type: http
+      namespace: weatherbit
+      baseUri: https://api.weatherbit.io/v2.0
+      description: "Weatherbit weather data API covering current conditions, forecasts, historical observations, air quality, and agricultural weather."
+      authentication:
+        type: apikey
+        key: key
+        value: "{{WEATHERBIT_API_KEY}}"
+        placement: query
+      resources:
+        - name: current-weather
+          path: /current
+          description: "Current weather observations"
+          operations:
+            - name: get-current-weather
+              method: GET
+              description: "Returns current weather observations"
+              inputParameters:
+                - name: lat
+                  in: query
+                  type: number
+                  required: false
+                  description: "Latitude"
+                - name: lon
+                  in: query
+                  type: number
+                  required: false
+                  description: "Longitude"
+                - name: city
+                  in: query
+                  type: string
+                  required: false
+                  description: "City name"
+                - name: city_id
+                  in: query
+                  type: integer
+                  required: false
+                  description: "City ID"
+                - name: postal_code
+                  in: query
+                  type: string
+                  required: false
+                  description: "Postal code"
+                - name: country
+                  in: query
+                  type: string
+                  required: false
+                  description: "Country code"
+                - name: units
+                  in: query
+                  type: string
+                  required: false
+                  description: "Units (M=metric, S=scientific, I=imperial)"
+                - name: lang
+                  in: query
+                  type: string
+                  required: false
+                  description: "Language code"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: alerts
+          path: /alerts
+          description: "Severe weather alerts"
+          operations:
+            - name: get-alerts
+              method: GET
+              description: "Returns severe weather alerts"
+              inputParameters:
+                - name: lat
+                  in: query
+                  type: number
+                  required: true
+                  description: "Latitude"
+                - name: lon
+                  in: query
+                  type: number
+                  required: true
+                  description: "Longitude"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: forecast-daily
+          path: /forecast/daily
+          description: "Daily weather forecasts"
+          operations:
+            - name: get-daily-forecast
+              method: GET
+              description: "Returns a daily weather forecast"
+              inputParameters:
+                - name: lat
+                  in: query
+                  type: number
+                  required: false
+                  description: "Latitude"
+                - name: lon
+                  in: query
+                  type: number
+                  required: false
+                  description: "Longitude"
+                - name: city
+                  in: query
+                  type: string
+                  required: false
+                  description: "City name"
+                - name: days
+                  in: query
+                  type: integer
+                  required: false
+                  description: "Number of forecast days (max 16)"
+                - name: units
+                  in: query
+                  type: string
+                  required: false
+                  description: "Units (M/S/I)"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: forecast-hourly
+          path: /forecast/hourly
+          description: "Hourly weather forecasts"
+          operations:
+            - name: get-hourly-forecast
+              method: GET
+              description: "Returns an hourly weather forecast"
+              inputParameters:
+                - name: lat
+                  in: query
+                  type: number
+                  required: false
+                  description: "Latitude"
+                - name: lon
+                  in: query
+                  type: number
+                  required: false
+                  description: "Longitude"
+                - name: hours
+                  in: query
+                  type: integer
+                  required: false
+                  description: "Number of hours (max 240)"
+                - name: units
+                  in: query
+                  type: string
+                  required: false
+                  description: "Units"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: history-daily
+          path: /history/daily
+          description: "Historical daily weather observations"
+          operations:
+            - name: get-history-daily
+              method: GET
+              description: "Returns historical daily weather observations"
+              inputParameters:
+                - name: lat
+                  in: query
+                  type: number
+                  required: false
+                  description: "Latitude"
+                - name: lon
+                  in: query
+                  type: number
+                  required: false
+                  description: "Longitude"
+                - name: start_date
+                  in: query
+                  type: string
+                  required: true
+                  description: "Start date (YYYY-MM-DD)"
+                - name: end_date
+                  in: query
+                  type: string
+                  required: true
+                  description: "End date (YYYY-MM-DD)"
+                - name: units
+                  in: query
+                  type: string
+                  required: false
+                  description: "Units"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: air-quality-current
+          path: /current/airquality
+          description: "Current air quality conditions"
+          operations:
+            - name: get-current-airquality
+              method: GET
+              description: "Returns current air quality conditions"
+              inputParameters:
+                - name: lat
+                  in: query
+                  type: number
+                  required: true
+                  description: "Latitude"
+                - name: lon
+                  in: query
+                  type: number
+                  required: true
+                  description: "Longitude"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: forecast-airquality
+          path: /forecast/airquality
+          description: "Air quality forecasts"
+          operations:
+            - name: get-airquality-forecast
+              method: GET
+              description: "Returns 72-hour hourly air quality forecast"
+              inputParameters:
+                - name: lat
+                  in: query
+                  type: number
+                  required: true
+                  description: "Latitude"
+                - name: lon
+                  in: query
+                  type: number
+                  required: true
+                  description: "Longitude"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: forecast-agweather
+          path: /forecast/agweather
+          description: "Agricultural weather forecasts"
+          operations:
+            - name: get-agweather-forecast
+              method: GET
+              description: "Returns agricultural weather forecast"
+              inputParameters:
+                - name: lat
+                  in: query
+                  type: number
+                  required: true
+                  description: "Latitude"
+                - name: lon
+                  in: query
+                  type: number
+                  required: true
+                  description: "Longitude"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: normals
+          path: /normals
+          description: "Historical climate normals"
+          operations:
+            - name: get-normals
+              method: GET
+              description: "Returns historical climate normals (averages)"
+              inputParameters:
+                - name: lat
+                  in: query
+                  type: number
+                  required: true
+                  description: "Latitude"
+                - name: lon
+                  in: query
+                  type: number
+                  required: true
+                  description: "Longitude"
+                - name: start_day
+                  in: query
+                  type: string
+                  required: true
+                  description: "Start day (MM-DD)"
+                - name: end_day
+                  in: query
+                  type: string
+                  required: true
+                  description: "End day (MM-DD)"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8101
+      namespace: weatherbit-rest
+      resources:
+        - path: /v1/current
+          name: current-weather
+          operations:
+            - method: GET
+              name: get-current-weather
+              description: "Get current weather conditions"
+              call: "weatherbit.get-current-weather"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/forecasts/daily
+          name: daily-forecast
+          operations:
+            - method: GET
+              name: get-daily-forecast
+              description: "Get daily weather forecast"
+              call: "weatherbit.get-daily-forecast"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/forecasts/hourly
+          name: hourly-forecast
+          operations:
+            - method: GET
+              name: get-hourly-forecast
+              description: "Get hourly weather forecast"
+              call: "weatherbit.get-hourly-forecast"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/alerts
+          name: alerts
+          operations:
+            - method: GET
+              name: get-alerts
+              description: "Get severe weather alerts"
+              call: "weatherbit.get-alerts"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9101
+      namespace: weatherbit-mcp
+      transport: http
+      tools:
+        - name: get-current-weather
+          description: "Get current weather conditions for a location"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-current-weather"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-daily-forecast
+          description: "Get daily weather forecast for a location"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-daily-forecast"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-hourly-forecast
+          description: "Get hourly weather forecast for a location"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-hourly-forecast"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-alerts
+          description: "Get severe weather alerts for a location"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-alerts"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-history-daily
+          description: "Get historical daily weather observations"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-history-daily"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-current-airquality
+          description: "Get current air quality conditions for a location"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-current-airquality"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-airquality-forecast
+          description: "Get 72-hour air quality forecast for a location"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-airquality-forecast"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-agweather-forecast
+          description: "Get agricultural weather forecast for a location"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-agweather-forecast"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-normals
+          description: "Get historical climate normals for a location"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "weatherbit.get-normals"
+          outputParameters:
+            - type: object
+              mapping: "$."

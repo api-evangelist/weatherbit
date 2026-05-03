@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-schema/weatherbit-forecast-ag-schema.json",
+  "title": "ForecastAG",
+  "description": "ForecastAG schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "lat": {
+      "type": "number",
+      "description": "Latitude",
+      "example": 47.61
+    },
+    "lon": {
+      "type": "number",
+      "description": "Longitude",
+      "example": -122.33
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/HistoryAGObj"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-structure/weatherbit-fc-minutely-ob-structure.json",
+  "name": "FCMinutelyOb",
+  "description": "FCMinutelyOb schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "timestamp_utc": {
+      "type": "string",
+      "description": "Full time (UTC) of forecast point (YYYY-MM-DD HH:MM)",
+      "example": "2017-03-15 13:11"
+    },
+    "timestamp_local": {
+      "type": "string",
+      "description": "Full local time of forecast point (YYYY-MM-DD HH:MM)",
+      "example": "2017-03-15 13:11"
+    },
+    "ts": {
+      "type": "double",
+      "description": "Unix Timestamp",
+      "example": 1551718800
+    },
+    "precip": {
+      "type": "double",
+      "description": "Precipitation rate - Default (mm/hr)",
+      "example": 2.0
+    },
+    "temp": {
+      "type": "double",
+      "description": "Temperature - Default (C)",
+      "example": 13.85
+    },
+    "snow": {
+      "type": "double",
+      "description": "Snowfall rate - Default (mm/hr)",
+      "example": 10.0
+    }
+  }
+}

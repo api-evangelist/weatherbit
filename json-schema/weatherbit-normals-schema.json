@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-schema/weatherbit-normals-schema.json",
+  "title": "Normals",
+  "description": "Normals schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "timezone": {
+      "type": "string",
+      "description": "Local IANA time zone",
+      "example": "America/New_York"
+    },
+    "sources": {
+      "type": "array",
+      "description": "List of data sources used in response",
+      "items": {
+        "type": "string",
+        "example": "era5"
+      }
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/NormalsObj"
+      }
+    }
+  }
+}

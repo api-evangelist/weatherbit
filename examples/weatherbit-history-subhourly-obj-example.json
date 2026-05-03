@@ -1,0 +1,32 @@
+{
+  "ts": 1551718800,
+  "timestamp_local": "2019-03-04 12:15:00",
+  "timestamp_utc": "2019-03-04 17:15:00",
+  "revision_status": "final",
+  "slp": 1020.1,
+  "pres": 845.0,
+  "rh": 85,
+  "dewpt": -1.5,
+  "temp": -1.2,
+  "app_temp": -1.5,
+  "wind_spd": 14.7,
+  "wind_gust_spd": 16.85,
+  "wind_dir": 325,
+  "uv": 4.0,
+  "solar_rad": 300.0,
+  "ghi": 1500.0,
+  "dhi": 200.0,
+  "dni": 400.0,
+  "elev_angle": 27.5,
+  "azimuth": 40.5,
+  "vis": 10.0,
+  "pod": "n",
+  "weather": {
+    "icon": "s01n",
+    "code": 601,
+    "description": "Light Snow"
+  },
+  "clouds": 50,
+  "precip_rate": 3.0,
+  "snow_rate": 30.0
+}

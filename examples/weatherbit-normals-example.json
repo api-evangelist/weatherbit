@@ -1,0 +1,9 @@
+{
+  "timezone": "America/New_York",
+  "sources": [
+    "era5"
+  ],
+  "data": [
+    null
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "city_name": "Seattle",
+  "state_code": "WA",
+  "country_code": "US",
+  "timezone": "America/New_York",
+  "lat": 47.61,
+  "lon": -122.33,
+  "sources": [
+    "12345-89083"
+  ],
+  "data": [
+    null
+  ]
+}

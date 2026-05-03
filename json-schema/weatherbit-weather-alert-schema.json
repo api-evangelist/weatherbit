@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-schema/weatherbit-weather-alert-schema.json",
+  "title": "WeatherAlert",
+  "description": "WeatherAlert schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "lat": {
+      "type": "number",
+      "description": "Latitude",
+      "example": 38.0
+    },
+    "lon": {
+      "type": "number",
+      "description": "Longitude",
+      "example": -78.25
+    },
+    "alerts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WeatherAlertGroup"
+      }
+    }
+  }
+}

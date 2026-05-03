@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-structure/weatherbit-weather-alert-group-structure.json",
+  "name": "WeatherAlertGroup",
+  "description": "WeatherAlertGroup schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Brief description of weather alert",
+      "example": "Flood Warning issued February 8 at 8:51PM CST expiring February 12 at 8:24AM CST by NWS St Louis MO"
+    },
+    "description": {
+      "type": "string",
+      "description": "Full description of weather alert",
+      "example": "Mississippi River at Chester\n\n.This Flood Warning is a result of 1-2 inches of rainfall across\nthe basin earlier this week...\nThe Flood Warning continues for\nthe Mississippi River at Chester\n* until Tuesday morning.\n* At  8:30 PM Friday the stage was 26.8 feet.\n* Flood stage is 27.0 feet.\n* Minor flooding is forecast.\n* The river is forecast to rise above flood stage by tonight and to\ncrest near 29.0 feet by Saturday evening. The river is forecast to\nfall below flood stage by Monday morning.\n* Impact:  At 28.0 feet...Unleveed islands near Chester and the prison\nfarm floods.\n* Impact:  At 27.0 feet...Flood Stage.  Unprotected farmland on right\nbank begins to flood."
+    },
+    "severity": {
+      "type": "string",
+      "description": "Severity of weather. (Advisory | Watch | Warning)",
+      "example": "Warning"
+    },
+    "effective_utc": {
+      "type": "string",
+      "description": "Issued time UTC",
+      "example": "2019-02-09 02:51:00"
+    },
+    "effective_local": {
+      "type": "string",
+      "description": "Issued time local",
+      "example": "2019-02-08 21:51:00"
+    },
+    "expires_utc": {
+      "type": "string",
+      "description": "Expiration time UTC",
+      "example": "2019-02-10 02:51:00"
+    },
+    "expires_local": {
+      "type": "string",
+      "description": "Expiration time local",
+      "example": "2019-02-09 21:51:00"
+    },
+    "uri": {
+      "type": "string",
+      "description": "URI to weather alert",
+      "example": "https://api.weather.gov/alerts/NWS-IDP-PROD-3361975-2942026"
+    },
+    "alerts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AlertRegionGroup"
+      }
+    }
+  }
+}

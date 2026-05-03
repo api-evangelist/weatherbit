@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-structure/weatherbit-energy-obs-structure.json",
+  "name": "EnergyObs",
+  "description": "EnergyObs schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "city_name": {
+      "type": "string",
+      "description": "City name (closest)",
+      "example": "Raleigh"
+    },
+    "state_code": {
+      "type": "string",
+      "description": "State abbreviation",
+      "example": "NC"
+    },
+    "country_code": {
+      "type": "string",
+      "description": "Country abbreviation",
+      "example": "US"
+    },
+    "timezone": {
+      "type": "string",
+      "description": "Local IANA time zone",
+      "example": "America/New_York"
+    },
+    "lat": {
+      "type": "double",
+      "description": "Latitude",
+      "example": 38.0
+    },
+    "lon": {
+      "type": "double",
+      "description": "Longitude",
+      "example": -78.25
+    },
+    "station_id": {
+      "type": "string",
+      "description": "Nearest Station ID [DEPRECATED]",
+      "example": "12345-999999"
+    },
+    "sources": {
+      "type": "array",
+      "description": "List of data sources used in response",
+      "items": {
+        "type": "string",
+        "example": "12345-89083"
+      }
+    },
+    "cdd": {
+      "type": "double",
+      "description": "Cooling degree days",
+      "example": 10.0
+    },
+    "hdd": {
+      "type": "double",
+      "description": "Heating degree days",
+      "example": 120.0
+    },
+    "rh": {
+      "type": "int32",
+      "description": "Average Relative humidity (%)",
+      "example": 75
+    },
+    "dewpt": {
+      "type": "double",
+      "description": "Average dew point temperature - Default (C)",
+      "example": 12.0
+    },
+    "wind_dir": {
+      "type": "int32",
+      "description": "Average wind direction (Degrees)",
+      "example": 125
+    },
+    "wind_spd": {
+      "type": "double",
+      "description": "Average wind speed - Default (m/s)",
+      "example": 5.85
+    },
+    "temp": {
+      "type": "double",
+      "description": "Average temperature - Default (C)",
+      "example": 13.85
+    },
+    "clouds": {
+      "type": "int32",
+      "description": "Average cloud cover (%)",
+      "example": 42
+    },
+    "t_ghi": {
+      "type": "double",
+      "description": "Total global horizontal solar irradiance (W/m^2)",
+      "example": 3000.0
+    },
+    "t_dhi": {
+      "type": "double",
+      "description": "Total diffuse horizontal solar irradiance (W/m^2)",
+      "example": 450.0
+    },
+    "t_dni": {
+      "type": "double",
+      "description": "Total direct normal solar irradiance (W/m^2)",
+      "example": 1200.0
+    },
+    "sun_hours": {
+      "type": "double",
+      "description": "Average number of daily sun hours - # hours where Solar GHI > 1000 W/m^2",
+      "example": 4.5
+    },
+    "precip": {
+      "type": "double",
+      "description": "Total precipitation in period - Default (mm)",
+      "example": 2.0
+    },
+    "snow": {
+      "type": "double",
+      "description": "Total snowfall in period - Default (mm)",
+      "example": 10.0
+    }
+  }
+}

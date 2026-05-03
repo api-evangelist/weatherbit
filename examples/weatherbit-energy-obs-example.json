@@ -1,0 +1,26 @@
+{
+  "city_name": "Raleigh",
+  "state_code": "NC",
+  "country_code": "US",
+  "timezone": "America/New_York",
+  "lat": 38.0,
+  "lon": -78.25,
+  "station_id": "12345-999999",
+  "sources": [
+    "12345-89083"
+  ],
+  "cdd": 10.0,
+  "hdd": 120.0,
+  "rh": 75,
+  "dewpt": 12.0,
+  "wind_dir": 125,
+  "wind_spd": 5.85,
+  "temp": 13.85,
+  "clouds": 42,
+  "t_ghi": 3000.0,
+  "t_dhi": 450.0,
+  "t_dni": 1200.0,
+  "sun_hours": 4.5,
+  "precip": 2.0,
+  "snow": 10.0
+}

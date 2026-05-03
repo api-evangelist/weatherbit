@@ -1,0 +1,33 @@
+{
+  "ts": 1551718800,
+  "timestamp_local": "2019-03-04 12:00:00",
+  "timestamp_utc": "2019-03-04 17:00:00",
+  "datetime": "2019-03-04:17",
+  "snow": 10.45,
+  "precip": 1.1,
+  "temp": -1.5,
+  "dewpt": -4.0,
+  "app_temp": 4.5,
+  "rh": 95,
+  "clouds": 100,
+  "weather": {
+    "icon": "s02d",
+    "code": 601,
+    "description": "Snow"
+  },
+  "slp": 1012.89,
+  "pres": 1005.0,
+  "uv": 6.5,
+  "solar_rad": 300.0,
+  "ghi": 1000.0,
+  "dhi": 200.0,
+  "dni": 400.0,
+  "vis": 1.0,
+  "pod": "d",
+  "pop": 75.0,
+  "wind_spd": 13.85,
+  "wind_gust_spd": 16.85,
+  "wind_dir": 105,
+  "wind_cdir": "ENE",
+  "wind_cdir_full": "East-North-East"
+}

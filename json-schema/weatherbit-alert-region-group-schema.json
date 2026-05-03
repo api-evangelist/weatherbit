@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-schema/weatherbit-alert-region-group-schema.json",
+  "title": "AlertRegionGroup",
+  "description": "List of impacted regions",
+  "type": "string",
+  "example": "St Louis, MO"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/weatherbit/refs/heads/main/json-schema/weatherbit-current-obs-group-schema.json",
+  "title": "CurrentObsGroup",
+  "description": "CurrentObsGroup schema from Weatherbit API",
+  "type": "object",
+  "properties": {
+    "count": {
+      "type": "integer",
+      "description": "Count of found observations",
+      "example": 1
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CurrentObs"
+      }
+    }
+  }
+}

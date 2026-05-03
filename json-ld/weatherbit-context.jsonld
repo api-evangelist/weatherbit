@@ -1,0 +1,528 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "wb": "https://api.weatherbit.io/v2.0/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "AQCurrentGroup": "wb:AQCurrentGroup",
+    "AQCurrent": "wb:AQCurrent",
+    "AQHour": "wb:AQHour",
+    "AQHourly": "wb:AQHourly",
+    "CurrentObsGroup": "wb:CurrentObsGroup",
+    "CurrentObs": "wb:CurrentObs",
+    "EnergyObsGroupForecast": "wb:EnergyObsGroupForecast",
+    "EnergyObsGroup": "wb:EnergyObsGroup",
+    "EnergyObs": "wb:EnergyObs",
+    "EnergyObsSeries": "wb:EnergyObsSeries",
+    "Error": "wb:Error",
+    "FCMinutelyOb": "wb:FCMinutelyOb",
+    "FCMinutely": "wb:FCMinutely",
+    "ForecastAGObj": "wb:ForecastAGObj",
+    "ForecastAG": "wb:ForecastAG",
+    "ForecastDay": "wb:ForecastDay",
+    "ForecastHour": "wb:ForecastHour",
+    "ForecastHourly": "wb:ForecastHourly",
+    "Forecast": "wb:Forecast",
+    "HistoryAGObj": "wb:HistoryAGObj",
+    "HistoryAG": "wb:HistoryAG",
+    "HistoryDayObj": "wb:HistoryDayObj",
+    "HistoryDay": "wb:HistoryDay",
+    "HistoryObj": "wb:HistoryObj",
+    "History": "wb:History",
+    "HistorySubhourlyObj": "wb:HistorySubhourlyObj",
+    "HistorySubhourly": "wb:HistorySubhourly",
+    "NormalsObj": "wb:NormalsObj",
+    "Normals": "wb:Normals",
+    "WeatherAlertGroup": "wb:WeatherAlertGroup",
+    "WeatherAlert": "wb:WeatherAlert",
+    "cityName": {
+      "@id": "wb:city_name",
+      "@type": "xsd:string"
+    },
+    "stateCode": {
+      "@id": "wb:state_code",
+      "@type": "xsd:string"
+    },
+    "countryCode": {
+      "@id": "wb:country_code",
+      "@type": "xsd:string"
+    },
+    "lat": {
+      "@id": "wb:lat",
+      "@type": "xsd:decimal"
+    },
+    "lon": {
+      "@id": "wb:lon",
+      "@type": "xsd:decimal"
+    },
+    "timezone": {
+      "@id": "wb:timezone",
+      "@type": "xsd:string"
+    },
+    "data": {
+      "@id": "wb:data",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "aqi": {
+      "@id": "wb:aqi",
+      "@type": "xsd:integer"
+    },
+    "so2": {
+      "@id": "wb:so2",
+      "@type": "xsd:decimal"
+    },
+    "no2": {
+      "@id": "wb:no2",
+      "@type": "xsd:decimal"
+    },
+    "o3": {
+      "@id": "wb:o3",
+      "@type": "xsd:decimal"
+    },
+    "pm25": {
+      "@id": "wb:pm25",
+      "@type": "xsd:decimal"
+    },
+    "pm10": {
+      "@id": "wb:pm10",
+      "@type": "xsd:decimal"
+    },
+    "ts": {
+      "@id": "wb:ts",
+      "@type": "xsd:decimal"
+    },
+    "timestampLocal": {
+      "@id": "wb:timestamp_local",
+      "@type": "xsd:string"
+    },
+    "timestampUtc": {
+      "@id": "wb:timestamp_utc",
+      "@type": "xsd:string"
+    },
+    "count": {
+      "@id": "wb:count",
+      "@type": "xsd:integer"
+    },
+    "station": {
+      "@id": "wb:station",
+      "@type": "xsd:string"
+    },
+    "sources": {
+      "@id": "wb:sources",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "vis": {
+      "@id": "wb:vis",
+      "@type": "xsd:integer"
+    },
+    "rh": {
+      "@id": "wb:rh",
+      "@type": "xsd:integer"
+    },
+    "dewpt": {
+      "@id": "wb:dewpt",
+      "@type": "xsd:decimal"
+    },
+    "windDir": {
+      "@id": "wb:wind_dir",
+      "@type": "xsd:integer"
+    },
+    "windCdir": {
+      "@id": "wb:wind_cdir",
+      "@type": "xsd:string"
+    },
+    "windCdirFull": {
+      "@id": "wb:wind_cdir_full",
+      "@type": "xsd:string"
+    },
+    "windSpeed": {
+      "@id": "wb:wind_speed",
+      "@type": "xsd:decimal"
+    },
+    "temp": {
+      "@id": "wb:temp",
+      "@type": "xsd:decimal"
+    },
+    "appTemp": {
+      "@id": "wb:app_temp",
+      "@type": "xsd:decimal"
+    },
+    "clouds": {
+      "@id": "wb:clouds",
+      "@type": "xsd:integer"
+    },
+    "weather": {
+      "@id": "wb:weather",
+      "@type": "@id"
+    },
+    "icon": {
+      "@id": "wb:icon",
+      "@type": "xsd:string"
+    },
+    "code": {
+      "@id": "wb:code",
+      "@type": "xsd:integer"
+    },
+    "description": "schema:description",
+    "datetime": {
+      "@id": "wb:datetime",
+      "@type": "xsd:string"
+    },
+    "obTime": {
+      "@id": "wb:ob_time",
+      "@type": "xsd:string"
+    },
+    "sunrise": {
+      "@id": "wb:sunrise",
+      "@type": "xsd:string"
+    },
+    "sunset": {
+      "@id": "wb:sunset",
+      "@type": "xsd:string"
+    },
+    "slp": {
+      "@id": "wb:slp",
+      "@type": "xsd:decimal"
+    },
+    "pres": {
+      "@id": "wb:pres",
+      "@type": "xsd:decimal"
+    },
+    "uv": {
+      "@id": "wb:uv",
+      "@type": "xsd:decimal"
+    },
+    "solarRad": {
+      "@id": "wb:solar_rad",
+      "@type": "xsd:decimal"
+    },
+    "ghi": {
+      "@id": "wb:ghi",
+      "@type": "xsd:decimal"
+    },
+    "dni": {
+      "@id": "wb:dni",
+      "@type": "xsd:decimal"
+    },
+    "dhi": {
+      "@id": "wb:dhi",
+      "@type": "xsd:decimal"
+    },
+    "elevAngle": {
+      "@id": "wb:elev_angle",
+      "@type": "xsd:decimal"
+    },
+    "pod": {
+      "@id": "wb:pod",
+      "@type": "xsd:string"
+    },
+    "precip": {
+      "@id": "wb:precip",
+      "@type": "xsd:decimal"
+    },
+    "snow": {
+      "@id": "wb:snow",
+      "@type": "xsd:decimal"
+    },
+    "thresholdUnits": {
+      "@id": "wb:threshold_units",
+      "@type": "xsd:string"
+    },
+    "thresholdValue": {
+      "@id": "wb:threshold_value",
+      "@type": "xsd:string"
+    },
+    "startDate": {
+      "@id": "wb:start_date",
+      "@type": "xsd:integer"
+    },
+    "endDate": {
+      "@id": "wb:end_date",
+      "@type": "xsd:integer"
+    },
+    "stationId": {
+      "@id": "wb:station_id",
+      "@type": "xsd:string"
+    },
+    "cdd": {
+      "@id": "wb:cdd",
+      "@type": "xsd:decimal"
+    },
+    "hdd": {
+      "@id": "wb:hdd",
+      "@type": "xsd:decimal"
+    },
+    "windSpd": {
+      "@id": "wb:wind_spd",
+      "@type": "xsd:decimal"
+    },
+    "tGhi": {
+      "@id": "wb:t_ghi",
+      "@type": "xsd:decimal"
+    },
+    "tDhi": {
+      "@id": "wb:t_dhi",
+      "@type": "xsd:decimal"
+    },
+    "tDni": {
+      "@id": "wb:t_dni",
+      "@type": "xsd:decimal"
+    },
+    "sunHours": {
+      "@id": "wb:sun_hours",
+      "@type": "xsd:decimal"
+    },
+    "date": {
+      "@id": "wb:date",
+      "@type": "xsd:string"
+    },
+    "message": {
+      "@id": "wb:message",
+      "@type": "xsd:string"
+    },
+    "bulkSoilDensity": {
+      "@id": "wb:bulk_soil_density",
+      "@type": "xsd:decimal"
+    },
+    "dlwrfAvg": {
+      "@id": "wb:dlwrf_avg",
+      "@type": "xsd:decimal"
+    },
+    "dlwrfMax": {
+      "@id": "wb:dlwrf_max",
+      "@type": "xsd:decimal"
+    },
+    "dlwrfNet": {
+      "@id": "wb:dlwrf_net",
+      "@type": "xsd:decimal"
+    },
+    "dswrfAvg": {
+      "@id": "wb:dswrf_avg",
+      "@type": "xsd:decimal"
+    },
+    "dswrfMax": {
+      "@id": "wb:dswrf_max",
+      "@type": "xsd:decimal"
+    },
+    "dswrfNet": {
+      "@id": "wb:dswrf_net",
+      "@type": "xsd:decimal"
+    },
+    "evapotranspiration": {
+      "@id": "wb:evapotranspiration",
+      "@type": "xsd:decimal"
+    },
+    "presAvg": {
+      "@id": "wb:pres_avg",
+      "@type": "xsd:decimal"
+    },
+    "revisionStatus": {
+      "@id": "wb:revision_status",
+      "@type": "xsd:string"
+    },
+    "skinTempAvg": {
+      "@id": "wb:skin_temp_avg",
+      "@type": "xsd:decimal"
+    },
+    "skinTempMax": {
+      "@id": "wb:skin_temp_max",
+      "@type": "xsd:decimal"
+    },
+    "skinTempMin": {
+      "@id": "wb:skin_temp_min",
+      "@type": "xsd:decimal"
+    },
+    "soilm010cm": {
+      "@id": "wb:soilm_0_10cm",
+      "@type": "xsd:decimal"
+    },
+    "soilm100200cm": {
+      "@id": "wb:soilm_100_200cm",
+      "@type": "xsd:decimal"
+    },
+    "soilm1040cm": {
+      "@id": "wb:soilm_10_40cm",
+      "@type": "xsd:decimal"
+    },
+    "soilm40100cm": {
+      "@id": "wb:soilm_40_100cm",
+      "@type": "xsd:decimal"
+    },
+    "soilt010cm": {
+      "@id": "wb:soilt_0_10cm",
+      "@type": "xsd:decimal"
+    },
+    "soilt100200cm": {
+      "@id": "wb:soilt_100_200cm",
+      "@type": "xsd:decimal"
+    },
+    "soilt1040cm": {
+      "@id": "wb:soilt_10_40cm",
+      "@type": "xsd:decimal"
+    },
+    "soilt40100cm": {
+      "@id": "wb:soilt_40_100cm",
+      "@type": "xsd:decimal"
+    },
+    "specificHumidity": {
+      "@id": "wb:specific_humidity",
+      "@type": "xsd:decimal"
+    },
+    "temp2mAvg": {
+      "@id": "wb:temp_2m_avg",
+      "@type": "xsd:decimal"
+    },
+    "vSoilm010cm": {
+      "@id": "wb:v_soilm_0_10cm",
+      "@type": "xsd:decimal"
+    },
+    "vSoilm100200cm": {
+      "@id": "wb:v_soilm_100_200cm",
+      "@type": "xsd:decimal"
+    },
+    "vSoilm1040cm": {
+      "@id": "wb:v_soilm_10_40cm",
+      "@type": "xsd:decimal"
+    },
+    "vSoilm40100cm": {
+      "@id": "wb:v_soilm_40_100cm",
+      "@type": "xsd:decimal"
+    },
+    "validDate": {
+      "@id": "wb:valid_date",
+      "@type": "xsd:string"
+    },
+    "wind10mSpdAvg": {
+      "@id": "wb:wind_10m_spd_avg",
+      "@type": "xsd:decimal"
+    },
+    "pop": {
+      "@id": "wb:pop",
+      "@type": "xsd:decimal"
+    },
+    "windGustSpd": {
+      "@id": "wb:wind_gust_spd",
+      "@type": "xsd:decimal"
+    },
+    "maxTemp": {
+      "@id": "wb:max_temp",
+      "@type": "xsd:decimal"
+    },
+    "minTemp": {
+      "@id": "wb:min_temp",
+      "@type": "xsd:decimal"
+    },
+    "appMaxTemp": {
+      "@id": "wb:app_max_temp",
+      "@type": "xsd:decimal"
+    },
+    "appMinTemp": {
+      "@id": "wb:app_min_temp",
+      "@type": "xsd:decimal"
+    },
+    "moonPhase": {
+      "@id": "wb:moon_phase",
+      "@type": "xsd:decimal"
+    },
+    "sunriseTs": {
+      "@id": "wb:sunrise_ts",
+      "@type": "xsd:integer"
+    },
+    "sunsetTs": {
+      "@id": "wb:sunset_ts",
+      "@type": "xsd:integer"
+    },
+    "moonriseTs": {
+      "@id": "wb:moonrise_ts",
+      "@type": "xsd:integer"
+    },
+    "moonsetTs": {
+      "@id": "wb:moonset_ts",
+      "@type": "xsd:integer"
+    },
+    "maxTempTs": {
+      "@id": "wb:max_temp_ts",
+      "@type": "xsd:decimal"
+    },
+    "minTempTs": {
+      "@id": "wb:min_temp_ts",
+      "@type": "xsd:decimal"
+    },
+    "maxWindSpd": {
+      "@id": "wb:max_wind_spd",
+      "@type": "xsd:decimal"
+    },
+    "maxWindDir": {
+      "@id": "wb:max_wind_dir",
+      "@type": "xsd:integer"
+    },
+    "maxWindSpdTs": {
+      "@id": "wb:max_wind_spd_ts",
+      "@type": "xsd:decimal"
+    },
+    "maxUv": {
+      "@id": "wb:max_uv",
+      "@type": "xsd:decimal"
+    },
+    "precipGpm": {
+      "@id": "wb:precip_gpm",
+      "@type": "xsd:decimal"
+    },
+    "azimuth": {
+      "@id": "wb:azimuth",
+      "@type": "xsd:decimal"
+    },
+    "precipRate": {
+      "@id": "wb:precip_rate",
+      "@type": "xsd:decimal"
+    },
+    "snowRate": {
+      "@id": "wb:snow_rate",
+      "@type": "xsd:decimal"
+    },
+    "month": {
+      "@id": "wb:month",
+      "@type": "xsd:decimal"
+    },
+    "minWindSpd": {
+      "@id": "wb:min_wind_spd",
+      "@type": "xsd:decimal"
+    },
+    "title": {
+      "@id": "wb:title",
+      "@type": "xsd:string"
+    },
+    "severity": {
+      "@id": "wb:severity",
+      "@type": "xsd:string"
+    },
+    "effectiveUtc": {
+      "@id": "wb:effective_utc",
+      "@type": "xsd:string"
+    },
+    "effectiveLocal": {
+      "@id": "wb:effective_local",
+      "@type": "xsd:string"
+    },
+    "expiresUtc": {
+      "@id": "wb:expires_utc",
+      "@type": "xsd:string"
+    },
+    "expiresLocal": {
+      "@id": "wb:expires_local",
+      "@type": "xsd:string"
+    },
+    "uri": {
+      "@id": "wb:uri",
+      "@type": "xsd:string"
+    },
+    "alerts": {
+      "@id": "wb:alerts",
+      "@container": "@set",
+      "@type": "xsd:string"
+    }
+  }
+}
