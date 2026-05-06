@@ -4,112 +4,85 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Weatherbit
 providerId: weatherbit
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - Weather
   - Forecasting
   - Historical Data
   - Air Quality
-  - Alerts
-  - Agricultural Weather
   - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Weatherbit API surface. Captures per-tier
-  quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to
-  be replaced with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
+description: Weatherbit applies a per-API-key daily call quota plus a per-second rate limit, both
+  scaled by subscription tier. Limits are published on the pricing page and apply across the data
+  endpoints; quota resets on a daily cycle.
+sources:
+  - https://www.weatherbit.io/pricing
+  - https://www.weatherbit.io/api
 responseCodes:
   throttled: 429
   quotaExceeded: 429
-  serviceUnavailable: 503
 limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - Weatherbit Current Weather API
-      - Weatherbit Severe Weather Alerts API
-      - Weatherbit Weather Forecast API
-      - Weatherbit Historical Weather API
-      - Weatherbit Ag-Weather API
-      - Weatherbit Air Quality API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
+  - name: Free Tier - Daily Quota
+    scope: key
+    metric: requests_per_day
+    limit: 50
+    timeFrame: day
+    notes: Resets daily; non-commercial use only.
+  - name: Free Tier - Burst Rate
+    scope: key
+    metric: requests_per_second
+    limit: 1
+    timeFrame: second
+  - name: Standard Tier - Daily Quota
+    scope: key
+    metric: requests_per_day
+    limit: 25000
+    timeFrame: day
+  - name: Standard Tier - Burst Rate
+    scope: key
+    metric: requests_per_second
+    limit: 25
+    timeFrame: second
+  - name: Plus Tier - Daily Quota
+    scope: key
+    metric: requests_per_day
+    limit: 250000
+    timeFrame: day
+  - name: Plus Tier - Burst Rate
+    scope: key
+    metric: requests_per_second
+    limit: 50
+    timeFrame: second
+  - name: Business Tier - Daily Quota
+    scope: key
+    metric: requests_per_day
+    limit: 2000000
+    timeFrame: day
+  - name: Business Tier - Burst Rate
+    scope: key
+    metric: requests_per_second
+    limit: 150
+    timeFrame: second
+  - name: Enterprise Tier
+    scope: key
+    metric: varies
+    limit: custom; >2M calls/day, negotiated rate
+  - name: Historical Weather Calls (Free)
+    scope: key
     metric: requests_per_month
-    limit: 1000
+    limit: 10000
     timeFrame: month
-    applies:
-      - Weatherbit Current Weather API
-      - Weatherbit Severe Weather Alerts API
-      - Weatherbit Weather Forecast API
-      - Weatherbit Historical Weather API
-      - Weatherbit Ag-Weather API
-      - Weatherbit Air Quality API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Weatherbit Current Weather API
-      - Weatherbit Severe Weather Alerts API
-      - Weatherbit Weather Forecast API
-      - Weatherbit Historical Weather API
-      - Weatherbit Ag-Weather API
-      - Weatherbit Air Quality API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Weatherbit Current Weather API
-      - Weatherbit Severe Weather Alerts API
-      - Weatherbit Weather Forecast API
-      - Weatherbit Historical Weather API
-      - Weatherbit Ag-Weather API
-      - Weatherbit Air Quality API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Weatherbit Current Weather API
-      - Weatherbit Severe Weather Alerts API
-      - Weatherbit Weather Forecast API
-      - Weatherbit Historical Weather API
-      - Weatherbit Ag-Weather API
-      - Weatherbit Air Quality API
+    notes: Separate monthly cap for historical-weather endpoints on the Free tier.
 policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+  - name: Per-Key Scoping
+    description: Limits and daily quotas are scoped to the API key. Sign in to the dashboard to upgrade
+      or downgrade the key's plan.
+  - name: Tier Upgrades
+    description: A 21-day Business-Plan trial is offered at sign-up; production volume is gated by
+      moving the key onto a paid tier.
+  - name: Backoff
+    description: Clients should back off and retry after exceeding the per-second rate limit; the
+      daily quota resets on a daily cycle.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
