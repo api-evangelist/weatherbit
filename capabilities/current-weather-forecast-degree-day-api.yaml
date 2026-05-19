@@ -1,0 +1,109 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Weatherbit - Interactive Swagger UI Documentation — Forecast Degree Day API
+  description: 'Weatherbit - Interactive Swagger UI Documentation — Forecast Degree Day API. 1 operations. Lead operation:
+    Weatherbit Returns Energy Forecast API Response - Given a Single Lat/lon.. Self-contained Naftiko capability covering
+    one Weatherbit business surface.'
+  tags:
+  - Weatherbit
+  - Forecast Degree Day API
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    WEATHERBIT_API_KEY: WEATHERBIT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: current-weather-forecast-degree-day-api
+    baseUri: https://api.weatherbit.io/v2.0
+    description: Weatherbit - Interactive Swagger UI Documentation — Forecast Degree Day API business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: forecast-energy
+      path: /forecast/energy
+      operations:
+      - name: get
+        method: GET
+        description: Weatherbit Returns Energy Forecast API Response - Given a Single Lat/lon.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: lat
+          in: query
+          type: number
+          description: Latitude component of location.
+        - name: lon
+          in: query
+          type: number
+          description: Longitude component of location.
+        - name: threshold
+          in: query
+          type: number
+          description: Temperature threshold to use to calculate degree days (default 18 C)
+        - name: units
+          in: query
+          type: string
+          description: Convert to units. Default Metric See <a target='blank' href='/api/requests'>units field description</a>
+        - name: tp
+          in: query
+          type: string
+          description: 'Time period (default: daily)'
+        - name: key
+          in: query
+          type: string
+          description: Your registered API key.
+          required: true
+  exposes:
+  - type: rest
+    namespace: current-weather-forecast-degree-day-api-rest
+    port: 8080
+    description: REST adapter for Weatherbit - Interactive Swagger UI Documentation — Forecast Degree Day API. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/forecast/energy
+      name: forecast-energy
+      description: REST surface for forecast-energy.
+      operations:
+      - method: GET
+        name: get
+        description: Weatherbit Returns Energy Forecast API Response - Given a Single Lat/lon.
+        call: current-weather-forecast-degree-day-api.get
+        with:
+          lat: rest.lat
+          lon: rest.lon
+          threshold: rest.threshold
+          units: rest.units
+          tp: rest.tp
+          key: rest.key
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: current-weather-forecast-degree-day-api-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Weatherbit - Interactive Swagger UI Documentation — Forecast Degree Day API. One tool per
+      consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: weatherbit-returns-energy-forecast-api
+      description: Weatherbit Returns Energy Forecast API Response - Given a Single Lat/lon.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: current-weather-forecast-degree-day-api.get
+      with:
+        lat: tools.lat
+        lon: tools.lon
+        threshold: tools.threshold
+        units: tools.units
+        tp: tools.tp
+        key: tools.key
+      outputParameters:
+      - type: object
+        mapping: $.

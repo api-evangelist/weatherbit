@@ -1,0 +1,121 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Weatherbit - Interactive Swagger UI Documentation — Alerts
+  description: 'Weatherbit - Interactive Swagger UI Documentation — Alerts. 1 operations. Lead operation: Weatherbit Returns
+    Severe Weather Alerts Issued by Meteorological Agencies - Given a Lat/lon.. Self-contained Naftiko capability covering
+    one Weatherbit business surface.'
+  tags:
+  - Weatherbit
+  - Alerts
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    WEATHERBIT_API_KEY: WEATHERBIT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: current-weather-alerts
+    baseUri: https://api.weatherbit.io/v2.0
+    description: Weatherbit - Interactive Swagger UI Documentation — Alerts business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: alerts
+      path: /alerts
+      operations:
+      - name: get
+        method: GET
+        description: Weatherbit Returns Severe Weather Alerts Issued by Meteorological Agencies - Given a Lat/lon.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: lat
+          in: query
+          type: number
+          description: Latitude component of location.
+        - name: lon
+          in: query
+          type: number
+          description: Longitude component of location.
+        - name: city_id
+          in: query
+          type: string
+          description: 'City ID. Example: 4487042'
+        - name: city
+          in: query
+          type: string
+          description: City search.. Example - &city=Raleigh,NC or &city=Berlin,DE or city=Paris&country=FR
+        - name: postal_code
+          in: query
+          type: string
+          description: 'Postal Code. Example: 28546'
+        - name: country
+          in: query
+          type: string
+          description: Country Code (2 letter) - to be used with postal_code.
+        - name: station
+          in: query
+          type: string
+          description: Station Call ID.
+        - name: key
+          in: query
+          type: string
+          description: Your registered API key.
+          required: true
+  exposes:
+  - type: rest
+    namespace: current-weather-alerts-rest
+    port: 8080
+    description: REST adapter for Weatherbit - Interactive Swagger UI Documentation — Alerts. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/alerts
+      name: alerts
+      description: REST surface for alerts.
+      operations:
+      - method: GET
+        name: get
+        description: Weatherbit Returns Severe Weather Alerts Issued by Meteorological Agencies - Given a Lat/lon.
+        call: current-weather-alerts.get
+        with:
+          lat: rest.lat
+          lon: rest.lon
+          city_id: rest.city_id
+          city: rest.city
+          postal_code: rest.postal_code
+          country: rest.country
+          station: rest.station
+          key: rest.key
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: current-weather-alerts-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Weatherbit - Interactive Swagger UI Documentation — Alerts. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: weatherbit-returns-severe-weather-alerts
+      description: Weatherbit Returns Severe Weather Alerts Issued by Meteorological Agencies - Given a Lat/lon.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: current-weather-alerts.get
+      with:
+        lat: tools.lat
+        lon: tools.lon
+        city_id: tools.city_id
+        city: tools.city
+        postal_code: tools.postal_code
+        country: tools.country
+        station: tools.station
+        key: tools.key
+      outputParameters:
+      - type: object
+        mapping: $.

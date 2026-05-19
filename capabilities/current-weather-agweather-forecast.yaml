@@ -1,0 +1,110 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Weatherbit - Interactive Swagger UI Documentation — AgWeather Forecast
+  description: 'Weatherbit - Interactive Swagger UI Documentation — AgWeather Forecast. 1 operations. Lead operation: Weatherbit
+    Returns Agweather Forecast - Given a Lat/lon.. Self-contained Naftiko capability covering one Weatherbit business surface.'
+  tags:
+  - Weatherbit
+  - AgWeather Forecast
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    WEATHERBIT_API_KEY: WEATHERBIT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: current-weather-agweather-forecast
+    baseUri: https://api.weatherbit.io/v2.0
+    description: Weatherbit - Interactive Swagger UI Documentation — AgWeather Forecast business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: forecast-agweather
+      path: /forecast/agweather
+      operations:
+      - name: get
+        method: GET
+        description: Weatherbit Returns Agweather Forecast - Given a Lat/lon.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: lat
+          in: query
+          type: number
+          description: Latitude component of location.
+        - name: lon
+          in: query
+          type: number
+          description: Longitude component of location.
+        - name: start_date
+          in: query
+          type: string
+          description: Start Date (YYYY-MM-DD or YYYY-MM-DD:HH).
+          required: true
+        - name: end_date
+          in: query
+          type: string
+          description: End Date (YYYY-MM-DD or YYYY-MM-DD:HH).
+          required: true
+        - name: units
+          in: query
+          type: string
+          description: Convert to units. Default Metric See <a target='blank' href='/api/requests'>units field description</a>
+        - name: key
+          in: query
+          type: string
+          description: Your registered API key.
+          required: true
+  exposes:
+  - type: rest
+    namespace: current-weather-agweather-forecast-rest
+    port: 8080
+    description: REST adapter for Weatherbit - Interactive Swagger UI Documentation — AgWeather Forecast. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/forecast/agweather
+      name: forecast-agweather
+      description: REST surface for forecast-agweather.
+      operations:
+      - method: GET
+        name: get
+        description: Weatherbit Returns Agweather Forecast - Given a Lat/lon.
+        call: current-weather-agweather-forecast.get
+        with:
+          lat: rest.lat
+          lon: rest.lon
+          start_date: rest.start_date
+          end_date: rest.end_date
+          units: rest.units
+          key: rest.key
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: current-weather-agweather-forecast-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Weatherbit - Interactive Swagger UI Documentation — AgWeather Forecast. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: weatherbit-returns-agweather-forecast-given
+      description: Weatherbit Returns Agweather Forecast - Given a Lat/lon.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: current-weather-agweather-forecast.get
+      with:
+        lat: tools.lat
+        lon: tools.lon
+        start_date: tools.start_date
+        end_date: tools.end_date
+        units: tools.units
+        key: tools.key
+      outputParameters:
+      - type: object
+        mapping: $.
