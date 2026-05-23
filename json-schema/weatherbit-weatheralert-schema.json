@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/WeatherAlert",
+  "title": "WeatherAlert",
+  "type": "object",
+  "properties": {
+    "lat": {
+      "type": "number",
+      "description": "Latitude",
+      "example": 38.0
+    },
+    "lon": {
+      "type": "number",
+      "description": "Longitude",
+      "example": -78.25
+    },
+    "alerts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WeatherAlertGroup"
+      }
+    }
+  }
+}

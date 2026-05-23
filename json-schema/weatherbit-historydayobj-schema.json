@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/HistoryDayObj",
+  "title": "HistoryDayObj",
+  "type": "object",
+  "properties": {
+    "datetime": {
+      "type": "string",
+      "description": "Date in format \"YYYY-MM-DD\". All datetime is in (UTC)",
+      "example": "2015-01-03"
+    },
+    "ts": {
+      "type": "integer",
+      "description": "Unix timestamp of datetime (Midnight UTC)",
+      "example": 1501970516
+    },
+    "revision_status": {
+      "type": "string",
+      "description": "Data revision status (interim or final)",
+      "example": "final"
+    },
+    "slp": {
+      "type": "number",
+      "description": "Average sea level pressure (mb)",
+      "example": 1020.1
+    },
+    "pres": {
+      "type": "number",
+      "description": "Average pressure (mb)",
+      "example": 885.1
+    },
+    "rh": {
+      "type": "number",
+      "description": "Average relative humidity as a percentage (%)",
+      "example": 85.0
+    },
+    "dewpt": {
+      "type": "number",
+      "description": "Average dewpoint - Default (C)",
+      "example": -1.5
+    },
+    "temp": {
+      "type": "number",
+      "description": "Average temperature - Default (C)",
+      "example": 1.0
+    },
+    "max_temp": {
+      "type": "number",
+      "description": "Max temperature - Default (C)",
+      "example": 1.5
+    },
+    "max_temp_ts": {
+      "type": "number",
+      "description": "Time of max memperature - Unix Timestamp",
+      "example": 1501970816
+    },
+    "min_temp": {
+      "type": "number",
+      "description": "Min temperature - Default (C)",
+      "example": 11.7
+    },
+    "min_temp_ts": {
+      "type": "number",
+      "description": "Time of max temperature - unix timestamp",
+      "example": 1501970516
+    },
+    "wind_spd": {
+      "type": "number",
+      "description": "Average wind speed - default (m/s)",
+      "example": 14.98
+    },
+    "wind_dir": {
+      "type": "integer",
+      "description": "Average wind direction (degrees)",
+      "example": 325
+    },
+    "wind_gust_spd": {
+      "type": "number",
+      "description": "Wind gust speed - default (m/s)",
+      "example": 40.98
+    },
+    "max_wind_spd": {
+      "type": "number",
+      "description": "Max 2min Wind Speed - default (m/s)",
+      "example": 19.98
+    },
+    "max_wind_dir": {
+      "type": "integer",
+      "description": "Direction of wind at time of max 2min wind (degrees)",
+      "example": 325
+    },
+    "max_wind_spd_ts": {
+      "type": "number",
+      "description": "Time of max 2min wind - unix timestamp",
+      "example": 1501970516
+    },
+    "ghi": {
+      "type": "integer",
+      "description": "Average hourly global horizontal solar irradiance (W/m^2)",
+      "example": 125
+    },
+    "t_ghi": {
+      "type": "integer",
+      "description": "Total global horizontal solar irradiance (W/m^2)",
+      "example": 4500
+    },
+    "dni": {
+      "type": "integer",
+      "description": "Average direct normal solar irradiance (W/m^2)",
+      "example": 125
+    },
+    "t_dni": {
+      "type": "integer",
+      "description": "Total direct normal solar irradiance (W/m^2)",
+      "example": 4500
+    },
+    "dhi": {
+      "type": "integer",
+      "description": "Average hourly diffuse horizontal solar irradiance (W/m^2)",
+      "example": 125
+    },
+    "t_dhi": {
+      "type": "integer",
+      "description": "Total diffuse horizontal solar irradiance (W/m^2)",
+      "example": 4500
+    },
+    "max_uv": {
+      "type": "number",
+      "description": "Max UV Index (1-11+)",
+      "example": 6.0
+    },
+    "precip": {
+      "type": "number",
+      "description": "Liquid equivalent precipitation - default (mm)",
+      "example": 3.0
+    },
+    "precip_gpm": {
+      "type": "number",
+      "description": "Satellite estimated liquid equivalent precipitation - default (mm)",
+      "example": 3.0
+    },
+    "snow": {
+      "type": "number",
+      "description": "Snowfall - default (mm)",
+      "example": 30.0
+    }
+  }
+}

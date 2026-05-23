@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/FCMinutelyOb",
+  "title": "FCMinutelyOb",
+  "type": "object",
+  "properties": {
+    "timestamp_utc": {
+      "type": "string",
+      "description": "Full time (UTC) of forecast point (YYYY-MM-DD HH:MM)",
+      "example": "2017-03-15 13:11"
+    },
+    "timestamp_local": {
+      "type": "string",
+      "description": "Full local time of forecast point (YYYY-MM-DD HH:MM)",
+      "example": "2017-03-15 13:11"
+    },
+    "ts": {
+      "type": "number",
+      "description": "Unix Timestamp",
+      "example": 1551718800
+    },
+    "precip": {
+      "type": "number",
+      "description": "Precipitation rate - Default (mm/hr)",
+      "example": 2.0
+    },
+    "temp": {
+      "type": "number",
+      "description": "Temperature - Default (C)",
+      "example": 13.85
+    },
+    "snow": {
+      "type": "number",
+      "description": "Snowfall rate - Default (mm/hr)",
+      "example": 10.0
+    }
+  }
+}

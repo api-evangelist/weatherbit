@@ -1,0 +1,357 @@
+{
+  "provider": "Weatherbit",
+  "providerId": "weatherbit",
+  "kind": "json-structure",
+  "description": "Structural overview of the Weatherbit API surface; extracted from openapi/.",
+  "schemaCount": 32,
+  "operationCount": 17,
+  "schemas": [
+    {
+      "name": "ForecastHour",
+      "type": "object",
+      "propertyCount": 27,
+      "required": []
+    },
+    {
+      "name": "Forecast",
+      "type": "object",
+      "propertyCount": 30,
+      "required": []
+    },
+    {
+      "name": "HistoryObj",
+      "type": "object",
+      "propertyCount": 27,
+      "required": []
+    },
+    {
+      "name": "ForecastAG",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "HistoryAG",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "HistoryAGObj",
+      "type": "object",
+      "propertyCount": 32,
+      "required": []
+    },
+    {
+      "name": "ForecastAGObj",
+      "type": "object",
+      "propertyCount": 30,
+      "required": []
+    },
+    {
+      "name": "HistorySubhourlyObj",
+      "type": "object",
+      "propertyCount": 26,
+      "required": []
+    },
+    {
+      "name": "HistoryDayObj",
+      "type": "object",
+      "propertyCount": 28,
+      "required": []
+    },
+    {
+      "name": "NormalsObj",
+      "type": "object",
+      "propertyCount": 9,
+      "required": []
+    },
+    {
+      "name": "Normals",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "ForecastDay",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "ForecastHourly",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "AQCurrent",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "AQCurrentGroup",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "AQHour",
+      "type": "object",
+      "propertyCount": 9,
+      "required": []
+    },
+    {
+      "name": "AQHourly",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "FCMinutelyOb",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "FCMinutely",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "CurrentObs",
+      "type": "object",
+      "propertyCount": 36,
+      "required": []
+    },
+    {
+      "name": "CurrentObsGroup",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "EnergyObsSeries",
+      "type": "object",
+      "propertyCount": 15,
+      "required": []
+    },
+    {
+      "name": "EnergyObs",
+      "type": "object",
+      "propertyCount": 22,
+      "required": []
+    },
+    {
+      "name": "WeatherAlert",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "WeatherAlertGroup",
+      "type": "object",
+      "propertyCount": 9,
+      "required": []
+    },
+    {
+      "name": "AlertRegionGroup",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "EnergyObsGroup",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "EnergyObsGroupForecast",
+      "type": "object",
+      "propertyCount": 9,
+      "required": []
+    },
+    {
+      "name": "History",
+      "type": "object",
+      "propertyCount": 8,
+      "required": []
+    },
+    {
+      "name": "HistorySubhourly",
+      "type": "object",
+      "propertyCount": 8,
+      "required": []
+    },
+    {
+      "name": "HistoryDay",
+      "type": "object",
+      "propertyCount": 8,
+      "required": []
+    },
+    {
+      "name": "Error",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    }
+  ],
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/alerts",
+      "operationId": null,
+      "summary": "Weatherbit Returns Severe Weather Alerts Issued by Meteorological Agencies - Given a Lat/lon.",
+      "tags": [
+        "Alerts"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/current",
+      "operationId": null,
+      "summary": "Weatherbit Returns a Current Observation - Given a Lat/lon.",
+      "tags": [
+        "Current Weather Data"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/forecast/daily",
+      "operationId": null,
+      "summary": "Weatherbit Returns a Daily Forecast - Given Lat/Lon.",
+      "tags": [
+        "16 Day / Daily Forecast"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/forecast/minutely",
+      "operationId": null,
+      "summary": "Weatherbit Returns a 60 Minute Precipitation Forecast - Given Lat/Lon.",
+      "tags": [
+        "60 Minute Rain/Snow Nowcast"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/forecast/airquality",
+      "operationId": null,
+      "summary": "Weatherbit Returns 72 Hour (hourly) Air Quality Forecast - Given a Geolocation.",
+      "tags": [
+        "Air Quality Forecast"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/history/airquality",
+      "operationId": null,
+      "summary": "Weatherbit Returns 72 Hours of Historical Air Quality Conditions - Given a Geolocation.",
+      "tags": [
+        "Historical Air Quality"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/current/airquality",
+      "operationId": null,
+      "summary": "Weatherbit Returns Current Air Quality Conditions - Given a Geolocation.",
+      "tags": [
+        "Current Air Quality"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/forecast/hourly",
+      "operationId": null,
+      "summary": "Weatherbit Returns an Hourly Forecast - Given a Lat/lon.",
+      "tags": [
+        "240 Hour / Hourly Forecast"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/forecast/agweather",
+      "operationId": null,
+      "summary": "Weatherbit Returns Agweather Forecast - Given a Lat/lon.",
+      "tags": [
+        "AgWeather Forecast"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/history/agweather",
+      "operationId": null,
+      "summary": "Weatherbit Returns Historical Agweather - Given a Lat/lon.",
+      "tags": [
+        "Historical AgWeather Data"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/normals",
+      "operationId": null,
+      "summary": "Weatherbit Returns Historical Climate Normals (Averages) - Given a Lat/lon.",
+      "tags": [
+        "Climate Normals (Averages)"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/history/daily",
+      "operationId": null,
+      "summary": "Weatherbit Returns Historical Observations - Given a Lat/lon.",
+      "tags": [
+        "Daily Historical Weather Data"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/history/hourly",
+      "operationId": null,
+      "summary": "Weatherbit Returns Historical Observations - Given a Lat/lon.",
+      "tags": [
+        "Hourly Historical Weather Data"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/history/subhourly",
+      "operationId": null,
+      "summary": "Weatherbit Returns Historical Observations - Given a Lat/lon.",
+      "tags": [
+        "Sub-Hourly Historical Weather Data"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/forecast/energy",
+      "operationId": null,
+      "summary": "Weatherbit Returns Energy Forecast API Response - Given a Single Lat/lon.",
+      "tags": [
+        "Forecast Degree Day API"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/history/energy",
+      "operationId": null,
+      "summary": "Weatherbit Returns Energy API Response - Given a Single Lat/lon.",
+      "tags": [
+        "Historical Degree Day API"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/bulk/files",
+      "operationId": null,
+      "summary": "Weatherbit Download Pre-generated Bulk Datasets",
+      "tags": [
+        "Bulk Downloads"
+      ]
+    }
+  ]
+}

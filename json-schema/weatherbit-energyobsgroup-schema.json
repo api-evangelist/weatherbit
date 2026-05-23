@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EnergyObsGroup",
+  "title": "EnergyObsGroup",
+  "type": "object",
+  "properties": {
+    "count": {
+      "type": "integer",
+      "description": "Count of found observations",
+      "example": 1
+    },
+    "start_date": {
+      "type": "integer",
+      "description": "Start Date"
+    },
+    "end_date": {
+      "type": "integer",
+      "description": "End Date"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/EnergyObs"
+      }
+    }
+  }
+}

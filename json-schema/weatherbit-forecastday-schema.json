@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ForecastDay",
+  "title": "ForecastDay",
+  "type": "object",
+  "properties": {
+    "city_name": {
+      "type": "string",
+      "description": "City Name",
+      "example": "Raleigh"
+    },
+    "state_code": {
+      "type": "string",
+      "description": "State Abbreviation",
+      "example": "NC"
+    },
+    "country_code": {
+      "type": "string",
+      "description": "Country Abbreviation",
+      "example": "US"
+    },
+    "lat": {
+      "type": "number",
+      "description": "Latitude",
+      "example": 38.25
+    },
+    "lon": {
+      "type": "number",
+      "description": "Longitude",
+      "example": -78.0
+    },
+    "timezone": {
+      "type": "string",
+      "description": "Local IANA time zone",
+      "example": "America/New_York"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Forecast"
+      }
+    }
+  }
+}
