@@ -7,7 +7,7 @@ apis:
   - Weather
   - Current Conditions
   - Observations
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   baseURL: https://api.weatherbit.io/v2.0
   humanURL: https://www.weatherbit.io/api/weather-current
   properties:
@@ -57,7 +57,7 @@ apis:
   - Weather
   - Alerts
   - Emergency
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   baseURL: https://api.weatherbit.io/v2.0
   humanURL: https://www.weatherbit.io/api/alerts
   properties:
@@ -72,7 +72,7 @@ apis:
   - Forecasting
   - Daily
   - Hourly
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   baseURL: https://api.weatherbit.io/v2.0
   humanURL: https://www.weatherbit.io/api/weather-forecast-api
   properties:
@@ -86,7 +86,7 @@ apis:
   - Weather
   - Historical
   - Climate
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   baseURL: https://api.weatherbit.io/v2.0
   humanURL: https://www.weatherbit.io/api/historical-weather-api
   properties:
@@ -100,7 +100,7 @@ apis:
   - Weather
   - Agriculture
   - Evapotranspiration
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   baseURL: https://api.weatherbit.io/v2.0
   humanURL: https://www.weatherbit.io/api/agweather-api
   properties:
@@ -114,7 +114,7 @@ apis:
   - Air Quality
   - AQI
   - Environment
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   baseURL: https://api.weatherbit.io/v2.0
   humanURL: https://www.weatherbit.io/api/air-quality-api
   properties:
@@ -130,7 +130,7 @@ tags:
 - Air Quality
 - Alerts
 - Agricultural Weather
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 common:
 - url: https://www.weatherbit.io/pricing
   type: Plans
