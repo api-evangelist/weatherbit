@@ -132,6 +132,8 @@ tags:
 - Agricultural Weather
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 common:
+- type: DomainSecurity
+  url: security/weatherbit-domain-security.yml
 - url: https://www.weatherbit.io/pricing
   type: Plans
 - url: https://www.weatherbit.io/features
