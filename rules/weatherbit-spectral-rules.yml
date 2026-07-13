@@ -1,6 +1,20 @@
+# weatherbit — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - servers-https-only: 50% of servers already https (warn)
+#   - servers-expected-domain: 2/2 servers on weatherbit.io
+#   - query-params-casing: snake @ 100% (n=149)
+#   - schema-names-casing: pascal @ 100% (n=32)
+#   - schema-properties-casing: snake @ 100% (n=400)
+#   - error-schema-defined: Error
+#   - merge: kept 19 existing, added 5 measured, upgraded 0
+#   - added: servers-expected-domain, query-params-casing, schema-names-casing, schema-properties-casing, error-schema-defined
+extends:
+  - spectral:oas
 rules:
-
-  # INFO / METADATA
   info-title-required:
     description: Info must have a title
     severity: error
@@ -8,7 +22,6 @@ rules:
     then:
       field: title
       function: truthy
-
   info-description-required:
     description: Info must have a description
     severity: warn
@@ -16,7 +29,6 @@ rules:
     then:
       field: description
       function: truthy
-
   info-version-required:
     description: Info must have a version
     severity: error
@@ -24,8 +36,6 @@ rules:
     then:
       field: version
       function: truthy
-
-  # OPENAPI VERSION
   openapi-version-3:
     description: Must use OpenAPI 3.x
     severity: error
@@ -34,9 +44,7 @@ rules:
       field: openapi
       function: pattern
       functionOptions:
-        match: "^3\\."
-
-  # SERVERS
+        match: ^3\.
   servers-required:
     description: Servers array must be defined
     severity: error
@@ -44,7 +52,6 @@ rules:
     then:
       field: servers
       function: truthy
-
   servers-https-only:
     description: All server URLs must use HTTPS
     severity: warn
@@ -52,9 +59,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^https://"
-
-  # PATHS — NAMING CONVENTIONS
+        match: ^https://
   paths-kebab-case:
     description: Path segments must use kebab-case or snake_case
     severity: info
@@ -62,8 +67,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^(\\/[a-z0-9{}_,\\-\\/]*)*$"
-
+        match: ^(\/[a-z0-9{}_,\-\/]*)*$
   paths-no-trailing-slash:
     description: Paths must not have trailing slashes
     severity: warn
@@ -71,9 +75,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        notMatch: "\\/$"
-
-  # OPERATIONS
+        notMatch: \/$
   operation-summary-required:
     description: Every operation must have a summary
     severity: warn
@@ -81,17 +83,15 @@ rules:
     then:
       field: summary
       function: truthy
-
   operation-summary-weatherbit-prefix:
     description: Operation summaries must start with Weatherbit
-    message: "Summary must start with 'Weatherbit': {{value}}"
+    message: 'Summary must start with ''Weatherbit'': {{value}}'
     severity: info
     given: $.paths[*][get,post,put,delete,patch].summary
     then:
       function: pattern
       functionOptions:
-        match: "^Weatherbit"
-
+        match: ^Weatherbit
   operation-tags-required:
     description: Operations must have at least one tag
     severity: warn
@@ -99,8 +99,6 @@ rules:
     then:
       field: tags
       function: truthy
-
-  # PARAMETERS
   parameter-description-required:
     description: Every parameter should have a description
     severity: warn
@@ -108,19 +106,17 @@ rules:
     then:
       field: description
       function: truthy
-
   parameter-api-key-in-query:
     description: API key parameter must be named 'key'
-    message: "API key parameter should be named 'key'"
+    message: API key parameter should be named 'key'
     severity: info
     given: $.paths[*][get,post,put,delete,patch].parameters[?(@.name == 'key')]
     then:
       field: in
       function: enumeration
       functionOptions:
-        values: [query]
-
-  # RESPONSES
+        values:
+        - query
   response-success-required:
     description: Every operation must have a 2xx success response
     severity: error
@@ -130,7 +126,6 @@ rules:
       functionOptions:
         schema:
           minProperties: 1
-
   response-description-required:
     description: Every response must have a description
     severity: warn
@@ -138,8 +133,6 @@ rules:
     then:
       field: description
       function: truthy
-
-  # SCHEMAS
   schema-type-defined:
     description: Schemas should define a type
     severity: warn
@@ -147,8 +140,6 @@ rules:
     then:
       field: type
       function: truthy
-
-  # HTTP METHOD CONVENTIONS
   get-no-request-body:
     description: GET operations must not have a request body
     severity: error
@@ -156,8 +147,6 @@ rules:
     then:
       field: requestBody
       function: falsy
-
-  # GENERAL QUALITY
   no-empty-descriptions:
     description: Descriptions must not be empty strings
     severity: warn
@@ -165,12 +154,53 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: ".+"
-
+        match: .+
   contact-info-recommended:
     description: Info should have contact details
     severity: info
     given: $.info
     then:
       field: contact
+      function: truthy
+  servers-expected-domain:
+    description: Server URLs should be on the weatherbit.io domain.
+    severity: warn
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: weatherbit\.io
+  query-params-casing:
+    description: Query parameters should be snake_case (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].parameters[?(@.in=='query')]
+    then:
+      field: name
+      function: casing
+      functionOptions:
+        type: snake
+  schema-names-casing:
+    description: Component schema names should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: '@key'
+      function: pattern
+      functionOptions:
+        match: ^[A-Z][A-Za-z0-9]*$
+  schema-properties-casing:
+    description: Schema properties should be snake_case (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas[*].properties
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: snake
+  error-schema-defined:
+    description: A shared error schema (Error) should be defined for error payloads.
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: Error
       function: truthy
