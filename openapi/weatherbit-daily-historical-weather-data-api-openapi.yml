@@ -1,0 +1,320 @@
+openapi: 3.0.1
+info:
+  title: Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Daily Historical Weather Data API
+  description: This an interactive version of the documentation for the Weatherbit API.  The base URL for the API is [http://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/) or [https://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/). Below is the Swagger UI documentation for the API. All API requests require the `key` parameter.        An Example for a 48 hour forecast for London, UK would be `http://api.weatherbit.io/v2.0/forecast/hourly?lat=51.5072`&`lon=-0.1276`. See our [Weather API description page](https://www.weatherbit.io/api) for the full documentation.
+  version: 2.0.0
+servers:
+- url: https://api.weatherbit.io/v2.0
+- url: http://api.weatherbit.io/v2.0
+tags:
+- name: Daily Historical Weather Data
+paths:
+  /history/daily:
+    get:
+      tags:
+      - Daily Historical Weather Data
+      summary: Weatherbit Returns Historical Observations - Given a Lat/lon.
+      description: Returns Historical Observations - Given a lat, and lon. See https://www.weatherbit.io/api for API specific rate limits.
+      parameters:
+      - name: lat
+        in: query
+        description: Latitude component of location.
+        schema:
+          type: number
+          format: double
+        example: 35.05
+      - name: lon
+        in: query
+        description: Longitude component of location.
+        schema:
+          type: number
+          format: double
+        example: 36.94
+      - name: city_id
+        in: query
+        description: 'City ID. Example: 4487042'
+        schema:
+          type: string
+          format: string
+        example: Kansas City
+      - name: city
+        in: query
+        description: City search.. Example - &city=Raleigh,NC or &city=Berlin,DE or city=Paris&country=FR
+        schema:
+          type: string
+          format: string
+        example: Kansas City
+      - name: postal_code
+        in: query
+        description: 'Postal Code. Example: 28546'
+        schema:
+          type: string
+          format: string
+        example: example-value
+      - name: country
+        in: query
+        description: Country Code (2 letter) - to be used with postal_code.
+        schema:
+          type: string
+          format: string
+        example: US
+      - name: station
+        in: query
+        description: Station Call ID.
+        schema:
+          type: string
+          format: string
+        example: example-value
+      - name: start_date
+        in: query
+        description: Start Date (YYYY-MM-DD or YYYY-MM-DD:HH).
+        required: true
+        schema:
+          type: string
+          format: string
+        example: example-value
+      - name: end_date
+        in: query
+        description: End Date (YYYY-MM-DD or YYYY-MM-DD:HH).
+        required: true
+        schema:
+          type: string
+          format: string
+        example: example-value
+      - name: units
+        in: query
+        description: Convert to units. Default Metric See <a target='blank' href='/api/requests'>units field description</a>
+        schema:
+          type: string
+          format: string
+          enum:
+          - S
+          - I
+        example: I
+      - name: lang
+        in: query
+        description: 'Language (Default: English) See <a target=''blank'' href=''/api/requests''>language field description</a>'
+        schema:
+          type: string
+          format: string
+          enum:
+          - ar
+          - az
+          - be
+          - bg
+          - bs
+          - ca
+          - cs
+          - de
+          - fi
+          - fr
+          - el
+          - es
+          - et
+          - hr
+          - hu
+          - id
+          - it
+          - is
+          - kw
+          - nb
+          - nl
+          - pl
+          - pt
+          - ro
+          - ru
+          - sk
+          - sl
+          - sr
+          - sv
+          - tr
+          - uk
+          - zh
+          - zh-tw
+        example: uk
+      - name: key
+        in: query
+        description: Your registered API key.
+        required: true
+        schema:
+          type: string
+          format: string
+        example: abc123xyz
+      responses:
+        '200':
+          description: An Historical Day Data Object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HistoryDay'
+        default:
+          description: No Data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    HistoryDayObj:
+      type: object
+      properties:
+        datetime:
+          type: string
+          description: Date in format "YYYY-MM-DD". All datetime is in (UTC)
+          example: 2015-01-03
+        ts:
+          type: integer
+          description: Unix timestamp of datetime (Midnight UTC)
+          example: 1501970516
+        revision_status:
+          type: string
+          description: Data revision status (interim or final)
+          example: final
+        slp:
+          type: number
+          description: Average sea level pressure (mb)
+          example: 1020.1
+        pres:
+          type: number
+          description: Average pressure (mb)
+          example: 885.1
+        rh:
+          type: number
+          description: Average relative humidity as a percentage (%)
+          example: 85.0
+        dewpt:
+          type: number
+          description: Average dewpoint - Default (C)
+          example: -1.5
+        temp:
+          type: number
+          description: Average temperature - Default (C)
+          example: 1.0
+        max_temp:
+          type: number
+          description: Max temperature - Default (C)
+          example: 1.5
+        max_temp_ts:
+          type: number
+          description: Time of max memperature - Unix Timestamp
+          example: 1501970816
+        min_temp:
+          type: number
+          description: Min temperature - Default (C)
+          example: 11.7
+        min_temp_ts:
+          type: number
+          description: Time of max temperature - unix timestamp
+          example: 1501970516
+        wind_spd:
+          type: number
+          description: Average wind speed - default (m/s)
+          example: 14.98
+        wind_dir:
+          type: integer
+          description: Average wind direction (degrees)
+          example: 325
+        wind_gust_spd:
+          type: number
+          description: Wind gust speed - default (m/s)
+          example: 40.98
+        max_wind_spd:
+          type: number
+          description: Max 2min Wind Speed - default (m/s)
+          example: 19.98
+        max_wind_dir:
+          type: integer
+          description: Direction of wind at time of max 2min wind (degrees)
+          example: 325
+        max_wind_spd_ts:
+          type: number
+          description: Time of max 2min wind - unix timestamp
+          example: 1501970516
+        ghi:
+          type: integer
+          description: Average hourly global horizontal solar irradiance (W/m^2)
+          example: 125
+        t_ghi:
+          type: integer
+          description: Total global horizontal solar irradiance (W/m^2)
+          example: 4500
+        dni:
+          type: integer
+          description: Average direct normal solar irradiance (W/m^2)
+          example: 125
+        t_dni:
+          type: integer
+          description: Total direct normal solar irradiance (W/m^2)
+          example: 4500
+        dhi:
+          type: integer
+          description: Average hourly diffuse horizontal solar irradiance (W/m^2)
+          example: 125
+        t_dhi:
+          type: integer
+          description: Total diffuse horizontal solar irradiance (W/m^2)
+          example: 4500
+        max_uv:
+          type: number
+          description: Max UV Index (1-11+)
+          example: 6.0
+        precip:
+          type: number
+          description: Liquid equivalent precipitation - default (mm)
+          example: 3.0
+        precip_gpm:
+          type: number
+          description: Satellite estimated liquid equivalent precipitation - default (mm)
+          example: 3.0
+        snow:
+          type: number
+          description: Snowfall - default (mm)
+          example: 30.0
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+    HistoryDay:
+      type: object
+      properties:
+        city_name:
+          type: string
+          description: City name (Closest)
+          example: Seattle
+        state_code:
+          type: string
+          description: State abbreviation
+          example: WA
+        country_code:
+          type: string
+          description: Country abbreviation
+          example: US
+        timezone:
+          type: string
+          description: Local IANA time zone
+          example: America/New_York
+        lat:
+          type: number
+          description: Latitude
+          example: 47.61
+        lon:
+          type: number
+          description: Longitude
+          example: -122.33
+        sources:
+          type: array
+          description: List of data sources used in response
+          items:
+            type: string
+            example: 12345-89083
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/HistoryDayObj'

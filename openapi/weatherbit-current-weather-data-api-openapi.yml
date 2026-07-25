@@ -1,0 +1,353 @@
+openapi: 3.0.1
+info:
+  title: Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Current Weather Data API
+  description: This an interactive version of the documentation for the Weatherbit API.  The base URL for the API is [http://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/) or [https://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/). Below is the Swagger UI documentation for the API. All API requests require the `key` parameter.        An Example for a 48 hour forecast for London, UK would be `http://api.weatherbit.io/v2.0/forecast/hourly?lat=51.5072`&`lon=-0.1276`. See our [Weather API description page](https://www.weatherbit.io/api) for the full documentation.
+  version: 2.0.0
+servers:
+- url: https://api.weatherbit.io/v2.0
+- url: http://api.weatherbit.io/v2.0
+tags:
+- name: Current Weather Data
+paths:
+  /current:
+    get:
+      tags:
+      - Current Weather Data
+      summary: Weatherbit Returns a Current Observation - Given a Lat/lon.
+      description: Returns a Current Observation - given a lat, and a lon.
+      parameters:
+      - name: lat
+        in: query
+        description: Latitude component of location.
+        schema:
+          type: number
+          format: double
+        example: 58.5
+      - name: lon
+        in: query
+        description: Longitude component of location.
+        schema:
+          type: number
+          format: double
+        example: 74.68
+      - name: include
+        in: query
+        description: Include 1 hour - minutely precip forecast in the response, or severe weather alerts
+        schema:
+          type: string
+          format: string
+          enum:
+          - minutely
+          - alerts
+        example: minutely
+      - name: city_id
+        in: query
+        description: 'City ID. Example: 4487042'
+        schema:
+          type: string
+          format: string
+        example: Kansas City
+      - name: city
+        in: query
+        description: City search.. Example - &city=Raleigh,NC or &city=Berlin,DE or city=Paris&country=FR
+        schema:
+          type: string
+          format: string
+        example: Kansas City
+      - name: postal_code
+        in: query
+        description: 'Postal Code. Example: 28546'
+        schema:
+          type: string
+          format: string
+        example: example-value
+      - name: country
+        in: query
+        description: Country Code (2 letter) - to be used with postal_code.
+        schema:
+          type: string
+          format: string
+        example: US
+      - name: station
+        in: query
+        description: Station Call ID.
+        schema:
+          type: string
+          format: string
+        example: example-value
+      - name: stations
+        in: query
+        description: 'Comma separated list of Station Call ID''s. Example: KRDU,KBFI,KVNY'
+        schema:
+          type: string
+          format: string
+        example: example-value
+      - name: points
+        in: query
+        description: 'Comma separated list of points. Example: (35.5, -75.5),(45, 65),(45.12, -130.5)'
+        schema:
+          type: string
+          format: string
+        example: example-value
+      - name: cities
+        in: query
+        description: 'Comma separated list of City ID''s. Example: 4487042, 4494942, 4504871'
+        schema:
+          type: string
+          format: string
+        example: example-value
+      - name: units
+        in: query
+        description: Convert to units. Default Metric See <a target='blank' href='/api/requests'>units field description</a>
+        schema:
+          type: string
+          format: string
+          enum:
+          - S
+          - I
+        example: S
+      - name: lang
+        in: query
+        description: 'Language (Default: English) See <a target=''blank'' href=''/api/requests''>language field description</a>'
+        schema:
+          type: string
+          format: string
+          enum:
+          - ar
+          - az
+          - be
+          - bg
+          - bs
+          - ca
+          - cs
+          - de
+          - fi
+          - fr
+          - el
+          - es
+          - et
+          - hr
+          - hu
+          - id
+          - it
+          - is
+          - kw
+          - nb
+          - nl
+          - pl
+          - pt
+          - ro
+          - ru
+          - sk
+          - sl
+          - sr
+          - sv
+          - tr
+          - uk
+          - zh
+          - zh-tw
+        example: uk
+      - name: key
+        in: query
+        description: Your registered API key.
+        required: true
+        schema:
+          type: string
+          format: string
+        example: abc123xyz
+      responses:
+        '200':
+          description: An Observation Group object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CurrentObsGroup'
+        default:
+          description: No Data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    CurrentObs:
+      type: object
+      properties:
+        city_name:
+          type: string
+          description: City name (closest)
+          example: Raleigh
+        state_code:
+          type: string
+          description: State abbreviation
+          example: NC
+        country_code:
+          type: string
+          description: Country abbreviation
+          example: US
+        timezone:
+          type: string
+          description: Local IANA time zone
+          example: America/New_York
+        lat:
+          type: number
+          description: Latitude
+          example: 38.0
+        lon:
+          type: number
+          description: Longitude
+          example: -78.25
+        station:
+          type: string
+          description: Source Station ID
+          example: KRDU
+        sources:
+          type: array
+          description: List of data sources used in response
+          items:
+            type: string
+            example: rtma
+        vis:
+          type: integer
+          description: Visibility - default (M)
+          example: 10000
+        rh:
+          type: integer
+          description: Relative humidity (%)
+          example: 75
+        dewpt:
+          type: number
+          description: Dew point temperature - default (C)
+          example: 12.0
+        wind_dir:
+          type: integer
+          description: Wind direction (degrees)
+          example: 125
+        wind_cdir:
+          type: string
+          description: Cardinal wind direction
+          example: ENE
+        wind_cdir_full:
+          type: string
+          description: Cardinal wind direction (text)
+          example: East-North-East
+        wind_speed:
+          type: number
+          description: Wind speed - Default (m/s)
+          example: 5.85
+        temp:
+          type: number
+          description: Temperature - Default (C)
+          example: 13.85
+        app_temp:
+          type: number
+          description: Apparent temperature - Default (C)
+          example: 14.85
+        clouds:
+          type: integer
+          description: Cloud cover (%)
+          example: 42
+        weather:
+          type: object
+          properties:
+            icon:
+              type: string
+              description: Icon code for forecast image display
+              example: c02
+            code:
+              type: integer
+              description: Weather Condition code
+              example: 802
+            description:
+              type: string
+              description: Weather Condition description
+              example: Broken clouds
+        datetime:
+          type: string
+          description: Cycle Hour (UTC) of observation
+          example: 2017-03-15:13
+        ob_time:
+          type: string
+          description: Full time (UTC) of observation (YYYY-MM-DD HH:MM)
+          example: 2017-03-15 13:11
+        ts:
+          type: number
+          description: Unix Timestamp
+          example: 1490990400
+        sunrise:
+          type: string
+          description: Time (UTC) of Sunrise (HH:MM)
+          example: 06:22
+        sunset:
+          type: string
+          description: Time (UTC) of Sunset (HH:MM)
+          example: 1174
+        slp:
+          type: number
+          description: Mean sea level pressure in millibars (mb)
+          example: 1013.12
+        pres:
+          type: number
+          description: Pressure (mb)
+          example: 1010.0
+        aqi:
+          type: number
+          description: Air quality index (US EPA standard 0 to +500)
+          example: 50.0
+        uv:
+          type: number
+          description: UV Index
+          example: 6.5
+        solar_rad:
+          type: number
+          description: Estimated solar radiation (W/m^2)
+          example: 300.4
+        ghi:
+          type: number
+          description: Global horizontal irradiance (W/m^2)
+          example: 450.4
+        dni:
+          type: number
+          description: Direct normal irradiance (W/m^2)
+          example: 450.4
+        dhi:
+          type: number
+          description: Diffuse horizontal irradiance (W/m^2)
+          example: 450.4
+        elev_angle:
+          type: number
+          description: Current solar elevation angle (Degrees)
+          example: 37.0
+        pod:
+          type: string
+          description: Part of the day (d = day, n = night)
+        precip:
+          type: number
+          description: Precipitation in last hour - Default (mm)
+          example: 2.0
+        snow:
+          type: number
+          description: Snowfall in last hour - Default (mm)
+          example: 10.0
+    CurrentObsGroup:
+      type: object
+      properties:
+        count:
+          type: integer
+          description: Count of found observations
+          example: 1
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CurrentObs'
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

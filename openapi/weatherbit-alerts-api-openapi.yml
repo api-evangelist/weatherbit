@@ -1,0 +1,190 @@
+openapi: 3.0.1
+info:
+  title: Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Alerts API
+  description: This an interactive version of the documentation for the Weatherbit API.  The base URL for the API is [http://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/) or [https://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/). Below is the Swagger UI documentation for the API. All API requests require the `key` parameter.        An Example for a 48 hour forecast for London, UK would be `http://api.weatherbit.io/v2.0/forecast/hourly?lat=51.5072`&`lon=-0.1276`. See our [Weather API description page](https://www.weatherbit.io/api) for the full documentation.
+  version: 2.0.0
+servers:
+- url: https://api.weatherbit.io/v2.0
+- url: http://api.weatherbit.io/v2.0
+tags:
+- name: Alerts
+paths:
+  /alerts:
+    get:
+      tags:
+      - Alerts
+      summary: Weatherbit Returns Severe Weather Alerts Issued by Meteorological Agencies - Given a Lat/lon.
+      description: Returns severe weather alerts issued by meteorological agencies - given a lat, and a lon.
+      parameters:
+      - name: lat
+        in: query
+        description: Latitude component of location.
+        schema:
+          type: number
+          format: double
+        example: 3.93
+      - name: lon
+        in: query
+        description: Longitude component of location.
+        schema:
+          type: number
+          format: double
+        example: 9.38
+      - name: city_id
+        in: query
+        description: 'City ID. Example: 4487042'
+        schema:
+          type: string
+          format: string
+        example: Kansas City
+      - name: city
+        in: query
+        description: City search.. Example - &city=Raleigh,NC or &city=Berlin,DE or city=Paris&country=FR
+        schema:
+          type: string
+          format: string
+        example: Kansas City
+      - name: postal_code
+        in: query
+        description: 'Postal Code. Example: 28546'
+        schema:
+          type: string
+          format: string
+        example: example-value
+      - name: country
+        in: query
+        description: Country Code (2 letter) - to be used with postal_code.
+        schema:
+          type: string
+          format: string
+        example: US
+      - name: station
+        in: query
+        description: Station Call ID.
+        schema:
+          type: string
+          format: string
+        example: example-value
+      - name: key
+        in: query
+        description: Your registered API key.
+        required: true
+        schema:
+          type: string
+          format: string
+        example: abc123xyz
+      responses:
+        '200':
+          description: Weather Alert Object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WeatherAlert'
+        default:
+          description: No Data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    WeatherAlert:
+      type: object
+      properties:
+        lat:
+          type: number
+          description: Latitude
+          example: 38.0
+        lon:
+          type: number
+          description: Longitude
+          example: -78.25
+        alerts:
+          type: array
+          items:
+            $ref: '#/components/schemas/WeatherAlertGroup'
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+    WeatherAlertGroup:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Brief description of weather alert
+          example: Flood Warning issued February 8 at 8:51PM CST expiring February 12 at 8:24AM CST by NWS St Louis MO
+        description:
+          type: string
+          description: Full description of weather alert
+          example: 'Mississippi River at Chester
+
+
+            .This Flood Warning is a result of 1-2 inches of rainfall across
+
+            the basin earlier this week...
+
+            The Flood Warning continues for
+
+            the Mississippi River at Chester
+
+            * until Tuesday morning.
+
+            * At  8:30 PM Friday the stage was 26.8 feet.
+
+            * Flood stage is 27.0 feet.
+
+            * Minor flooding is forecast.
+
+            * The river is forecast to rise above flood stage by tonight and to
+
+            crest near 29.0 feet by Saturday evening. The river is forecast to
+
+            fall below flood stage by Monday morning.
+
+            * Impact:  At 28.0 feet...Unleveed islands near Chester and the prison
+
+            farm floods.
+
+            * Impact:  At 27.0 feet...Flood Stage.  Unprotected farmland on right
+
+            bank begins to flood.'
+        severity:
+          type: string
+          description: Severity of weather. (Advisory | Watch | Warning)
+          example: Warning
+        effective_utc:
+          type: string
+          description: Issued time UTC
+          example: 2019-02-09 02:51:00
+        effective_local:
+          type: string
+          description: Issued time local
+          example: 2019-02-08 21:51:00
+        expires_utc:
+          type: string
+          description: Expiration time UTC
+          example: 2019-02-10 02:51:00
+        expires_local:
+          type: string
+          description: Expiration time local
+          example: 2019-02-09 21:51:00
+        uri:
+          type: string
+          description: URI to weather alert
+          example: https://api.weather.gov/alerts/NWS-IDP-PROD-3361975-2942026
+        alerts:
+          type: array
+          items:
+            $ref: '#/components/schemas/AlertRegionGroup'
+    AlertRegionGroup:
+      type: string
+      description: List of impacted regions
+      example: St Louis, MO

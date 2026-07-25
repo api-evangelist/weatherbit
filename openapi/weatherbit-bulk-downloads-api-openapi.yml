@@ -1,0 +1,54 @@
+openapi: 3.0.1
+info:
+  title: Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Bulk Downloads API
+  description: This an interactive version of the documentation for the Weatherbit API.  The base URL for the API is [http://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/) or [https://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/). Below is the Swagger UI documentation for the API. All API requests require the `key` parameter.        An Example for a 48 hour forecast for London, UK would be `http://api.weatherbit.io/v2.0/forecast/hourly?lat=51.5072`&`lon=-0.1276`. See our [Weather API description page](https://www.weatherbit.io/api) for the full documentation.
+  version: 2.0.0
+servers:
+- url: https://api.weatherbit.io/v2.0
+- url: http://api.weatherbit.io/v2.0
+tags:
+- name: Bulk Downloads
+paths:
+  /bulk/files:
+    get:
+      tags:
+      - Bulk Downloads
+      summary: Weatherbit Download Pre-generated Bulk Datasets
+      description: 'Downloads bulk data files - OPTIONS: ( current.csv.gz, forecast_hourly.csv.gz, forecast_daily.csv.gz). Units are Metric (Celcius, m/s, etc).'
+      parameters:
+      - name: file
+        in: path
+        description: Filename (ie. current.csv.gz)
+        required: true
+        schema:
+          type: string
+          format: string
+        example: example-value
+      - name: key
+        in: query
+        description: Your registered API key.
+        required: true
+        schema:
+          type: string
+          format: string
+        example: abc123xyz
+      responses:
+        default:
+          description: No Data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

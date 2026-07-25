@@ -1,0 +1,170 @@
+openapi: 3.0.1
+info:
+  title: Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Climate Normals (Averages) API
+  description: This an interactive version of the documentation for the Weatherbit API.  The base URL for the API is [http://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/) or [https://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/). Below is the Swagger UI documentation for the API. All API requests require the `key` parameter.        An Example for a 48 hour forecast for London, UK would be `http://api.weatherbit.io/v2.0/forecast/hourly?lat=51.5072`&`lon=-0.1276`. See our [Weather API description page](https://www.weatherbit.io/api) for the full documentation.
+  version: 2.0.0
+servers:
+- url: https://api.weatherbit.io/v2.0
+- url: http://api.weatherbit.io/v2.0
+tags:
+- name: Climate Normals (Averages)
+paths:
+  /normals:
+    get:
+      tags:
+      - Climate Normals (Averages)
+      summary: Weatherbit Returns Historical Climate Normals (Averages) - Given a Lat/lon.
+      description: Returns Historical Climate Normals (Averages) - Given a lat, and lon. See https://www.weatherbit.io/api for API specific rate limits.
+      parameters:
+      - name: lat
+        in: query
+        description: Latitude component of location.
+        required: true
+        schema:
+          type: number
+          format: double
+        example: 8.25
+      - name: lon
+        in: query
+        description: Longitude component of location.
+        required: true
+        schema:
+          type: number
+          format: double
+        example: 21.65
+      - name: start_day
+        in: query
+        description: Start Day (MM-DD).
+        required: true
+        schema:
+          type: string
+          format: string
+        example: example-value
+      - name: end_day
+        in: query
+        description: End Day (MM-DD).
+        required: true
+        schema:
+          type: string
+          format: string
+        example: example-value
+      - name: tp
+        in: query
+        description: Time period of calculation (daily, monthly, or hourly).
+        required: true
+        schema:
+          type: string
+          format: string
+          enum:
+          - daily
+          - hourly
+          - monthly
+        example: daily
+      - name: units
+        in: query
+        description: Convert to units. Default Metric See <a target='blank' href='/api/requests'>units field description</a>
+        schema:
+          type: string
+          format: string
+          enum:
+          - S
+          - I
+        example: S
+      - name: series_year
+        in: query
+        description: Series year for calculation. 2020 for 1991-2020. 2010 for 1981-2010.
+        required: true
+        schema:
+          type: number
+          format: number
+        example: 73.0
+      - name: key
+        in: query
+        description: Your registered API key.
+        required: true
+        schema:
+          type: string
+          format: string
+        example: abc123xyz
+      responses:
+        '200':
+          description: An Normals Data Object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Normals'
+        default:
+          description: No Data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Normals:
+      type: object
+      properties:
+        timezone:
+          type: string
+          description: Local IANA time zone
+          example: America/New_York
+        sources:
+          type: array
+          description: List of data sources used in response
+          items:
+            type: string
+            example: era5
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/NormalsObj'
+    NormalsObj:
+      type: object
+      properties:
+        month:
+          type: number
+          description: Month number
+          example: 2.0
+        temp:
+          type: number
+          description: Average temperature
+          example: 30.0
+        dewpt:
+          type: number
+          description: Average dew point
+          example: 25.0
+        max_wind_spd:
+          type: number
+          description: Maximum wind speed
+          example: 5.0
+        min_wind_spd:
+          type: number
+          description: Minimum wind speed
+          example: 0.0
+        wind_spd:
+          type: number
+          description: Average wind speed
+          example: 2.0
+        wind_dir:
+          type: number
+          description: Average wind direction
+          example: 200.0
+        precip:
+          type: number
+          description: Average Liquid equivalent precipitation - Default (mm)
+          example: 3.1
+        snow:
+          type: number
+          description: Average Snowfall - Default (mm)
+          example: 30.5
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
