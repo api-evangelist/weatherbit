@@ -91,40 +91,6 @@ apis:
     url: openapi/weatherbit-16-day-daily-forecast-api-openapi.yml
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-16-day-daily-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-240-hour-hourly-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-60-minute-rain-snow-nowcast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-agweather-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-air-quality-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-alerts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-bulk-downloads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-climate-normals-averages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-daily-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-forecast-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-agweather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-hourly-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-sub-hourly-historical-weather-data.yaml
 - aid: weatherbit:weatherbit-240-hour-hourly-forecast-api
   name: Weatherbit 240 Hour / Hourly Forecast API
   description: >-
@@ -138,40 +104,6 @@ apis:
     url: openapi/weatherbit-240-hour-hourly-forecast-api-openapi.yml
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-16-day-daily-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-240-hour-hourly-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-60-minute-rain-snow-nowcast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-agweather-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-air-quality-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-alerts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-bulk-downloads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-climate-normals-averages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-daily-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-forecast-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-agweather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-hourly-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-sub-hourly-historical-weather-data.yaml
 - aid: weatherbit:weatherbit-60-minute-rain-snow-nowcast-api
   name: Weatherbit 60 Minute Rain/Snow Nowcast API
   description: >-
@@ -185,40 +117,6 @@ apis:
     url: openapi/weatherbit-60-minute-rain-snow-nowcast-api-openapi.yml
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-16-day-daily-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-240-hour-hourly-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-60-minute-rain-snow-nowcast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-agweather-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-air-quality-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-alerts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-bulk-downloads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-climate-normals-averages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-daily-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-forecast-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-agweather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-hourly-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-sub-hourly-historical-weather-data.yaml
 - aid: weatherbit:weatherbit-agweather-forecast-api
   name: Weatherbit AgWeather Forecast API
   description: The AgWeather Forecast API from Weatherbit — 1 operation(s) for agweather forecast.
@@ -231,40 +129,6 @@ apis:
     url: openapi/weatherbit-agweather-forecast-api-openapi.yml
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-16-day-daily-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-240-hour-hourly-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-60-minute-rain-snow-nowcast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-agweather-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-air-quality-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-alerts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-bulk-downloads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-climate-normals-averages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-daily-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-forecast-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-agweather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-hourly-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-sub-hourly-historical-weather-data.yaml
 - aid: weatherbit:weatherbit-air-quality-forecast-api
   name: Weatherbit Air Quality Forecast API
   description: The Air Quality Forecast API from Weatherbit — 1 operation(s) for air quality forecast.
@@ -277,40 +141,6 @@ apis:
     url: openapi/weatherbit-air-quality-forecast-api-openapi.yml
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-16-day-daily-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-240-hour-hourly-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-60-minute-rain-snow-nowcast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-agweather-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-air-quality-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-alerts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-bulk-downloads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-climate-normals-averages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-daily-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-forecast-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-agweather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-hourly-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-sub-hourly-historical-weather-data.yaml
 - aid: weatherbit:weatherbit-alerts-api
   name: Weatherbit Alerts API
   description: The Alerts API from Weatherbit — 1 operation(s) for alerts.
@@ -323,40 +153,6 @@ apis:
     url: openapi/weatherbit-alerts-api-openapi.yml
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-16-day-daily-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-240-hour-hourly-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-60-minute-rain-snow-nowcast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-agweather-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-air-quality-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-alerts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-bulk-downloads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-climate-normals-averages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-daily-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-forecast-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-agweather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-hourly-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-sub-hourly-historical-weather-data.yaml
 - aid: weatherbit:weatherbit-bulk-downloads-api
   name: Weatherbit Bulk Downloads API
   description: The Bulk Downloads API from Weatherbit — 1 operation(s) for bulk downloads.
@@ -369,40 +165,6 @@ apis:
     url: openapi/weatherbit-bulk-downloads-api-openapi.yml
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-16-day-daily-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-240-hour-hourly-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-60-minute-rain-snow-nowcast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-agweather-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-air-quality-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-alerts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-bulk-downloads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-climate-normals-averages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-daily-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-forecast-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-agweather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-hourly-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-sub-hourly-historical-weather-data.yaml
 - aid: weatherbit:weatherbit-climate-normals-averages-api
   name: Weatherbit Climate Normals (Averages) API
   description: >-
@@ -416,40 +178,6 @@ apis:
     url: openapi/weatherbit-climate-normals-averages-api-openapi.yml
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-16-day-daily-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-240-hour-hourly-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-60-minute-rain-snow-nowcast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-agweather-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-air-quality-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-alerts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-bulk-downloads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-climate-normals-averages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-daily-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-forecast-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-agweather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-hourly-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-sub-hourly-historical-weather-data.yaml
 - aid: weatherbit:weatherbit-current-air-quality-api
   name: Weatherbit Current Air Quality API
   description: The Current Air Quality API from Weatherbit — 1 operation(s) for current air quality.
@@ -462,40 +190,6 @@ apis:
     url: openapi/weatherbit-current-air-quality-api-openapi.yml
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-16-day-daily-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-240-hour-hourly-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-60-minute-rain-snow-nowcast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-agweather-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-air-quality-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-alerts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-bulk-downloads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-climate-normals-averages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-daily-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-forecast-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-agweather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-hourly-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-sub-hourly-historical-weather-data.yaml
 - aid: weatherbit:weatherbit-current-weather-data-api
   name: Weatherbit Current Weather Data API
   description: The Current Weather Data API from Weatherbit — 1 operation(s) for current weather data.
@@ -508,40 +202,6 @@ apis:
     url: openapi/weatherbit-current-weather-data-api-openapi.yml
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-16-day-daily-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-240-hour-hourly-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-60-minute-rain-snow-nowcast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-agweather-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-air-quality-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-alerts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-bulk-downloads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-climate-normals-averages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-daily-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-forecast-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-agweather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-hourly-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-sub-hourly-historical-weather-data.yaml
 - aid: weatherbit:weatherbit-daily-historical-weather-data-api
   name: Weatherbit Daily Historical Weather Data API
   description: >-
@@ -556,40 +216,6 @@ apis:
     url: openapi/weatherbit-daily-historical-weather-data-api-openapi.yml
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-16-day-daily-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-240-hour-hourly-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-60-minute-rain-snow-nowcast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-agweather-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-air-quality-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-alerts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-bulk-downloads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-climate-normals-averages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-daily-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-forecast-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-agweather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-hourly-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-sub-hourly-historical-weather-data.yaml
 - aid: weatherbit:weatherbit-forecast-degree-day-api-api
   name: Weatherbit Forecast Degree Day API API
   description: >-
@@ -603,40 +229,6 @@ apis:
     url: openapi/weatherbit-forecast-degree-day-api-api-openapi.yml
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-16-day-daily-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-240-hour-hourly-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-60-minute-rain-snow-nowcast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-agweather-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-air-quality-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-alerts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-bulk-downloads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-climate-normals-averages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-daily-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-forecast-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-agweather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-hourly-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-sub-hourly-historical-weather-data.yaml
 - aid: weatherbit:weatherbit-historical-agweather-data-api
   name: Weatherbit Historical AgWeather Data API
   description: >-
@@ -650,40 +242,6 @@ apis:
     url: openapi/weatherbit-historical-agweather-data-api-openapi.yml
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-16-day-daily-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-240-hour-hourly-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-60-minute-rain-snow-nowcast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-agweather-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-air-quality-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-alerts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-bulk-downloads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-climate-normals-averages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-daily-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-forecast-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-agweather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-hourly-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-sub-hourly-historical-weather-data.yaml
 - aid: weatherbit:weatherbit-historical-air-quality-api
   name: Weatherbit Historical Air Quality API
   description: >-
@@ -697,40 +255,6 @@ apis:
     url: openapi/weatherbit-historical-air-quality-api-openapi.yml
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-16-day-daily-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-240-hour-hourly-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-60-minute-rain-snow-nowcast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-agweather-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-air-quality-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-alerts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-bulk-downloads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-climate-normals-averages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-daily-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-forecast-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-agweather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-hourly-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-sub-hourly-historical-weather-data.yaml
 - aid: weatherbit:weatherbit-historical-degree-day-api-api
   name: Weatherbit Historical Degree Day API API
   description: >-
@@ -744,40 +268,6 @@ apis:
     url: openapi/weatherbit-historical-degree-day-api-api-openapi.yml
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-16-day-daily-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-240-hour-hourly-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-60-minute-rain-snow-nowcast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-agweather-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-air-quality-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-alerts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-bulk-downloads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-climate-normals-averages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-daily-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-forecast-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-agweather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-hourly-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-sub-hourly-historical-weather-data.yaml
 - aid: weatherbit:weatherbit-hourly-historical-weather-data-api
   name: Weatherbit Hourly Historical Weather Data API
   description: >-
@@ -792,40 +282,6 @@ apis:
     url: openapi/weatherbit-hourly-historical-weather-data-api-openapi.yml
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-16-day-daily-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-240-hour-hourly-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-60-minute-rain-snow-nowcast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-agweather-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-air-quality-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-alerts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-bulk-downloads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-climate-normals-averages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-daily-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-forecast-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-agweather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-hourly-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-sub-hourly-historical-weather-data.yaml
 - aid: weatherbit:weatherbit-sub-hourly-historical-weather-data-api
   name: Weatherbit Sub-Hourly Historical Weather Data API
   description: >-
@@ -840,40 +296,6 @@ apis:
     url: openapi/weatherbit-sub-hourly-historical-weather-data-api-openapi.yml
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-16-day-daily-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-240-hour-hourly-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-60-minute-rain-snow-nowcast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-agweather-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-air-quality-forecast.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-alerts.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-bulk-downloads.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-climate-normals-averages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-current-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-daily-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-forecast-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-agweather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-air-quality.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-historical-degree-day-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-hourly-historical-weather-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/current-weather-sub-hourly-historical-weather-data.yaml
 name: Weatherbit
 tags:
 - Weather
