@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Bulk Downloads API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bulk Downloads",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Weatherbit Download Pre-generated Bulk Datasets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weatherbit.io/v2.0/bulk/files",
+            "params": [
+              {
+                "name": "file",
+                "value": "example-value",
+                "type": "path",
+                "description": "Filename (ie. current.csv.gz)"
+              },
+              {
+                "name": "key",
+                "value": "abc123xyz",
+                "type": "query",
+                "description": "Your registered API key."
+              }
+            ]
+          },
+          "docs": "Downloads bulk data files - OPTIONS: ( current.csv.gz, forecast_hourly.csv.gz, forecast_daily.csv.gz). Units are Metric (Celcius, m/s, etc)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

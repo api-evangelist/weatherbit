@@ -1,0 +1,97 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast 240 Hour / Hourly Forecast API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "240 Hour / Hourly Forecast",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Weatherbit Returns an Hourly Forecast - Given a Lat/lon.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weatherbit.io/v2.0/forecast/hourly",
+            "params": [
+              {
+                "name": "lat",
+                "value": "86.82",
+                "type": "query",
+                "description": "Latitude component of location."
+              },
+              {
+                "name": "lon",
+                "value": "7.04",
+                "type": "query",
+                "description": "Longitude component of location."
+              },
+              {
+                "name": "city_id",
+                "value": "Kansas City",
+                "type": "query",
+                "description": "City ID. Example: 4487042"
+              },
+              {
+                "name": "city",
+                "value": "Kansas City",
+                "type": "query",
+                "description": "City search.. Example - &city=Raleigh,NC or &city=Berlin,DE or city=Paris&country=FR"
+              },
+              {
+                "name": "postal_code",
+                "value": "example-value",
+                "type": "query",
+                "description": "Postal Code. Example: 28546"
+              },
+              {
+                "name": "country",
+                "value": "US",
+                "type": "query",
+                "description": "Country Code (2 letter) - to be used with postal_code."
+              },
+              {
+                "name": "station",
+                "value": "example-value",
+                "type": "query",
+                "description": "Station Call ID."
+              },
+              {
+                "name": "units",
+                "value": "I",
+                "type": "query",
+                "description": "Convert to units. Default Metric See <a target='blank' href='/api/requests'>units field description</a>"
+              },
+              {
+                "name": "lang",
+                "value": "fr",
+                "type": "query",
+                "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>"
+              },
+              {
+                "name": "hours",
+                "value": "71",
+                "type": "query",
+                "description": "Number of hours to return."
+              },
+              {
+                "name": "key",
+                "value": "abc123xyz",
+                "type": "query",
+                "description": "Your registered API key."
+              }
+            ]
+          },
+          "docs": "Returns an hourly forecast, where each point represents a one hour period. Every point has a datetime string in the format \"YYYY-MM-DD:HH\". Time is UTC. \n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

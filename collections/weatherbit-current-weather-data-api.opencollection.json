@@ -1,0 +1,115 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Current Weather Data API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Current Weather Data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Weatherbit Returns a Current Observation - Given a Lat/lon.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weatherbit.io/v2.0/current",
+            "params": [
+              {
+                "name": "lat",
+                "value": "58.5",
+                "type": "query",
+                "description": "Latitude component of location."
+              },
+              {
+                "name": "lon",
+                "value": "74.68",
+                "type": "query",
+                "description": "Longitude component of location."
+              },
+              {
+                "name": "include",
+                "value": "minutely",
+                "type": "query",
+                "description": "Include 1 hour - minutely precip forecast in the response, or severe weather alerts"
+              },
+              {
+                "name": "city_id",
+                "value": "Kansas City",
+                "type": "query",
+                "description": "City ID. Example: 4487042"
+              },
+              {
+                "name": "city",
+                "value": "Kansas City",
+                "type": "query",
+                "description": "City search.. Example - &city=Raleigh,NC or &city=Berlin,DE or city=Paris&country=FR"
+              },
+              {
+                "name": "postal_code",
+                "value": "example-value",
+                "type": "query",
+                "description": "Postal Code. Example: 28546"
+              },
+              {
+                "name": "country",
+                "value": "US",
+                "type": "query",
+                "description": "Country Code (2 letter) - to be used with postal_code."
+              },
+              {
+                "name": "station",
+                "value": "example-value",
+                "type": "query",
+                "description": "Station Call ID."
+              },
+              {
+                "name": "stations",
+                "value": "example-value",
+                "type": "query",
+                "description": "Comma separated list of Station Call ID's. Example: KRDU,KBFI,KVNY"
+              },
+              {
+                "name": "points",
+                "value": "example-value",
+                "type": "query",
+                "description": "Comma separated list of points. Example: (35.5, -75.5),(45, 65),(45.12, -130.5)"
+              },
+              {
+                "name": "cities",
+                "value": "example-value",
+                "type": "query",
+                "description": "Comma separated list of City ID's. Example: 4487042, 4494942, 4504871"
+              },
+              {
+                "name": "units",
+                "value": "S",
+                "type": "query",
+                "description": "Convert to units. Default Metric See <a target='blank' href='/api/requests'>units field description</a>"
+              },
+              {
+                "name": "lang",
+                "value": "uk",
+                "type": "query",
+                "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>"
+              },
+              {
+                "name": "key",
+                "value": "abc123xyz",
+                "type": "query",
+                "description": "Your registered API key."
+              }
+            ]
+          },
+          "docs": "Returns a Current Observation - given a lat, and a lon."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

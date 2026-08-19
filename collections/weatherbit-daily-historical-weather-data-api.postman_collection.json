@@ -1,0 +1,311 @@
+{
+  "item": [
+    {
+      "id": "4d516ec9-e8ff-4623-a0fa-b27d4c5faae6",
+      "name": "Daily Historical Weather Data",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8c4abfae-422a-4dd1-8b56-e8cf0364ffbb",
+          "name": "Weatherbit Returns Historical Observations - Given a Lat/lon.",
+          "request": {
+            "name": "Weatherbit Returns Historical Observations - Given a Lat/lon.",
+            "description": {
+              "content": "Returns Historical Observations - Given a lat, and lon. See https://www.weatherbit.io/api for API specific rate limits.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "history",
+                "daily"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lat",
+                  "value": "<double>",
+                  "description": "Latitude component of location."
+                },
+                {
+                  "disabled": false,
+                  "key": "lon",
+                  "value": "<double>",
+                  "description": "Longitude component of location."
+                },
+                {
+                  "disabled": false,
+                  "key": "city_id",
+                  "value": "<string>",
+                  "description": "City ID. Example: 4487042"
+                },
+                {
+                  "disabled": false,
+                  "key": "city",
+                  "value": "<string>",
+                  "description": "City search.. Example - &city=Raleigh,NC or &city=Berlin,DE or city=Paris&country=FR"
+                },
+                {
+                  "disabled": false,
+                  "key": "postal_code",
+                  "value": "<string>",
+                  "description": "Postal Code. Example: 28546"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "Country Code (2 letter) - to be used with postal_code."
+                },
+                {
+                  "disabled": false,
+                  "key": "station",
+                  "value": "<string>",
+                  "description": "Station Call ID."
+                },
+                {
+                  "disabled": false,
+                  "key": "start_date",
+                  "value": "<string>",
+                  "description": "(Required) Start Date (YYYY-MM-DD or YYYY-MM-DD:HH)."
+                },
+                {
+                  "disabled": false,
+                  "key": "end_date",
+                  "value": "<string>",
+                  "description": "(Required) End Date (YYYY-MM-DD or YYYY-MM-DD:HH)."
+                },
+                {
+                  "disabled": false,
+                  "key": "units",
+                  "value": "<string>",
+                  "description": "Convert to units. Default Metric See <a target='blank' href='/api/requests'>units field description</a>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lang",
+                  "value": "<string>",
+                  "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>"
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>",
+                  "description": "(Required) Your registered API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2f6ecca7-1e64-4cca-b8a7-412050ac2d30",
+              "name": "An Historical Day Data Object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "history",
+                    "daily"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "35.05"
+                    },
+                    {
+                      "key": "lon",
+                      "value": "36.94"
+                    },
+                    {
+                      "key": "city_id",
+                      "value": "Kansas City"
+                    },
+                    {
+                      "key": "city",
+                      "value": "Kansas City"
+                    },
+                    {
+                      "key": "postal_code",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "country",
+                      "value": "US"
+                    },
+                    {
+                      "key": "station",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "units",
+                      "value": "I"
+                    },
+                    {
+                      "key": "lang",
+                      "value": "uk"
+                    },
+                    {
+                      "key": "key",
+                      "value": "abc123xyz"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"city_name\": \"Seattle\",\n  \"state_code\": \"WA\",\n  \"country_code\": \"US\",\n  \"timezone\": \"America/New_York\",\n  \"lat\": 47.61,\n  \"lon\": -122.33,\n  \"sources\": [\n    \"12345-89083\",\n    \"12345-89083\"\n  ],\n  \"data\": [\n    {\n      \"datetime\": \"2015-01-03\",\n      \"ts\": 1501970516,\n      \"revision_status\": \"final\",\n      \"slp\": 1020.1,\n      \"pres\": 885.1,\n      \"rh\": 85,\n      \"dewpt\": -1.5,\n      \"temp\": 1,\n      \"max_temp\": 1.5,\n      \"max_temp_ts\": 1501970816,\n      \"min_temp\": 11.7,\n      \"min_temp_ts\": 1501970516,\n      \"wind_spd\": 14.98,\n      \"wind_dir\": 325,\n      \"wind_gust_spd\": 40.98,\n      \"max_wind_spd\": 19.98,\n      \"max_wind_dir\": 325,\n      \"max_wind_spd_ts\": 1501970516,\n      \"ghi\": 125,\n      \"t_ghi\": 4500,\n      \"dni\": 125,\n      \"t_dni\": 4500,\n      \"dhi\": 125,\n      \"t_dhi\": 4500,\n      \"max_uv\": 6,\n      \"precip\": 3,\n      \"precip_gpm\": 3,\n      \"snow\": 30\n    },\n    {\n      \"datetime\": \"2015-01-03\",\n      \"ts\": 1501970516,\n      \"revision_status\": \"final\",\n      \"slp\": 1020.1,\n      \"pres\": 885.1,\n      \"rh\": 85,\n      \"dewpt\": -1.5,\n      \"temp\": 1,\n      \"max_temp\": 1.5,\n      \"max_temp_ts\": 1501970816,\n      \"min_temp\": 11.7,\n      \"min_temp_ts\": 1501970516,\n      \"wind_spd\": 14.98,\n      \"wind_dir\": 325,\n      \"wind_gust_spd\": 40.98,\n      \"max_wind_spd\": 19.98,\n      \"max_wind_dir\": 325,\n      \"max_wind_spd_ts\": 1501970516,\n      \"ghi\": 125,\n      \"t_ghi\": 4500,\n      \"dni\": 125,\n      \"t_dni\": 4500,\n      \"dhi\": 125,\n      \"t_dhi\": 4500,\n      \"max_uv\": 6,\n      \"precip\": 3,\n      \"precip_gpm\": 3,\n      \"snow\": 30\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "24913b01-d5f6-41fd-8da1-32e729eb1d73",
+              "name": "No Data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "history",
+                    "daily"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "35.05"
+                    },
+                    {
+                      "key": "lon",
+                      "value": "36.94"
+                    },
+                    {
+                      "key": "city_id",
+                      "value": "Kansas City"
+                    },
+                    {
+                      "key": "city",
+                      "value": "Kansas City"
+                    },
+                    {
+                      "key": "postal_code",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "country",
+                      "value": "US"
+                    },
+                    {
+                      "key": "station",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "units",
+                      "value": "I"
+                    },
+                    {
+                      "key": "lang",
+                      "value": "uk"
+                    },
+                    {
+                      "key": "key",
+                      "value": "abc123xyz"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 5806,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.weatherbit.io/v2.0",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2988483a-580c-4e6b-9c9f-a0112912bc68",
+    "name": "Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Daily Historical Weather Data API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This an interactive version of the documentation for the Weatherbit API.  The base URL for the API is [http://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/) or [https://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/). Below is the Swagger UI documentation for the API. All API requests require the `key` parameter.        An Example for a 48 hour forecast for London, UK would be `http://api.weatherbit.io/v2.0/forecast/hourly?lat=51.5072`&`lon=-0.1276`. See our [Weather API description page](https://www.weatherbit.io/api) for the full documentation.",
+      "type": "text/plain"
+    }
+  }
+}

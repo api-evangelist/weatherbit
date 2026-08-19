@@ -1,0 +1,67 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Forecast Degree Day API API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Forecast Degree Day API",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Weatherbit Returns Energy Forecast API Response - Given a Single Lat/lon.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weatherbit.io/v2.0/forecast/energy",
+            "params": [
+              {
+                "name": "lat",
+                "value": "35.45",
+                "type": "query",
+                "description": "Latitude component of location."
+              },
+              {
+                "name": "lon",
+                "value": "8.17",
+                "type": "query",
+                "description": "Longitude component of location."
+              },
+              {
+                "name": "threshold",
+                "value": "59.44",
+                "type": "query",
+                "description": "Temperature threshold to use to calculate degree days (default 18 C) "
+              },
+              {
+                "name": "units",
+                "value": "I",
+                "type": "query",
+                "description": "Convert to units. Default Metric See <a target='blank' href='/api/requests'>units field description</a>"
+              },
+              {
+                "name": "tp",
+                "value": "daily",
+                "type": "query",
+                "description": "Time period (default: daily)"
+              },
+              {
+                "name": "key",
+                "value": "abc123xyz",
+                "type": "query",
+                "description": "Your registered API key."
+              }
+            ]
+          },
+          "docs": "Retrieve an 8 day forecast relevant to te Energy Sector (degree days, solar radiation, precipitation, wind)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

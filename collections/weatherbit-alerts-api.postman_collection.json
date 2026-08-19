@@ -1,0 +1,252 @@
+{
+  "item": [
+    {
+      "id": "bb18ce5d-19e8-4ccd-967d-0891c447d3b2",
+      "name": "Alerts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8072dc83-72bd-4cc5-8a7e-1a84e11bcb5c",
+          "name": "Weatherbit Returns Severe Weather Alerts Issued by Meteorological Agencies - Given a Lat/lon.",
+          "request": {
+            "name": "Weatherbit Returns Severe Weather Alerts Issued by Meteorological Agencies - Given a Lat/lon.",
+            "description": {
+              "content": "Returns severe weather alerts issued by meteorological agencies - given a lat, and a lon.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alerts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lat",
+                  "value": "<double>",
+                  "description": "Latitude component of location."
+                },
+                {
+                  "disabled": false,
+                  "key": "lon",
+                  "value": "<double>",
+                  "description": "Longitude component of location."
+                },
+                {
+                  "disabled": false,
+                  "key": "city_id",
+                  "value": "<string>",
+                  "description": "City ID. Example: 4487042"
+                },
+                {
+                  "disabled": false,
+                  "key": "city",
+                  "value": "<string>",
+                  "description": "City search.. Example - &city=Raleigh,NC or &city=Berlin,DE or city=Paris&country=FR"
+                },
+                {
+                  "disabled": false,
+                  "key": "postal_code",
+                  "value": "<string>",
+                  "description": "Postal Code. Example: 28546"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "Country Code (2 letter) - to be used with postal_code."
+                },
+                {
+                  "disabled": false,
+                  "key": "station",
+                  "value": "<string>",
+                  "description": "Station Call ID."
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>",
+                  "description": "(Required) Your registered API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5dadb901-b36f-4fb0-9f32-ab24db1252c3",
+              "name": "Weather Alert Object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "3.93"
+                    },
+                    {
+                      "key": "lon",
+                      "value": "9.38"
+                    },
+                    {
+                      "key": "city_id",
+                      "value": "Kansas City"
+                    },
+                    {
+                      "key": "city",
+                      "value": "Kansas City"
+                    },
+                    {
+                      "key": "postal_code",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "country",
+                      "value": "US"
+                    },
+                    {
+                      "key": "station",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "key",
+                      "value": "abc123xyz"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"lat\": 38,\n  \"lon\": -78.25,\n  \"alerts\": [\n    {\n      \"title\": \"Flood Warning issued February 8 at 8:51PM CST expiring February 12 at 8:24AM CST by NWS St Louis MO\",\n      \"description\": \"Mississippi River at Chester\\n\\n.This Flood Warning is a result of 1-2 inches of rainfall across\\nthe basin earlier this week...\\nThe Flood Warning continues for\\nthe Mississippi River at Chester\\n* until Tuesday morning.\\n* At  8:30 PM Friday the stage was 26.8 feet.\\n* Flood stage is 27.0 feet.\\n* Minor flooding is forecast.\\n* The river is forecast to rise above flood stage by tonight and to\\ncrest near 29.0 feet by Saturday evening. The river is forecast to\\nfall below flood stage by Monday morning.\\n* Impact:  At 28.0 feet...Unleveed islands near Chester and the prison\\nfarm floods.\\n* Impact:  At 27.0 feet...Flood Stage.  Unprotected farmland on right\\nbank begins to flood.\",\n      \"severity\": \"Warning\",\n      \"effective_utc\": \"2019-02-09 02:51:00\",\n      \"effective_local\": \"2019-02-08 21:51:00\",\n      \"expires_utc\": \"2019-02-10 02:51:00\",\n      \"expires_local\": \"2019-02-09 21:51:00\",\n      \"uri\": \"https://api.weather.gov/alerts/NWS-IDP-PROD-3361975-2942026\",\n      \"alerts\": [\n        \"St Louis, MO\",\n        \"St Louis, MO\"\n      ]\n    },\n    {\n      \"title\": \"Flood Warning issued February 8 at 8:51PM CST expiring February 12 at 8:24AM CST by NWS St Louis MO\",\n      \"description\": \"Mississippi River at Chester\\n\\n.This Flood Warning is a result of 1-2 inches of rainfall across\\nthe basin earlier this week...\\nThe Flood Warning continues for\\nthe Mississippi River at Chester\\n* until Tuesday morning.\\n* At  8:30 PM Friday the stage was 26.8 feet.\\n* Flood stage is 27.0 feet.\\n* Minor flooding is forecast.\\n* The river is forecast to rise above flood stage by tonight and to\\ncrest near 29.0 feet by Saturday evening. The river is forecast to\\nfall below flood stage by Monday morning.\\n* Impact:  At 28.0 feet...Unleveed islands near Chester and the prison\\nfarm floods.\\n* Impact:  At 27.0 feet...Flood Stage.  Unprotected farmland on right\\nbank begins to flood.\",\n      \"severity\": \"Warning\",\n      \"effective_utc\": \"2019-02-09 02:51:00\",\n      \"effective_local\": \"2019-02-08 21:51:00\",\n      \"expires_utc\": \"2019-02-10 02:51:00\",\n      \"expires_local\": \"2019-02-09 21:51:00\",\n      \"uri\": \"https://api.weather.gov/alerts/NWS-IDP-PROD-3361975-2942026\",\n      \"alerts\": [\n        \"St Louis, MO\",\n        \"St Louis, MO\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "097f74ac-2b44-4fa3-b003-b5244ea20132",
+              "name": "No Data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "3.93"
+                    },
+                    {
+                      "key": "lon",
+                      "value": "9.38"
+                    },
+                    {
+                      "key": "city_id",
+                      "value": "Kansas City"
+                    },
+                    {
+                      "key": "city",
+                      "value": "Kansas City"
+                    },
+                    {
+                      "key": "postal_code",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "country",
+                      "value": "US"
+                    },
+                    {
+                      "key": "station",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "key",
+                      "value": "abc123xyz"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2596,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.weatherbit.io/v2.0",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "aafe04bf-2243-4df5-beb6-bf526c0e78bf",
+    "name": "Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Alerts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This an interactive version of the documentation for the Weatherbit API.  The base URL for the API is [http://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/) or [https://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/). Below is the Swagger UI documentation for the API. All API requests require the `key` parameter.        An Example for a 48 hour forecast for London, UK would be `http://api.weatherbit.io/v2.0/forecast/hourly?lat=51.5072`&`lon=-0.1276`. See our [Weather API description page](https://www.weatherbit.io/api) for the full documentation.",
+      "type": "text/plain"
+    }
+  }
+}

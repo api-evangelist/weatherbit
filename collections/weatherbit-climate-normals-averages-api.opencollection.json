@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Climate Normals (Averages) API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Climate Normals (Averages)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Weatherbit Returns Historical Climate Normals (Averages) - Given a Lat/lon.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weatherbit.io/v2.0/normals",
+            "params": [
+              {
+                "name": "lat",
+                "value": "8.25",
+                "type": "query",
+                "description": "Latitude component of location."
+              },
+              {
+                "name": "lon",
+                "value": "21.65",
+                "type": "query",
+                "description": "Longitude component of location."
+              },
+              {
+                "name": "start_day",
+                "value": "example-value",
+                "type": "query",
+                "description": "Start Day (MM-DD)."
+              },
+              {
+                "name": "end_day",
+                "value": "example-value",
+                "type": "query",
+                "description": "End Day (MM-DD)."
+              },
+              {
+                "name": "tp",
+                "value": "daily",
+                "type": "query",
+                "description": "Time period of calculation (daily, monthly, or hourly)."
+              },
+              {
+                "name": "units",
+                "value": "S",
+                "type": "query",
+                "description": "Convert to units. Default Metric See <a target='blank' href='/api/requests'>units field description</a>"
+              },
+              {
+                "name": "series_year",
+                "value": "73",
+                "type": "query",
+                "description": "Series year for calculation. 2020 for 1991-2020. 2010 for 1981-2010."
+              },
+              {
+                "name": "key",
+                "value": "abc123xyz",
+                "type": "query",
+                "description": "Your registered API key."
+              }
+            ]
+          },
+          "docs": "Returns Historical Climate Normals (Averages) - Given a lat, and lon. See https://www.weatherbit.io/api for API specific rate limits."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

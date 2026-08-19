@@ -1,0 +1,85 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast 60 Minute Rain/Snow Nowcast API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "60 Minute Rain/Snow Nowcast",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Weatherbit Returns a 60 Minute Precipitation Forecast - Given Lat/Lon.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weatherbit.io/v2.0/forecast/minutely",
+            "params": [
+              {
+                "name": "lat",
+                "value": "22.12",
+                "type": "query",
+                "description": "Latitude component of location."
+              },
+              {
+                "name": "lon",
+                "value": "91.76",
+                "type": "query",
+                "description": "Longitude component of location."
+              },
+              {
+                "name": "city_id",
+                "value": "Kansas City",
+                "type": "query",
+                "description": "City ID. Example: 4487042"
+              },
+              {
+                "name": "city",
+                "value": "Kansas City",
+                "type": "query",
+                "description": "City search.. Example - &city=Raleigh,NC or &city=Berlin,DE or city=Paris&country=FR"
+              },
+              {
+                "name": "postal_code",
+                "value": "example-value",
+                "type": "query",
+                "description": "Postal Code. Example: 28546"
+              },
+              {
+                "name": "country",
+                "value": "US",
+                "type": "query",
+                "description": "Country Code (2 letter) - to be used with postal_code."
+              },
+              {
+                "name": "station",
+                "value": "example-value",
+                "type": "query",
+                "description": "Station Call ID."
+              },
+              {
+                "name": "units",
+                "value": "S",
+                "type": "query",
+                "description": "Convert to units. Default Metric See <a target='blank' href='/api/requests'>units field description</a>"
+              },
+              {
+                "name": "key",
+                "value": "abc123xyz",
+                "type": "query",
+                "description": "Your registered API key."
+              }
+            ]
+          },
+          "docs": "Returns a 60 minute precipitation forecast, where each point represents one minute (1 min) period."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

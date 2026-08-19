@@ -1,0 +1,241 @@
+{
+  "item": [
+    {
+      "id": "147e3a6e-d26c-4268-b4d5-68565f294d84",
+      "name": "Historical AgWeather Data",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "da91d907-f5cf-4598-a645-87f78f9eef75",
+          "name": "Weatherbit Returns Historical Agweather - Given a Lat/lon.",
+          "request": {
+            "name": "Weatherbit Returns Historical Agweather - Given a Lat/lon.",
+            "description": {
+              "content": "Returns Historical Agweather Observations - Given a lat, and lon. See https://www.weatherbit.io/api for API specific rate limits.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "history",
+                "agweather"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lat",
+                  "value": "<double>",
+                  "description": "Latitude component of location."
+                },
+                {
+                  "disabled": false,
+                  "key": "lon",
+                  "value": "<double>",
+                  "description": "Longitude component of location."
+                },
+                {
+                  "disabled": false,
+                  "key": "start_date",
+                  "value": "<string>",
+                  "description": "(Required) Start Date (YYYY-MM-DD or YYYY-MM-DD:HH)."
+                },
+                {
+                  "disabled": false,
+                  "key": "end_date",
+                  "value": "<string>",
+                  "description": "(Required) End Date (YYYY-MM-DD or YYYY-MM-DD:HH)."
+                },
+                {
+                  "disabled": false,
+                  "key": "tp",
+                  "value": "<string>",
+                  "description": "(Required) Time period of calculation (daily [DEFAULT], or hourly)."
+                },
+                {
+                  "disabled": false,
+                  "key": "units",
+                  "value": "<string>",
+                  "description": "Convert to units. Default Metric See <a target='blank' href='/api/requests'>units field description</a>"
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>",
+                  "description": "(Required) Your registered API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e876eb70-c7e5-433d-88de-f982f03844a6",
+              "name": "An AGWeather Historical Data Object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "history",
+                    "agweather"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "41.08"
+                    },
+                    {
+                      "key": "lon",
+                      "value": "16.98"
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "tp",
+                      "value": "hourly"
+                    },
+                    {
+                      "key": "units",
+                      "value": "I"
+                    },
+                    {
+                      "key": "key",
+                      "value": "abc123xyz"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"lat\": 47.61,\n  \"lon\": -122.33,\n  \"data\": [\n    {\n      \"bulk_soil_density\": 1370,\n      \"dlwrf_avg\": 418.656,\n      \"dlwrf_max\": 440.25,\n      \"dlwrf_net\": 143,\n      \"dswrf_avg\": 158.848,\n      \"dswrf_max\": 492.25,\n      \"dswrf_net\": -50.832,\n      \"evapotranspiration\": 4.247,\n      \"precip\": 18.5,\n      \"pres_avg\": 1011.644,\n      \"revision_status\": \"final\",\n      \"skin_temp_avg\": 29.4,\n      \"skin_temp_max\": 40.4,\n      \"skin_temp_min\": 25.4,\n      \"soilm_0_10cm\": 25.697,\n      \"soilm_100_200cm\": 273.625,\n      \"soilm_10_40cm\": 72.813,\n      \"soilm_40_100cm\": 152.203,\n      \"soilt_0_10cm\": 29.5,\n      \"soilt_100_200cm\": 24.4,\n      \"soilt_10_40cm\": 29.8,\n      \"soilt_40_100cm\": 27.7,\n      \"specific_humidity\": 0.014513969421387,\n      \"timestamp_local\": \"2023-09-08 00:00:00\",\n      \"timestamp_utc\": \"2023-09-08 00:00:00\",\n      \"temp_2m_avg\": 26.6,\n      \"v_soilm_0_10cm\": 0.257,\n      \"v_soilm_100_200cm\": 0.274,\n      \"v_soilm_10_40cm\": 0.243,\n      \"v_soilm_40_100cm\": 0.254,\n      \"valid_date\": \"2023-09-08\",\n      \"wind_10m_spd_avg\": 2.505\n    },\n    {\n      \"bulk_soil_density\": 1370,\n      \"dlwrf_avg\": 418.656,\n      \"dlwrf_max\": 440.25,\n      \"dlwrf_net\": 143,\n      \"dswrf_avg\": 158.848,\n      \"dswrf_max\": 492.25,\n      \"dswrf_net\": -50.832,\n      \"evapotranspiration\": 4.247,\n      \"precip\": 18.5,\n      \"pres_avg\": 1011.644,\n      \"revision_status\": \"final\",\n      \"skin_temp_avg\": 29.4,\n      \"skin_temp_max\": 40.4,\n      \"skin_temp_min\": 25.4,\n      \"soilm_0_10cm\": 25.697,\n      \"soilm_100_200cm\": 273.625,\n      \"soilm_10_40cm\": 72.813,\n      \"soilm_40_100cm\": 152.203,\n      \"soilt_0_10cm\": 29.5,\n      \"soilt_100_200cm\": 24.4,\n      \"soilt_10_40cm\": 29.8,\n      \"soilt_40_100cm\": 27.7,\n      \"specific_humidity\": 0.014513969421387,\n      \"timestamp_local\": \"2023-09-08 00:00:00\",\n      \"timestamp_utc\": \"2023-09-08 00:00:00\",\n      \"temp_2m_avg\": 26.6,\n      \"v_soilm_0_10cm\": 0.257,\n      \"v_soilm_100_200cm\": 0.274,\n      \"v_soilm_10_40cm\": 0.243,\n      \"v_soilm_40_100cm\": 0.254,\n      \"valid_date\": \"2023-09-08\",\n      \"wind_10m_spd_avg\": 2.505\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "83723130-1635-4283-8fa5-d9cd9ca3279c",
+              "name": "No Data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "history",
+                    "agweather"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "41.08"
+                    },
+                    {
+                      "key": "lon",
+                      "value": "16.98"
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "tp",
+                      "value": "hourly"
+                    },
+                    {
+                      "key": "units",
+                      "value": "I"
+                    },
+                    {
+                      "key": "key",
+                      "value": "abc123xyz"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 341,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.weatherbit.io/v2.0",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a8182076-4f72-4c09-893c-820c43888f1e",
+    "name": "Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Historical AgWeather Data API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This an interactive version of the documentation for the Weatherbit API.  The base URL for the API is [http://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/) or [https://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/). Below is the Swagger UI documentation for the API. All API requests require the `key` parameter.        An Example for a 48 hour forecast for London, UK would be `http://api.weatherbit.io/v2.0/forecast/hourly?lat=51.5072`&`lon=-0.1276`. See our [Weather API description page](https://www.weatherbit.io/api) for the full documentation.",
+      "type": "text/plain"
+    }
+  }
+}

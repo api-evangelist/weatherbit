@@ -1,0 +1,132 @@
+{
+  "item": [
+    {
+      "id": "ac80426d-3857-478a-b235-39aa2c07c816",
+      "name": "Bulk Downloads",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "61e9a66a-c953-490c-8547-bfec011d0f20",
+          "name": "Weatherbit Download Pre-generated Bulk Datasets",
+          "request": {
+            "name": "Weatherbit Download Pre-generated Bulk Datasets",
+            "description": {
+              "content": "Downloads bulk data files - OPTIONS: ( current.csv.gz, forecast_hourly.csv.gz, forecast_daily.csv.gz). Units are Metric (Celcius, m/s, etc).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "bulk",
+                "files"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>",
+                  "description": "(Required) Your registered API key."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "file",
+                  "description": "(Required) Filename (ie. current.csv.gz)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "107d1b95-e3e9-4926-a74b-2bf10dde1090",
+              "name": "No Data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bulk",
+                    "files"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "abc123xyz"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "file",
+                      "description": "(Required) Filename (ie. current.csv.gz)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1282,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.weatherbit.io/v2.0",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8c37d249-220e-4c20-893a-f1eb0085001c",
+    "name": "Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Bulk Downloads API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This an interactive version of the documentation for the Weatherbit API.  The base URL for the API is [http://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/) or [https://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/). Below is the Swagger UI documentation for the API. All API requests require the `key` parameter.        An Example for a 48 hour forecast for London, UK would be `http://api.weatherbit.io/v2.0/forecast/hourly?lat=51.5072`&`lon=-0.1276`. See our [Weather API description page](https://www.weatherbit.io/api) for the full documentation.",
+      "type": "text/plain"
+    }
+  }
+}

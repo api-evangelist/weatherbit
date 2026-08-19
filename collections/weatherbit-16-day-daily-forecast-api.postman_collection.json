@@ -1,0 +1,297 @@
+{
+  "item": [
+    {
+      "id": "3539173c-04dc-4912-a315-128eb923ad9c",
+      "name": "16 Day / Daily Forecast",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "df8dc28e-6e89-436d-a945-b5c014f8d246",
+          "name": "Weatherbit Returns a Daily Forecast - Given Lat/Lon.",
+          "request": {
+            "name": "Weatherbit Returns a Daily Forecast - Given Lat/Lon.",
+            "description": {
+              "content": "Returns a daily forecast, where each point represents one day (24hr) period. Every point has a datetime string in the format \"YYYY-MM-DD\". One day begins at 00:00 UTC, and ends at 23:59 UTC. \n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "forecast",
+                "daily"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lat",
+                  "value": "<double>",
+                  "description": "Latitude component of location."
+                },
+                {
+                  "disabled": false,
+                  "key": "lon",
+                  "value": "<double>",
+                  "description": "Longitude component of location."
+                },
+                {
+                  "disabled": false,
+                  "key": "city_id",
+                  "value": "<string>",
+                  "description": "City ID. Example: 4487042"
+                },
+                {
+                  "disabled": false,
+                  "key": "city",
+                  "value": "<string>",
+                  "description": "City search.. Example - &city=Raleigh,NC or &city=Berlin,DE or city=Paris&country=FR"
+                },
+                {
+                  "disabled": false,
+                  "key": "postal_code",
+                  "value": "<string>",
+                  "description": "Postal Code. Example: 28546"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "Country Code (2 letter) - to be used with postal_code."
+                },
+                {
+                  "disabled": false,
+                  "key": "station",
+                  "value": "<string>",
+                  "description": "Station Call ID."
+                },
+                {
+                  "disabled": false,
+                  "key": "days",
+                  "value": "<integer>",
+                  "description": "Number of days to return. Default 16."
+                },
+                {
+                  "disabled": false,
+                  "key": "units",
+                  "value": "<string>",
+                  "description": "Convert to units. Default Metric See <a target='blank' href='/api/requests'>units field description</a>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lang",
+                  "value": "<string>",
+                  "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>"
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>",
+                  "description": "(Required) Your registered API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0936c0ac-8c57-4679-9c4c-9824f58bb90a",
+              "name": "A forecast object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "forecast",
+                    "daily"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "44.48"
+                    },
+                    {
+                      "key": "lon",
+                      "value": "23.85"
+                    },
+                    {
+                      "key": "city_id",
+                      "value": "Kansas City"
+                    },
+                    {
+                      "key": "city",
+                      "value": "Kansas City"
+                    },
+                    {
+                      "key": "postal_code",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "country",
+                      "value": "US"
+                    },
+                    {
+                      "key": "station",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "days",
+                      "value": "29.76"
+                    },
+                    {
+                      "key": "units",
+                      "value": "S"
+                    },
+                    {
+                      "key": "lang",
+                      "value": "el"
+                    },
+                    {
+                      "key": "key",
+                      "value": "abc123xyz"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"city_name\": \"Raleigh\",\n  \"state_code\": \"NC\",\n  \"country_code\": \"US\",\n  \"lat\": 38.25,\n  \"lon\": -78,\n  \"timezone\": \"America/New_York\",\n  \"data\": [\n    {\n      \"ts\": 1551718800,\n      \"timestamp_local\": \"2019-03-04 12:00:00\",\n      \"timestamp_utc\": \"2019-03-04 17:00:00\",\n      \"datetime\": \"2019-03-04:17\",\n      \"snow\": 10.45,\n      \"precip\": 1.1,\n      \"temp\": 1,\n      \"dewpt\": 1,\n      \"max_temp\": 1.5,\n      \"min_temp\": -1.23,\n      \"app_max_temp\": 4,\n      \"app_min_temp\": -2,\n      \"rh\": 95,\n      \"clouds\": 100,\n      \"weather\": {\n        \"icon\": \"s02n\",\n        \"code\": 601,\n        \"description\": \"Snow\"\n      },\n      \"slp\": 1012.89,\n      \"pres\": 1005,\n      \"uv\": 6.5,\n      \"vis\": 3,\n      \"pop\": 75,\n      \"moon_phase\": 0.87,\n      \"sunrise_ts\": 1530331260,\n      \"sunset_ts\": 1530331260,\n      \"moonrise_ts\": 1530331260,\n      \"moonset_ts\": 1530331260,\n      \"pod\": \"n\",\n      \"wind_spd\": 13.85,\n      \"wind_dir\": 105,\n      \"wind_cdir\": \"ENE\",\n      \"wind_cdir_full\": \"East-North-East\"\n    },\n    {\n      \"ts\": 1551718800,\n      \"timestamp_local\": \"2019-03-04 12:00:00\",\n      \"timestamp_utc\": \"2019-03-04 17:00:00\",\n      \"datetime\": \"2019-03-04:17\",\n      \"snow\": 10.45,\n      \"precip\": 1.1,\n      \"temp\": 1,\n      \"dewpt\": 1,\n      \"max_temp\": 1.5,\n      \"min_temp\": -1.23,\n      \"app_max_temp\": 4,\n      \"app_min_temp\": -2,\n      \"rh\": 95,\n      \"clouds\": 100,\n      \"weather\": {\n        \"icon\": \"s02n\",\n        \"code\": 601,\n        \"description\": \"Snow\"\n      },\n      \"slp\": 1012.89,\n      \"pres\": 1005,\n      \"uv\": 6.5,\n      \"vis\": 3,\n      \"pop\": 75,\n      \"moon_phase\": 0.87,\n      \"sunrise_ts\": 1530331260,\n      \"sunset_ts\": 1530331260,\n      \"moonrise_ts\": 1530331260,\n      \"moonset_ts\": 1530331260,\n      \"pod\": \"n\",\n      \"wind_spd\": 13.85,\n      \"wind_dir\": 105,\n      \"wind_cdir\": \"ENE\",\n      \"wind_cdir_full\": \"East-North-East\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4eb22f04-6110-4546-8199-75199c36669a",
+              "name": "No Data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "forecast",
+                    "daily"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "44.48"
+                    },
+                    {
+                      "key": "lon",
+                      "value": "23.85"
+                    },
+                    {
+                      "key": "city_id",
+                      "value": "Kansas City"
+                    },
+                    {
+                      "key": "city",
+                      "value": "Kansas City"
+                    },
+                    {
+                      "key": "postal_code",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "country",
+                      "value": "US"
+                    },
+                    {
+                      "key": "station",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "days",
+                      "value": "29.76"
+                    },
+                    {
+                      "key": "units",
+                      "value": "S"
+                    },
+                    {
+                      "key": "lang",
+                      "value": "el"
+                    },
+                    {
+                      "key": "key",
+                      "value": "abc123xyz"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8084,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.weatherbit.io/v2.0",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "719b2b42-e762-424f-8e76-80d342139397",
+    "name": "Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This an interactive version of the documentation for the Weatherbit API.  The base URL for the API is [http://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/) or [https://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/). Below is the Swagger UI documentation for the API. All API requests require the `key` parameter.        An Example for a 48 hour forecast for London, UK would be `http://api.weatherbit.io/v2.0/forecast/hourly?lat=51.5072`&`lon=-0.1276`. See our [Weather API description page](https://www.weatherbit.io/api) for the full documentation.",
+      "type": "text/plain"
+    }
+  }
+}

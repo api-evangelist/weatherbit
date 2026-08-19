@@ -1,0 +1,109 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Hourly Historical Weather Data API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Hourly Historical Weather Data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Weatherbit Returns Historical Observations - Given a Lat/lon.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weatherbit.io/v2.0/history/hourly",
+            "params": [
+              {
+                "name": "lat",
+                "value": "64.13",
+                "type": "query",
+                "description": "Latitude component of location."
+              },
+              {
+                "name": "lon",
+                "value": "38.01",
+                "type": "query",
+                "description": "Longitude component of location."
+              },
+              {
+                "name": "city_id",
+                "value": "Kansas City",
+                "type": "query",
+                "description": "City ID. Example: 4487042"
+              },
+              {
+                "name": "city",
+                "value": "Kansas City",
+                "type": "query",
+                "description": "City search.. Example - &city=Raleigh,NC or &city=Berlin,DE or city=Paris&country=FR"
+              },
+              {
+                "name": "postal_code",
+                "value": "example-value",
+                "type": "query",
+                "description": "Postal Code. Example: 28546"
+              },
+              {
+                "name": "country",
+                "value": "US",
+                "type": "query",
+                "description": "Country Code (2 letter) - to be used with postal_code."
+              },
+              {
+                "name": "station",
+                "value": "example-value",
+                "type": "query",
+                "description": "Station Call ID."
+              },
+              {
+                "name": "start_date",
+                "value": "example-value",
+                "type": "query",
+                "description": "Start Date (YYYY-MM-DD or YYYY-MM-DD:HH)."
+              },
+              {
+                "name": "end_date",
+                "value": "example-value",
+                "type": "query",
+                "description": "End Date (YYYY-MM-DD or YYYY-MM-DD:HH)."
+              },
+              {
+                "name": "units",
+                "value": "S",
+                "type": "query",
+                "description": "Convert to units. Default Metric See <a target='blank' href='/api/requests'>units field description</a>"
+              },
+              {
+                "name": "lang",
+                "value": "sv",
+                "type": "query",
+                "description": "Language (Default: English) See <a target='blank' href='/api/requests'>language field description</a>"
+              },
+              {
+                "name": "tz",
+                "value": "local",
+                "type": "query",
+                "description": "Assume utc (default) or local time for start_date, end_date"
+              },
+              {
+                "name": "key",
+                "value": "abc123xyz",
+                "type": "query",
+                "description": "Your registered API key."
+              }
+            ]
+          },
+          "docs": "Returns Historical Observations - Given a lat, and lon. See https://www.weatherbit.io/api for API specific rate limits."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

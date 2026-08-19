@@ -1,0 +1,241 @@
+{
+  "item": [
+    {
+      "id": "3cf4fd11-1c01-4940-abb2-a0b452896ce3",
+      "name": "Current Air Quality",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "04cfba97-257f-4d22-8f13-be77fb1ba3f8",
+          "name": "Weatherbit Returns Current Air Quality Conditions - Given a Geolocation.",
+          "request": {
+            "name": "Weatherbit Returns Current Air Quality Conditions - Given a Geolocation.",
+            "description": {
+              "content": "Returns current air quality conditions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "current",
+                "airquality"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lat",
+                  "value": "<double>",
+                  "description": "Latitude component of location."
+                },
+                {
+                  "disabled": false,
+                  "key": "lon",
+                  "value": "<double>",
+                  "description": "Longitude component of location."
+                },
+                {
+                  "disabled": false,
+                  "key": "city_id",
+                  "value": "<string>",
+                  "description": "City ID. Example: 4487042"
+                },
+                {
+                  "disabled": false,
+                  "key": "city",
+                  "value": "<string>",
+                  "description": "City search.. Example - &city=Raleigh,NC or &city=Berlin,DE or city=Paris&country=FR"
+                },
+                {
+                  "disabled": false,
+                  "key": "postal_code",
+                  "value": "<string>",
+                  "description": "Postal Code. Example: 28546"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "Country Code (2 letter) - to be used with postal_code."
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>",
+                  "description": "(Required) Your registered API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "87c040d7-2cb0-44aa-bff6-d09b89482e3e",
+              "name": "Current air quality conditions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "current",
+                    "airquality"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "1.36"
+                    },
+                    {
+                      "key": "lon",
+                      "value": "36.08"
+                    },
+                    {
+                      "key": "city_id",
+                      "value": "Kansas City"
+                    },
+                    {
+                      "key": "city",
+                      "value": "Kansas City"
+                    },
+                    {
+                      "key": "postal_code",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "country",
+                      "value": "US"
+                    },
+                    {
+                      "key": "key",
+                      "value": "abc123xyz"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"city_name\": \"Raleigh\",\n  \"state_code\": \"NC\",\n  \"country_code\": \"US\",\n  \"lat\": 38.25,\n  \"lon\": -78,\n  \"timezone\": \"America/New_York\",\n  \"data\": [\n    {\n      \"aqi\": 100,\n      \"so2\": 50,\n      \"no2\": 25,\n      \"o3\": 2,\n      \"pm25\": 230,\n      \"pm10\": 150\n    },\n    {\n      \"aqi\": 100,\n      \"so2\": 50,\n      \"no2\": 25,\n      \"o3\": 2,\n      \"pm25\": 230,\n      \"pm10\": 150\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "db91ac6b-78c4-4bba-b197-640eeaa737de",
+              "name": "No Data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "current",
+                    "airquality"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "1.36"
+                    },
+                    {
+                      "key": "lon",
+                      "value": "36.08"
+                    },
+                    {
+                      "key": "city_id",
+                      "value": "Kansas City"
+                    },
+                    {
+                      "key": "city",
+                      "value": "Kansas City"
+                    },
+                    {
+                      "key": "postal_code",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "country",
+                      "value": "US"
+                    },
+                    {
+                      "key": "key",
+                      "value": "abc123xyz"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1726,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.weatherbit.io/v2.0",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "77c3f29f-d9d9-4114-88a8-6318b925ba01",
+    "name": "Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Current Air Quality API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This an interactive version of the documentation for the Weatherbit API.  The base URL for the API is [http://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/) or [https://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/). Below is the Swagger UI documentation for the API. All API requests require the `key` parameter.        An Example for a 48 hour forecast for London, UK would be `http://api.weatherbit.io/v2.0/forecast/hourly?lat=51.5072`&`lon=-0.1276`. See our [Weather API description page](https://www.weatherbit.io/api) for the full documentation.",
+      "type": "text/plain"
+    }
+  }
+}

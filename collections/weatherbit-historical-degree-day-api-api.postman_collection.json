@@ -1,0 +1,255 @@
+{
+  "item": [
+    {
+      "id": "e1082426-0f98-4c7d-a615-c0de85d72aff",
+      "name": "Historical Degree Day API",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "67f6370d-6dd4-4e94-a2bc-1a587bd400b1",
+          "name": "Weatherbit Returns Energy API Response - Given a Single Lat/lon.",
+          "request": {
+            "name": "Weatherbit Returns Energy API Response - Given a Single Lat/lon.",
+            "description": {
+              "content": "Returns aggregate energy specific historical weather fields, over a specified time period. See https://www.weatherbit.io/api for API specific rate limits.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "history",
+                "energy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lat",
+                  "value": "<double>",
+                  "description": "(Required) Latitude component of location."
+                },
+                {
+                  "disabled": false,
+                  "key": "lon",
+                  "value": "<double>",
+                  "description": "(Required) Longitude component of location."
+                },
+                {
+                  "disabled": false,
+                  "key": "start_date",
+                  "value": "<string>",
+                  "description": "(Required) Start Date (YYYY-MM-DD or YYYY-MM-DD:HH)."
+                },
+                {
+                  "disabled": false,
+                  "key": "end_date",
+                  "value": "<string>",
+                  "description": "(Required) End Date (YYYY-MM-DD or YYYY-MM-DD:HH)."
+                },
+                {
+                  "disabled": false,
+                  "key": "tp",
+                  "value": "<string>",
+                  "description": "Time period to aggregate by (daily, monthly)"
+                },
+                {
+                  "disabled": false,
+                  "key": "threshold",
+                  "value": "<double>",
+                  "description": "Temperature threshold to use to calculate degree days (default 18 C) "
+                },
+                {
+                  "disabled": false,
+                  "key": "units",
+                  "value": "<string>",
+                  "description": "Convert to units. Default Metric See <a target='blank' href='/api/requests'>units field description</a>"
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>",
+                  "description": "(Required) Your registered API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0b883e12-47ad-478d-9ef9-3a5f84a5d40d",
+              "name": "An Energy Data Object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "history",
+                    "energy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "74.69"
+                    },
+                    {
+                      "key": "lon",
+                      "value": "61.34"
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "tp",
+                      "value": "monthly"
+                    },
+                    {
+                      "key": "threshold",
+                      "value": "22.57"
+                    },
+                    {
+                      "key": "units",
+                      "value": "S"
+                    },
+                    {
+                      "key": "key",
+                      "value": "abc123xyz"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 1,\n  \"start_date\": 286,\n  \"end_date\": 7594,\n  \"data\": [\n    {\n      \"city_name\": \"Raleigh\",\n      \"state_code\": \"NC\",\n      \"country_code\": \"US\",\n      \"timezone\": \"America/New_York\",\n      \"lat\": 38,\n      \"lon\": -78.25,\n      \"station_id\": \"12345-999999\",\n      \"sources\": [\n        \"12345-89083\",\n        \"12345-89083\"\n      ],\n      \"cdd\": 10,\n      \"hdd\": 120,\n      \"rh\": 75,\n      \"dewpt\": 12,\n      \"wind_dir\": 125,\n      \"wind_spd\": 5.85,\n      \"temp\": 13.85,\n      \"clouds\": 42,\n      \"t_ghi\": 3000,\n      \"t_dhi\": 450,\n      \"t_dni\": 1200,\n      \"sun_hours\": 4.5,\n      \"precip\": 2,\n      \"snow\": 10\n    },\n    {\n      \"city_name\": \"Raleigh\",\n      \"state_code\": \"NC\",\n      \"country_code\": \"US\",\n      \"timezone\": \"America/New_York\",\n      \"lat\": 38,\n      \"lon\": -78.25,\n      \"station_id\": \"12345-999999\",\n      \"sources\": [\n        \"12345-89083\",\n        \"12345-89083\"\n      ],\n      \"cdd\": 10,\n      \"hdd\": 120,\n      \"rh\": 75,\n      \"dewpt\": 12,\n      \"wind_dir\": 125,\n      \"wind_spd\": 5.85,\n      \"temp\": 13.85,\n      \"clouds\": 42,\n      \"t_ghi\": 3000,\n      \"t_dhi\": 450,\n      \"t_dni\": 1200,\n      \"sun_hours\": 4.5,\n      \"precip\": 2,\n      \"snow\": 10\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "19b7ac72-1031-430f-b24d-c81bd1289f1f",
+              "name": "No Data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "history",
+                    "energy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "74.69"
+                    },
+                    {
+                      "key": "lon",
+                      "value": "61.34"
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "example-value"
+                    },
+                    {
+                      "key": "tp",
+                      "value": "monthly"
+                    },
+                    {
+                      "key": "threshold",
+                      "value": "22.57"
+                    },
+                    {
+                      "key": "units",
+                      "value": "S"
+                    },
+                    {
+                      "key": "key",
+                      "value": "abc123xyz"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 6921,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.weatherbit.io/v2.0",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7a2fb6d8-da52-4478-9de3-f1684f0c3e7a",
+    "name": "Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Historical Degree Day API API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This an interactive version of the documentation for the Weatherbit API.  The base URL for the API is [http://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/) or [https://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/). Below is the Swagger UI documentation for the API. All API requests require the `key` parameter.        An Example for a 48 hour forecast for London, UK would be `http://api.weatherbit.io/v2.0/forecast/hourly?lat=51.5072`&`lon=-0.1276`. See our [Weather API description page](https://www.weatherbit.io/api) for the full documentation.",
+      "type": "text/plain"
+    }
+  }
+}

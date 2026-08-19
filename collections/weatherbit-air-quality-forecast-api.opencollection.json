@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Air Quality Forecast API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Air Quality Forecast",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Weatherbit Returns 72 Hour (hourly) Air Quality Forecast - Given a Geolocation.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.weatherbit.io/v2.0/forecast/airquality",
+            "params": [
+              {
+                "name": "lat",
+                "value": "40.04",
+                "type": "query",
+                "description": "Latitude component of location."
+              },
+              {
+                "name": "lon",
+                "value": "59",
+                "type": "query",
+                "description": "Longitude component of location."
+              },
+              {
+                "name": "city_id",
+                "value": "Kansas City",
+                "type": "query",
+                "description": "City ID. Example: 4487042"
+              },
+              {
+                "name": "city",
+                "value": "Kansas City",
+                "type": "query",
+                "description": "City search.. Example - &city=Raleigh,NC or &city=Berlin,DE or city=Paris&country=FR"
+              },
+              {
+                "name": "postal_code",
+                "value": "example-value",
+                "type": "query",
+                "description": "Postal Code. Example: 28546"
+              },
+              {
+                "name": "country",
+                "value": "US",
+                "type": "query",
+                "description": "Country Code (2 letter) - to be used with postal_code."
+              },
+              {
+                "name": "key",
+                "value": "abc123xyz",
+                "type": "query",
+                "description": "Your registered API key."
+              },
+              {
+                "name": "hours",
+                "value": "17",
+                "type": "query",
+                "description": "Number of hours to return."
+              }
+            ]
+          },
+          "docs": "Returns 72 hour (hourly) Air Quality forecast, where each point represents a one hour period."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
