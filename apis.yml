@@ -331,6 +331,8 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/weatherbit.png
 common:
+- type: Website
+  url: https://www.weatherbit.io/
 - type: AgenticAccess
   url: agentic-access/weatherbit-agentic-access.yml
 - type: DomainSecurity
