@@ -13,9 +13,8 @@ apis:
   properties:
   - url: https://www.weatherbit.io/api/alerts
     type: Documentation
-  description: >-
-    Returns severe weather alerts issued by local meteorological agencies. Covers the USA (NOAA), EU nations
-    and UK (Meteoalarm), Canada (Environment Canada), and China (China Meteorological Administration).
+  description: Returns severe weather alerts issued by local meteorological agencies. Covers the USA (NOAA),
+    EU nations and UK (Meteoalarm), Canada (Environment Canada), and China (China Meteorological Administration).
 - aid: weatherbit:weatherbit-weather-forecast-api
   name: Weatherbit Weather Forecast API
   tags:
@@ -29,9 +28,8 @@ apis:
   properties:
   - url: https://www.weatherbit.io/api/weather-forecast-api
     type: Documentation
-  description: >-
-    Provides accurate weather forecasts using high-resolution global and regional weather models. Includes
-    16-day daily, 240-hour hourly, and 60-minute precipitation nowcasts.
+  description: Provides accurate weather forecasts using high-resolution global and regional weather models.
+    Includes 16-day daily, 240-hour hourly, and 60-minute precipitation nowcasts.
 - aid: weatherbit:weatherbit-historical-weather-api
   name: Weatherbit Historical Weather API
   tags:
@@ -44,9 +42,8 @@ apis:
   properties:
   - url: https://www.weatherbit.io/api/historical-weather-api
     type: Documentation
-  description: >-
-    High-resolution historical weather data backed by over 120,000 weather stations and gridded datasets.
-    Includes daily, hourly, and sub-hourly observations, climate normals, and gap-free data.
+  description: High-resolution historical weather data backed by over 120,000 weather stations and gridded
+    datasets. Includes daily, hourly, and sub-hourly observations, climate normals, and gap-free data.
 - aid: weatherbit:weatherbit-ag-weather-api
   name: Weatherbit Ag-Weather API
   tags:
@@ -59,9 +56,8 @@ apis:
   properties:
   - url: https://www.weatherbit.io/api/agweather-api
     type: Documentation
-  description: >-
-    Agricultural weather data using the GLDAS re-analysis with global coverage at 0.25-degree resolution.
-    Includes evapotranspiration, soil moisture, and crop-specific weather parameters.
+  description: Agricultural weather data using the GLDAS re-analysis with global coverage at 0.25-degree
+    resolution. Includes evapotranspiration, soil moisture, and crop-specific weather parameters.
 - aid: weatherbit:weatherbit-air-quality-api
   name: Weatherbit Air Quality API
   tags:
@@ -74,14 +70,12 @@ apis:
   properties:
   - url: https://www.weatherbit.io/api/air-quality-api
     type: Documentation
-  description: >-
-    High-quality air quality data derived from global and regional air quality models. Tracks six major
-    pollutants (PM2.5, PM10, O3, NO2, SO2, CO) plus pollen levels and mold. Includes current and 72-hour
-    forecast data.
+  description: High-quality air quality data derived from global and regional air quality models. Tracks
+    six major pollutants (PM2.5, PM10, O3, NO2, SO2, CO) plus pollen levels and mold. Includes current
+    and 72-hour forecast data.
 - aid: weatherbit:weatherbit-16-day-daily-forecast-api
   name: Weatherbit 16 Day / Daily Forecast API
-  description: >-
-    The 16 Day / Daily Forecast API from Weatherbit — 1 operation(s) for 16 day / daily forecast.
+  description: The 16 Day / Daily Forecast API from Weatherbit — 1 operation(s) for 16 day / daily forecast.
   humanURL: https://www.weatherbit.io/api/weather-current
   baseURL: https://api.weatherbit.io/v2.0
   tags:
@@ -93,8 +87,8 @@ apis:
     url: https://www.weatherbit.io/api/weather-current
 - aid: weatherbit:weatherbit-240-hour-hourly-forecast-api
   name: Weatherbit 240 Hour / Hourly Forecast API
-  description: >-
-    The 240 Hour / Hourly Forecast API from Weatherbit — 1 operation(s) for 240 hour / hourly forecast.
+  description: The 240 Hour / Hourly Forecast API from Weatherbit — 1 operation(s) for 240 hour / hourly
+    forecast.
   humanURL: https://www.weatherbit.io/api/weather-current
   baseURL: https://api.weatherbit.io/v2.0
   tags:
@@ -106,8 +100,8 @@ apis:
     url: https://www.weatherbit.io/api/weather-current
 - aid: weatherbit:weatherbit-60-minute-rain-snow-nowcast-api
   name: Weatherbit 60 Minute Rain/Snow Nowcast API
-  description: >-
-    The 60 Minute Rain/Snow Nowcast API from Weatherbit — 1 operation(s) for 60 minute rain/snow nowcast.
+  description: The 60 Minute Rain/Snow Nowcast API from Weatherbit — 1 operation(s) for 60 minute rain/snow
+    nowcast.
   humanURL: https://www.weatherbit.io/api/weather-current
   baseURL: https://api.weatherbit.io/v2.0
   tags:
@@ -167,8 +161,8 @@ apis:
     url: https://www.weatherbit.io/api/weather-current
 - aid: weatherbit:weatherbit-climate-normals-averages-api
   name: Weatherbit Climate Normals (Averages) API
-  description: >-
-    The Climate Normals (Averages) API from Weatherbit — 1 operation(s) for climate normals (averages).
+  description: The Climate Normals (Averages) API from Weatherbit — 1 operation(s) for climate normals
+    (averages).
   humanURL: https://www.weatherbit.io/api/weather-current
   baseURL: https://api.weatherbit.io/v2.0
   tags:
@@ -204,9 +198,8 @@ apis:
     url: https://www.weatherbit.io/api/weather-current
 - aid: weatherbit:weatherbit-daily-historical-weather-data-api
   name: Weatherbit Daily Historical Weather Data API
-  description: >-
-    The Daily Historical Weather Data API from Weatherbit — 1 operation(s) for daily historical weather
-    data.
+  description: The Daily Historical Weather Data API from Weatherbit — 1 operation(s) for daily historical
+    weather data.
   humanURL: https://www.weatherbit.io/api/weather-current
   baseURL: https://api.weatherbit.io/v2.0
   tags:
@@ -217,9 +210,9 @@ apis:
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
 - aid: weatherbit:weatherbit-forecast-degree-day-api-api
-  name: Weatherbit Forecast Degree Day API API
-  description: >-
-    The Forecast Degree Day API API from Weatherbit — 1 operation(s) for forecast degree day api.
+  name: Weatherbit Forecast Degree Day API
+  description: The Forecast Degree Day API API from Weatherbit — 1 operation(s) for forecast degree day
+    api.
   humanURL: https://www.weatherbit.io/api/weather-current
   baseURL: https://api.weatherbit.io/v2.0
   tags:
@@ -231,8 +224,8 @@ apis:
     url: https://www.weatherbit.io/api/weather-current
 - aid: weatherbit:weatherbit-historical-agweather-data-api
   name: Weatherbit Historical AgWeather Data API
-  description: >-
-    The Historical AgWeather Data API from Weatherbit — 1 operation(s) for historical agweather data.
+  description: The Historical AgWeather Data API from Weatherbit — 1 operation(s) for historical agweather
+    data.
   humanURL: https://www.weatherbit.io/api/weather-current
   baseURL: https://api.weatherbit.io/v2.0
   tags:
@@ -244,8 +237,7 @@ apis:
     url: https://www.weatherbit.io/api/weather-current
 - aid: weatherbit:weatherbit-historical-air-quality-api
   name: Weatherbit Historical Air Quality API
-  description: >-
-    The Historical Air Quality API from Weatherbit — 1 operation(s) for historical air quality.
+  description: The Historical Air Quality API from Weatherbit — 1 operation(s) for historical air quality.
   humanURL: https://www.weatherbit.io/api/weather-current
   baseURL: https://api.weatherbit.io/v2.0
   tags:
@@ -256,9 +248,9 @@ apis:
   - type: Documentation
     url: https://www.weatherbit.io/api/weather-current
 - aid: weatherbit:weatherbit-historical-degree-day-api-api
-  name: Weatherbit Historical Degree Day API API
-  description: >-
-    The Historical Degree Day API API from Weatherbit — 1 operation(s) for historical degree day api.
+  name: Weatherbit Historical Degree Day API
+  description: The Historical Degree Day API API from Weatherbit — 1 operation(s) for historical degree
+    day api.
   humanURL: https://www.weatherbit.io/api/weather-current
   baseURL: https://api.weatherbit.io/v2.0
   tags:
@@ -270,9 +262,8 @@ apis:
     url: https://www.weatherbit.io/api/weather-current
 - aid: weatherbit:weatherbit-hourly-historical-weather-data-api
   name: Weatherbit Hourly Historical Weather Data API
-  description: >-
-    The Hourly Historical Weather Data API from Weatherbit — 1 operation(s) for hourly historical weather
-    data.
+  description: The Hourly Historical Weather Data API from Weatherbit — 1 operation(s) for hourly historical
+    weather data.
   humanURL: https://www.weatherbit.io/api/weather-current
   baseURL: https://api.weatherbit.io/v2.0
   tags:
@@ -284,9 +275,8 @@ apis:
     url: https://www.weatherbit.io/api/weather-current
 - aid: weatherbit:weatherbit-sub-hourly-historical-weather-data-api
   name: Weatherbit Sub-Hourly Historical Weather Data API
-  description: >-
-    The Sub-Hourly Historical Weather Data API from Weatherbit — 1 operation(s) for sub-hourly historical
-    weather data.
+  description: The Sub-Hourly Historical Weather Data API from Weatherbit — 1 operation(s) for sub-hourly
+    historical weather data.
   humanURL: https://www.weatherbit.io/api/weather-current
   baseURL: https://api.weatherbit.io/v2.0
   tags:
@@ -373,7 +363,8 @@ common:
   - name: Current Weather
     description: Live observations updated every 5-30 minutes from global weather station network.
   - name: 16-Day Daily Forecasts
-    description: High-accuracy daily forecasts for up to 16 days ahead using state-of-the-art weather models.
+    description: High-accuracy daily forecasts for up to 16 days ahead using state-of-the-art weather
+      models.
   - name: 240-Hour Hourly Forecasts
     description: Detailed hourly forecasts for up to 10 days (240 hours) ahead.
   - name: Severe Weather Alerts
@@ -381,9 +372,11 @@ common:
   - name: Historical Weather Data
     description: Gap-free historical weather data going back decades using ML and statistical backfilling.
   - name: Air Quality Monitoring
-    description: Current and forecast air quality data tracking PM2.5, PM10, O3, NO2, SO2, CO, and pollen levels.
+    description: Current and forecast air quality data tracking PM2.5, PM10, O3, NO2, SO2, CO, and pollen
+      levels.
   - name: Agricultural Weather
-    description: Specialized agricultural weather data including evapotranspiration, soil moisture, and growing degree days.
+    description: Specialized agricultural weather data including evapotranspiration, soil moisture, and
+      growing degree days.
   - name: Energy Forecasts
     description: Energy sector weather forecasts including heating and cooling degree days.
   - name: Climate Normals
@@ -395,7 +388,8 @@ common:
   - name: Mobile Weather Apps
     description: Power consumer weather applications with accurate forecasts and real-time conditions.
   - name: Agricultural Planning
-    description: Optimize crop management with specialized agricultural weather forecasts and historical data.
+    description: Optimize crop management with specialized agricultural weather forecasts and historical
+      data.
   - name: Energy Management
     description: Use degree-day forecasts for energy demand prediction and grid management.
   - name: Emergency Management
@@ -411,12 +405,12 @@ common:
   - name: REST API
     description: RESTful JSON API compatible with any programming language
 created: 2023/11/20
-modified: '2026-05-19'
-description: Weatherbit is a leading provider of weather data and forecasting services. They specialize in delivering accurate
-  and up-to-date weather information to businesses and individuals around the world. Services include real-time current weather,
-  16-day daily and 240-hour hourly forecasts, historical weather data, severe alerts, air quality monitoring, agricultural
-  weather, energy forecasts, and climate normals. Data is available globally via lat/lon, city name, postal code, and station
-  ID.
+modified: '2026-09-16'
+description: Weatherbit is a leading provider of weather data and forecasting services. They specialize
+  in delivering accurate and up-to-date weather information to businesses and individuals around the world.
+  Services include real-time current weather, 16-day daily and 240-hour hourly forecasts, historical weather
+  data, severe alerts, air quality monitoring, agricultural weather, energy forecasts, and climate normals.
+  Data is available globally via lat/lon, city name, postal code, and station ID.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
