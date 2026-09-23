@@ -1,7 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Current Air Quality API
-  description: This an interactive version of the documentation for the Weatherbit API.  The base URL for the API is [http://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/) or [https://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/). Below is the Swagger UI documentation for the API. All API requests require the `key` parameter.        An Example for a 48 hour forecast for London, UK would be `http://api.weatherbit.io/v2.0/forecast/hourly?lat=51.5072`&`lon=-0.1276`. See our [Weather API description page](https://www.weatherbit.io/api) for the full documentation.
+  title: Weatherbit - Interactive Swagger UI Documentation Current…
+  description: This an interactive version of the documentation for the Weatherbit API. The base URL for the API is http://api.weatherbit.io/v2.0/ or https://api.weatherbit.io/v2.0/. Below is the Swagger UI documentation for the API. All API requests require the `key` parameter. An Example for a 48 hour forecast for London, UK would be `http://api.weatherbit.io/v2.0/forecast/hourly?lat=51.5072`&`lon=-0.1276`. See our Weather API description page for the full documentation.
   version: 2.0.0
 servers:
 - url: https://api.weatherbit.io/v2.0
@@ -13,7 +13,7 @@ paths:
     get:
       tags:
       - Current Air Quality
-      summary: Weatherbit Returns Current Air Quality Conditions - Given a Geolocation.
+      summary: Weatherbit Returns Current Air Quality Conditions - Given a Geolocation
       description: Returns current air quality conditions.
       parameters:
       - name: lat
@@ -82,6 +82,8 @@ paths:
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
+      operationId: getCurrentAirquality
+      x-operation-id-source: derived
 components:
   schemas:
     AQCurrent:
@@ -111,14 +113,6 @@ components:
           type: number
           description: Concentration of PM 10 (µg/m³)
           example: 150.0
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
     AQCurrentGroup:
       type: object
       properties:
@@ -150,3 +144,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/AQCurrent'
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

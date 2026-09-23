@@ -1,7 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Forecast Degree Day API API
-  description: This an interactive version of the documentation for the Weatherbit API.  The base URL for the API is [http://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/) or [https://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/). Below is the Swagger UI documentation for the API. All API requests require the `key` parameter.        An Example for a 48 hour forecast for London, UK would be `http://api.weatherbit.io/v2.0/forecast/hourly?lat=51.5072`&`lon=-0.1276`. See our [Weather API description page](https://www.weatherbit.io/api) for the full documentation.
+  title: Weatherbit - Interactive Swagger UI Documentation Forecast…
+  description: This an interactive version of the documentation for the Weatherbit API. The base URL for the API is http://api.weatherbit.io/v2.0/ or https://api.weatherbit.io/v2.0/. Below is the Swagger UI documentation for the API. All API requests require the `key` parameter. An Example for a 48 hour forecast for London, UK would be `http://api.weatherbit.io/v2.0/forecast/hourly?lat=51.5072`&`lon=-0.1276`. See our Weather API description page for the full documentation.
   version: 2.0.0
 servers:
 - url: https://api.weatherbit.io/v2.0
@@ -13,7 +13,7 @@ paths:
     get:
       tags:
       - Forecast Degree Day API
-      summary: Weatherbit Returns Energy Forecast API Response - Given a Single Lat/lon.
+      summary: Weatherbit Returns Energy Forecast API Response - Given a Single Lat/lon
       description: Retrieve an 8 day forecast relevant to te Energy Sector (degree days, solar radiation, precipitation, wind).
       parameters:
       - name: lat
@@ -81,55 +81,10 @@ paths:
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
+      operationId: getForecastEnergy
+      x-operation-id-source: derived
 components:
   schemas:
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-    EnergyObsGroupForecast:
-      type: object
-      properties:
-        city_name:
-          type: string
-          description: City name (closest)
-          example: Raleigh
-        state_code:
-          type: string
-          description: State abbreviation
-          example: NC
-        country_code:
-          type: string
-          description: Country abbreviation
-          example: US
-        timezone:
-          type: string
-          description: Local IANA time zone
-          example: America/New_York
-        lat:
-          type: number
-          description: Latitude
-          example: 38.0
-        lon:
-          type: number
-          description: Longitude
-          example: -78.25
-        threshold_units:
-          type: string
-          description: Degree day threshold units
-          example: C
-        threshold_value:
-          type: string
-          description: Degree day threshold
-          example: '18'
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/EnergyObsSeries'
     EnergyObsSeries:
       type: object
       properties:
@@ -193,3 +148,50 @@ components:
           type: number
           description: Total snowfall in period - Default (mm)
           example: 10.0
+    EnergyObsGroupForecast:
+      type: object
+      properties:
+        city_name:
+          type: string
+          description: City name (closest)
+          example: Raleigh
+        state_code:
+          type: string
+          description: State abbreviation
+          example: NC
+        country_code:
+          type: string
+          description: Country abbreviation
+          example: US
+        timezone:
+          type: string
+          description: Local IANA time zone
+          example: America/New_York
+        lat:
+          type: number
+          description: Latitude
+          example: 38.0
+        lon:
+          type: number
+          description: Longitude
+          example: -78.25
+        threshold_units:
+          type: string
+          description: Degree day threshold units
+          example: C
+        threshold_value:
+          type: string
+          description: Degree day threshold
+          example: '18'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnergyObsSeries'
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

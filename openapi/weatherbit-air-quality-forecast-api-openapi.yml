@@ -1,7 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Weatherbit - Interactive Swagger UI Documentation 16 Day / Daily Forecast Air Quality Forecast API
-  description: This an interactive version of the documentation for the Weatherbit API.  The base URL for the API is [http://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/) or [https://api.weatherbit.io/v2.0/](http://api.weatherbit.io/v2.0/). Below is the Swagger UI documentation for the API. All API requests require the `key` parameter.        An Example for a 48 hour forecast for London, UK would be `http://api.weatherbit.io/v2.0/forecast/hourly?lat=51.5072`&`lon=-0.1276`. See our [Weather API description page](https://www.weatherbit.io/api) for the full documentation.
+  title: Weatherbit - Interactive Swagger UI Documentation Air…
+  description: This an interactive version of the documentation for the Weatherbit API. The base URL for the API is http://api.weatherbit.io/v2.0/ or https://api.weatherbit.io/v2.0/. Below is the Swagger UI documentation for the API. All API requests require the `key` parameter. An Example for a 48 hour forecast for London, UK would be `http://api.weatherbit.io/v2.0/forecast/hourly?lat=51.5072`&`lon=-0.1276`. See our Weather API description page for the full documentation.
   version: 2.0.0
 servers:
 - url: https://api.weatherbit.io/v2.0
@@ -13,7 +13,7 @@ paths:
     get:
       tags:
       - Air Quality Forecast
-      summary: Weatherbit Returns 72 Hour (hourly) Air Quality Forecast - Given a Geolocation.
+      summary: Weatherbit Returns 72 Hour (hourly) Air Quality Forecast - Given a Geolocation
       description: Returns 72 hour (hourly) Air Quality forecast, where each point represents a one hour period.
       parameters:
       - name: lat
@@ -89,39 +89,10 @@ paths:
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
+      operationId: getForecastAirquality
+      x-operation-id-source: derived
 components:
   schemas:
-    AQHourly:
-      type: object
-      properties:
-        city_name:
-          type: string
-          description: City Name
-          example: Raleigh
-        state_code:
-          type: string
-          description: State Abbreviation
-          example: NC
-        country_code:
-          type: string
-          description: Country Abbreviation
-          example: US
-        lat:
-          type: number
-          description: Latitude
-          example: 38.25
-        lon:
-          type: number
-          description: Longitude
-          example: -78.0
-        timezone:
-          type: string
-          description: Local IANA time zone
-          example: America/New_York
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AQHour'
     AQHour:
       type: object
       properties:
@@ -169,3 +140,34 @@ components:
           format: int32
         message:
           type: string
+    AQHourly:
+      type: object
+      properties:
+        city_name:
+          type: string
+          description: City Name
+          example: Raleigh
+        state_code:
+          type: string
+          description: State Abbreviation
+          example: NC
+        country_code:
+          type: string
+          description: Country Abbreviation
+          example: US
+        lat:
+          type: number
+          description: Latitude
+          example: 38.25
+        lon:
+          type: number
+          description: Longitude
+          example: -78.0
+        timezone:
+          type: string
+          description: Local IANA time zone
+          example: America/New_York
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AQHour'
