@@ -84,6 +84,14 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
     HistoryAGObj:
       type: object
       properties:
@@ -215,14 +223,6 @@ components:
           type: number
           description: Average Wind Speed at 10 meters
           example: 2.505
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
     ForecastAG:
       type: object
       properties:

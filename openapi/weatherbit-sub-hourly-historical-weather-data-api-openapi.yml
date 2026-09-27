@@ -170,43 +170,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    HistorySubhourly:
-      type: object
-      properties:
-        city_name:
-          type: string
-          description: City name (Closest)
-          example: Seattle
-        state_code:
-          type: string
-          description: State abbreviation
-          example: WA
-        country_code:
-          type: string
-          description: Country abbreviation
-          example: US
-        timezone:
-          type: string
-          description: Local IANA time zone
-          example: America/New_York
-        lat:
-          type: number
-          description: Latitude
-          example: 47.61
-        lon:
-          type: number
-          description: Longitude
-          example: -122.33
-        sources:
-          type: array
-          description: List of data sources used in response
-          items:
-            type: string
-            example: 12345-89083
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/HistoryObj'
     HistoryObj:
       type: object
       properties:
@@ -337,3 +300,40 @@ components:
           format: int32
         message:
           type: string
+    HistorySubhourly:
+      type: object
+      properties:
+        city_name:
+          type: string
+          description: City name (Closest)
+          example: Seattle
+        state_code:
+          type: string
+          description: State abbreviation
+          example: WA
+        country_code:
+          type: string
+          description: Country abbreviation
+          example: US
+        timezone:
+          type: string
+          description: Local IANA time zone
+          example: America/New_York
+        lat:
+          type: number
+          description: Latitude
+          example: 47.61
+        lon:
+          type: number
+          description: Longitude
+          example: -122.33
+        sources:
+          type: array
+          description: List of data sources used in response
+          items:
+            type: string
+            example: 12345-89083
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/HistoryObj'

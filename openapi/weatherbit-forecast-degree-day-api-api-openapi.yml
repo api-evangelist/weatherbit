@@ -85,6 +85,53 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    EnergyObsGroupForecast:
+      type: object
+      properties:
+        city_name:
+          type: string
+          description: City name (closest)
+          example: Raleigh
+        state_code:
+          type: string
+          description: State abbreviation
+          example: NC
+        country_code:
+          type: string
+          description: Country abbreviation
+          example: US
+        timezone:
+          type: string
+          description: Local IANA time zone
+          example: America/New_York
+        lat:
+          type: number
+          description: Latitude
+          example: 38.0
+        lon:
+          type: number
+          description: Longitude
+          example: -78.25
+        threshold_units:
+          type: string
+          description: Degree day threshold units
+          example: C
+        threshold_value:
+          type: string
+          description: Degree day threshold
+          example: '18'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnergyObsSeries'
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
     EnergyObsSeries:
       type: object
       properties:
@@ -148,50 +195,3 @@ components:
           type: number
           description: Total snowfall in period - Default (mm)
           example: 10.0
-    EnergyObsGroupForecast:
-      type: object
-      properties:
-        city_name:
-          type: string
-          description: City name (closest)
-          example: Raleigh
-        state_code:
-          type: string
-          description: State abbreviation
-          example: NC
-        country_code:
-          type: string
-          description: Country abbreviation
-          example: US
-        timezone:
-          type: string
-          description: Local IANA time zone
-          example: America/New_York
-        lat:
-          type: number
-          description: Latitude
-          example: 38.0
-        lon:
-          type: number
-          description: Longitude
-          example: -78.25
-        threshold_units:
-          type: string
-          description: Degree day threshold units
-          example: C
-        threshold_value:
-          type: string
-          description: Degree day threshold
-          example: '18'
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/EnergyObsSeries'
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
