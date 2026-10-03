@@ -292,14 +292,6 @@ components:
           type: number
           description: Snowfall - Default (mm)
           example: 30.0
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
     HistorySubhourly:
       type: object
       properties:
@@ -337,3 +329,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/HistoryObj'
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

@@ -132,14 +132,6 @@ components:
           type: number
           description: Concentration of PM 10 (µg/m³)
           example: 150.0
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
     AQHourly:
       type: object
       properties:
@@ -171,3 +163,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/AQHour'
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

@@ -182,14 +182,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ForecastHour'
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
     ForecastHour:
       type: object
       properties:
@@ -312,3 +304,11 @@ components:
           type: string
           description: Cardinal wind direction (text)
           example: East-North-East
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

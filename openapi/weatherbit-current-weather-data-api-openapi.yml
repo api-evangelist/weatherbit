@@ -175,17 +175,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    CurrentObsGroup:
-      type: object
-      properties:
-        count:
-          type: integer
-          description: Count of found observations
-          example: 1
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/CurrentObs'
     Error:
       type: object
       properties:
@@ -353,3 +342,14 @@ components:
           type: number
           description: Snowfall in last hour - Default (mm)
           example: 10.0
+    CurrentObsGroup:
+      type: object
+      properties:
+        count:
+          type: integer
+          description: Count of found observations
+          example: 1
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CurrentObs'

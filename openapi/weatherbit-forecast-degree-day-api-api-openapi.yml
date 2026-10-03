@@ -124,14 +124,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/EnergyObsSeries'
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
     EnergyObsSeries:
       type: object
       properties:
@@ -195,3 +187,11 @@ components:
           type: number
           description: Total snowfall in period - Default (mm)
           example: 10.0
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

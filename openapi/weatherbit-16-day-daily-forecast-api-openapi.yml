@@ -151,14 +151,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
     Forecast:
       type: object
       properties:
@@ -324,3 +316,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Forecast'
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
