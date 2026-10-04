@@ -106,23 +106,14 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Normals:
+    Error:
       type: object
       properties:
-        timezone:
+        code:
+          type: integer
+          format: int32
+        message:
           type: string
-          description: Local IANA time zone
-          example: America/New_York
-        sources:
-          type: array
-          description: List of data sources used in response
-          items:
-            type: string
-            example: era5
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/NormalsObj'
     NormalsObj:
       type: object
       properties:
@@ -162,11 +153,20 @@ components:
           type: number
           description: Average Snowfall - Default (mm)
           example: 30.5
-    Error:
+    Normals:
       type: object
       properties:
-        code:
-          type: integer
-          format: int32
-        message:
+        timezone:
           type: string
+          description: Local IANA time zone
+          example: America/New_York
+        sources:
+          type: array
+          description: List of data sources used in response
+          items:
+            type: string
+            example: era5
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/NormalsObj'

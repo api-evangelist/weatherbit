@@ -84,6 +84,21 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    ForecastAG:
+      type: object
+      properties:
+        lat:
+          type: number
+          description: Latitude
+          example: 47.61
+        lon:
+          type: number
+          description: Longitude
+          example: -122.33
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/HistoryAGObj'
     HistoryAGObj:
       type: object
       properties:
@@ -215,21 +230,6 @@ components:
           type: number
           description: Average Wind Speed at 10 meters
           example: 2.505
-    ForecastAG:
-      type: object
-      properties:
-        lat:
-          type: number
-          description: Latitude
-          example: 47.61
-        lon:
-          type: number
-          description: Longitude
-          example: -122.33
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/HistoryAGObj'
     Error:
       type: object
       properties:

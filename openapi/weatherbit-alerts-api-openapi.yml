@@ -112,6 +112,14 @@ components:
       type: string
       description: List of impacted regions
       example: St Louis, MO
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
     WeatherAlertGroup:
       type: object
       properties:
@@ -182,11 +190,3 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/AlertRegionGroup'
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string

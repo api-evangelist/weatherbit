@@ -151,6 +151,45 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    ForecastDay:
+      type: object
+      properties:
+        city_name:
+          type: string
+          description: City Name
+          example: Raleigh
+        state_code:
+          type: string
+          description: State Abbreviation
+          example: NC
+        country_code:
+          type: string
+          description: Country Abbreviation
+          example: US
+        lat:
+          type: number
+          description: Latitude
+          example: 38.25
+        lon:
+          type: number
+          description: Longitude
+          example: -78.0
+        timezone:
+          type: string
+          description: Local IANA time zone
+          example: America/New_York
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Forecast'
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
     Forecast:
       type: object
       properties:
@@ -285,42 +324,3 @@ components:
           type: string
           description: Cardinal wind direction (text)
           example: East-North-East
-    ForecastDay:
-      type: object
-      properties:
-        city_name:
-          type: string
-          description: City Name
-          example: Raleigh
-        state_code:
-          type: string
-          description: State Abbreviation
-          example: NC
-        country_code:
-          type: string
-          description: Country Abbreviation
-          example: US
-        lat:
-          type: number
-          description: Latitude
-          example: 38.25
-        lon:
-          type: number
-          description: Longitude
-          example: -78.0
-        timezone:
-          type: string
-          description: Local IANA time zone
-          example: America/New_York
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Forecast'
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string

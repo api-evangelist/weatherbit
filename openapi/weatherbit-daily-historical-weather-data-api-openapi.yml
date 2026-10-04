@@ -160,6 +160,14 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
     HistoryDay:
       type: object
       properties:
@@ -312,11 +320,3 @@ components:
           type: number
           description: Snowfall - default (mm)
           example: 30.0
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
