@@ -324,6 +324,10 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/weatherbit.png
 common:
+- type: RateLimits
+  url: rate-limits/weatherbit-rate-limits.yml
+- type: FinOps
+  url: finops/weatherbit-finops.yml
 - type: Website
   url: https://www.weatherbit.io/
 - type: AgenticAccess
