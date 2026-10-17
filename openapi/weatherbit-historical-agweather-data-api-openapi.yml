@@ -226,14 +226,6 @@ components:
           type: number
           description: Average Wind Speed at 10 meters
           example: 2.505
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
     HistoryAG:
       type: object
       properties:
@@ -249,3 +241,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/HistoryAGObj'
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

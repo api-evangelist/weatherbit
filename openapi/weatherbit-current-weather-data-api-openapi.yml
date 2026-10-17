@@ -186,14 +186,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CurrentObs'
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
     CurrentObs:
       type: object
       properties:
@@ -353,3 +345,11 @@ components:
           type: number
           description: Snowfall in last hour - Default (mm)
           example: 10.0
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

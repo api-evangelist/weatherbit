@@ -93,33 +93,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    WeatherAlert:
-      type: object
-      properties:
-        lat:
-          type: number
-          description: Latitude
-          example: 38.0
-        lon:
-          type: number
-          description: Longitude
-          example: -78.25
-        alerts:
-          type: array
-          items:
-            $ref: '#/components/schemas/WeatherAlertGroup'
-    AlertRegionGroup:
-      type: string
-      description: List of impacted regions
-      example: St Louis, MO
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
     WeatherAlertGroup:
       type: object
       properties:
@@ -190,3 +163,30 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/AlertRegionGroup'
+    WeatherAlert:
+      type: object
+      properties:
+        lat:
+          type: number
+          description: Latitude
+          example: 38.0
+        lon:
+          type: number
+          description: Longitude
+          example: -78.25
+        alerts:
+          type: array
+          items:
+            $ref: '#/components/schemas/WeatherAlertGroup'
+    AlertRegionGroup:
+      type: string
+      description: List of impacted regions
+      example: St Louis, MO
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

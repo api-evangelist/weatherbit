@@ -85,14 +85,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
     EnergyObsSeries:
       type: object
       properties:
@@ -195,3 +187,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/EnergyObsSeries'
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
